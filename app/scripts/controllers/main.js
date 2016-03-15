@@ -10,7 +10,7 @@
 angular.module('bmadminApp')
   .controller('MainCtrl', function ($scope,$http,logger,pages) {
       $scope.todayTime = Math.floor(Date.now() / 1000);
-      var data = {tag:"fetchPackagesUsers", id:$scope.user.id, email:$scope.user.email}
+      var data = {tag:"fetchPackagesPublic"}
       httpAccess(data,$http).then(function(result) {
           console.log(result);
           $scope.packages = result.data.export;

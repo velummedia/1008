@@ -3,7 +3,7 @@
     <div class="row clearfix">
         <div class="col-sm-4 col-xs-6 packageswrap" ng-repeat="item in packages" ng-if="item.package.approved == 1 && item.approved != 8 && item.access == 1 " ng-class="{'disable' : item.package.approved == 0, 'refund' : item.approved == 8}">
             <div ng-style="{'background-color' : colors[$index]}">
-                <span class="order-flag"><em>Pre Order</em></span>
+                <span class="order-flag"><em>Purchased</em></span>
                 <a href="#/package/{{createMoreInfo(item.package.name)}}">
                     <img class="img-responsive" ng-src="{{loadBackgroundImage(item.package.name)}}" alt="">
                 </a>
@@ -14,7 +14,7 @@
                 <footer class="more-buy-wrap clearfix">
                     <a href="#/package/{{createMoreInfo(item.package.name)}}">More Info</a>
                     <!-- <a href="{{item.package.url}}" target="_blank">More Info</a> -->
-                    <a class="buy-btn" href="#">Buy For ${{item.package.price}}</a>
+                    <a class="buy-btn" href="{{item.package.loginurl}}">LOGIN</a>
                 </footer>
 
                 <!--<div class="more-buy-wrap clearfix">-->
@@ -38,8 +38,8 @@
                 <footer class="more-buy-wrap clearfix">
                     <a href="#/package/{{createMoreInfo(item.package.name)}}">More Info</a>
                     <!-- <a href="{{item.package.url}}" target="_blank">More Info</a> -->
-                    <a class="buy-btn" href="#" ng-show="item.package.price !== '0'">Buy For ${{item.package.price}}</a>
-                    <a class="buy-btn" href="#" ng-show="item.package.price == '0'">
+                    <a class="buy-btn" href="#/paymentsuser/{{item.package.id}}" ng-show="item.package.price !== '0'">Buy For ${{item.package.price}}</a>
+                    <a class="buy-btn" href="#/paymentsuser/{{item.package.id}}" ng-show="item.package.price == '0'">
                         Access
                         <span ng-show="!item.package.vip && item.package.price !== '0'">
                             ${{item.package.price}}

@@ -176,8 +176,8 @@ angular.module('bmadminApp')
           name : 'Browse',
           page : 'browsepackage',
           type : 'head',
-          icon : 'images/user/browse.png',
-          iconh : 'images/user/browseh.png',
+          icon : 'images/user/browseg.png',
+          iconh : 'images/user/browsew.png',
           selected : false,
           child : '0'
         },

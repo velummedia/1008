@@ -209,21 +209,29 @@
 </div>
 
 
-<div class="right-side-text" ng-show="sidebarShowPayment">
-    <div class="right-side-inner">
-        <h1>Thanks for Making a Purchase</h1>
-        <p>You are just one step away from starting your plan.</p>
+
+
+<div class="right-side-text">
+    <div class="green-box">
+        <h4 class="h4" style="font-size: 17px">Thanks for Making a Purchase</h4>
+        <div class="inner">
+            <p>You are just one step away from starting your plan.</p>
+        </div>
     </div>
-    <div class="right-side-inner package-list">
-        <h1>Packages</h1>
-        <ul>
-            <li ng-repeat="item in filterPackages">
-                <a title="{{item.name}}" href="#/paymentsuser/{{item.id}}">{{item.name}} (${{item.price}})</a>
-                <a class="moreinfobutton" href="{{item.url}}" target="_blank">(More Info)</a>
-            </li>
-        </ul>
+
+    <div class="green-box package-list">
+        <h4 class="h4">Packages</h4>
+        <div class="inner">
+            <ul>
+                <li ng-repeat="item in filterPackages">
+                    <a title="{{item.name}}" href="#/paymentsuser/{{item.id}}">{{item.name}} (${{item.price}})</a>
+                    <a class="moreinfobutton" href="{{item.url}}" target="_blank">(More Info)</a>
+                </li>
+            </ul>
+        </div>
     </div>
 </div>
+
 <script type="text/ng-template" id="cvv.html">
     <div class="modal-header">
         <h3 class="modal-title">What`s CVV ?</h3>

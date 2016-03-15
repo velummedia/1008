@@ -1,4 +1,4 @@
-<div class="user-pages pack wh-bg">
+<div class="user-pages pack wh-bg" ng-class="{'full-width' : fullWidth}">
     <div class="banner clearfix">
         <div class="col-lg-6 col-lg-push-6 nopadding">
             <img class="img-responsive" src="{{pdata.cover}}" alt="Banner">
@@ -12,7 +12,7 @@
     <div class="clearfix row">
 
         <div class="col-sm-8 col-lg-9">
-            <h2 class="h1 text-center greent-txt">Welcome</h2>
+            <h2 class="h1 text-center green-txt">Welcome</h2>
             <p class="text-center welcome-txt" ng-bind-html="pdata.welcome_text">
 
             </p>
@@ -30,7 +30,7 @@
             </div>
 
             <div class="frq-section">
-                <h3 class="h1 text-center bold greent-txt">Frequently Asked Questions</h3>
+                <h3 class="h1 text-center bold green-txt">Frequently Asked Questions</h3>
                 <div class="grid-gallery">
 
                     <section class="grid-wrap">
@@ -47,12 +47,12 @@
             <div class="link-bar">
                 <div class="h3">
                     <a href="#">I want to start my training!</a>
-                    <a class="load-more-ic" href="#"><i class="fa fa-angle-right greent-txt"></i></a>
+                    <a class="load-more-ic" href="#"><i class="fa fa-angle-right green-txt"></i></a>
                 </div>
             </div>
 
             <div class="more-dt">
-                <h4 class="h1 bold text-center greent-txt">More</h4>
+                <h4 class="h1 bold text-center green-txt">More</h4>
                 <ul class="row clearfix">
 
                     <li class="col-xs-4" ng-repeat="it in pdata.moreinfo">
@@ -86,7 +86,7 @@
                 <div class="h3">
                     <div class="price">$972</div>
                     <a href="#">Buy Now</a>
-                    <a class="load-more-ic" href="#"><i class="fa fa-angle-right greent-txt"></i></a>
+                    <a class="load-more-ic" href="#"><i class="fa fa-angle-right green-txt"></i></a>
                 </div>
             </div>
         </div>
@@ -94,7 +94,7 @@
 
 </div>
 
-<div class="right-side-text">
+<div class="right-side-text" ng-show="showRightSidebar">
     <div class="green-box">
         <h4 class="h4">Choose a Plan</h4>
         <div class="inner">

@@ -1,13 +1,14 @@
-<!--<br>-->
+<div class="edit-profile user-pages">
 
-<div  class="edit-profile user-pages clearfix">
+    <div class="green-box clearfix">
+        <h4>Edit Profile</h4>
+        <div class="inner clearfix">
+            <div class="user-img"><img src="images/user/comingsoon.png" alt=""/></div>
 
-    <div class="user-img"><img src="images/user/comingsoon.png" alt=""/></div>
-
-    <div class="col-lg-9 edit-column">
-        <h2 class="user-name">{{user.name}}</h2>
-        <div class="dt">
-            <span class="dt-title">name</span>
+            <div class="col-lg-9 edit-column">
+                <h2 class="user-name">{{user.name}}</h2>
+                <div class="dt">
+                    <span class="dt-title">name</span>
             <span ng-show="nameEdit">
                 <form name="nameForm" ng-submit="editProfile(nameForm)">
                     <input class="input-txt" type="text" ng-value="user.name" name="name" ng-model="form.name" required>
@@ -22,9 +23,9 @@
             <span class="dt-describtion" ng-show="!nameEdit">{{user.name}}
                 <button class="edit-field-botton" ng-click="openEditModal('name')"><span></span></button>
             </span>
-        </div>
-        <div class="dt">
-            <span class="dt-title">email</span>
+                </div>
+                <div class="dt">
+                    <span class="dt-title">email</span>
             <span ng-show="emailEdit">
                 <form name="emailForm" ng-submit="editProfile(emailForm)">
                     <input class="input-txt" type="text" ng-value="user.email" name="email" ng-model="form.email" required>
@@ -39,9 +40,9 @@
             <span class="dt-describtion" ng-show="!emailEdit">{{user.email}}
                 <button class="edit-field-botton" ng-click="openEditModal('email')"><span></span></button>
             </span>
-        </div>
-        <div class="dt">
-            <span class="dt-title">Phone</span>
+                </div>
+                <div class="dt">
+                    <span class="dt-title">Phone</span>
             <span ng-show="phoneEdit">
                 <form name="phoneForm" ng-submit="editProfile(phoneForm)">
                     <input class="input-txt" type="text" ng-value="user.phone" name="phone" ng-model="form.phone">
@@ -56,9 +57,9 @@
             <span class="dt-describtion" ng-show="!phoneEdit">{{user.phone}}
                  <button class="edit-field-botton" ng-click="openEditModal('phone')"><span></span></button>
             </span>
-        </div>
-        <div class="dt">
-            <span class="dt-title">Password</span>
+                </div>
+                <div class="dt">
+                    <span class="dt-title">Password</span>
             <span ng-show="passwordEdit">
                 <form name="changepassword" ng-submit="passUser(changepassword)">
                     <input class="input-txt" type="password" class="form-control" name="password" ng-model="form.password" placeholder="Password">
@@ -74,18 +75,22 @@
             <span class="dt-describtion" ng-show="!passwordEdit">**********
                 <button class="edit-field-botton" ng-click="openEditModal('password')"><span></span></button>
             </span>
-            <div class="dt">
-                <input type="checkbox" ng-checked="true">
-                <span class="dt-title">Receive updates from Breaking Muscle on training plans and relevant articles and events.</span>
+                    <div class="dt">
+                        <input type="checkbox" ng-checked="true">
+                        <span class="dt-title">Receive updates from Breaking Muscle on training plans and relevant articles and events.</span>
+                    </div>
+                </div>
+                <!--         <div class="dt">
+                            <span class="dt-title">ipsum</span>
+                            <span class="dt-describtion">corporis deleniti
+                                 <button class="edit-field-botton"><span></span></button>
+                            </span>
+                        </div> -->
             </div>
         </div>
-<!--         <div class="dt">
-            <span class="dt-title">ipsum</span>
-            <span class="dt-describtion">corporis deleniti
-                 <button class="edit-field-botton"><span></span></button>
-            </span>
-        </div> -->
     </div>
+
+
 
 
     <!-- <div class="col-lg-4 col-md-6 edit-column last-column">

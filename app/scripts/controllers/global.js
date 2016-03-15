@@ -29,6 +29,8 @@ angular.module('bmadminApp')
     $rootScope.isActive = false;
     $rootScope.loginSectionActive = false;
 
+
+
     $scope.$watch(function () { return window.localStorage["bmadminlogin"]; },function(newVal,oldVal){
       if (newVal == 1) {
         $rootScope.headerMenusLinks = false;
@@ -39,27 +41,31 @@ angular.module('bmadminApp')
     });
     
   	$rootScope.colors = [
-      "#d8074c",
-      "#e87708",
-      "#eca907",
-      "#d8074c", //RED
-      "#8e0ee0",
-      "#21c94f",
-      "#1546d6", //BLUE
-      "#02c0dc",
-      "#eca907",
-      "#e87708",
-      "#d8074c",
-      "#8e0ee0",
-      "#21c94f",
-      "#02c0dc",
-      "#eca907",
-      "#e87708",
-      "#d8074c",
-      "#8e0ee0",
-      "#1546d6",
-      "#21c94f",
-      "#02c0dc",
+      "#913ccd",
+      "#f15f74",
+      "#f76d3c",
+      "#f7d842",
+      "#2ca8c2",
+      "#98cb4a",
+      "#839098",
+      "#5481e6",
+      "#913ccd",
+      "#f15f74",
+      "#f76d3c",
+      "#f7d842",
+      "#2ca8c2",
+      "#98cb4a",
+      "#839098",
+      "#5481e6",
+      "#913ccd",
+      "#f15f74",
+      "#f76d3c",
+      "#f7d842",
+      "#2ca8c2",
+      "#98cb4a",
+      "#839098",
+      "#5481e6"
+
       ];
   	
     function checkAccess(menus,ulevel,currentPage) {
@@ -98,6 +104,9 @@ angular.module('bmadminApp')
 
   	$rootScope.sidebarShow = true;
   	$rootScope.headerShow = true;
+
+    $rootScope.showRightSidebar = false;
+    $rootScope.fullWidth = true;
 
   	$rootScope.$on("$routeChangeSuccess", function (event, currentRoute, previousRoute) {
       // For Page Title
@@ -175,21 +184,19 @@ angular.module('bmadminApp')
       // 
 
       if (currentRoute.$$route.originalPath == '/login' ||
-  			  currentRoute.$$route.originalPath == '/login/:key' ||
+  		  currentRoute.$$route.originalPath == '/login/:key' ||
           currentRoute.$$route.originalPath == '/adminlogin' || 
           currentRoute.$$route.originalPath == '/vlogin' || 
           currentRoute.$$route.originalPath == '/forgotpassword' || 
           currentRoute.$$route.originalPath == '/resetpassword/:id' || 
           currentRoute.$$route.originalPath == '/activation/:id' || 
-          currentRoute.$$route.originalPath == '/main' ||
-          currentRoute.$$route.originalPath == '/' || 
           currentRoute.$$route.originalPath == '/activeaccount/:id') {
   			$rootScope.sidebarShow = false;
   			$rootScope.headerShow = false;
   		}else{
   			$rootScope.sidebarShow = true;
   			$rootScope.headerShow = true;
-        $rootScope.loginSectionActive = false;
+            $rootScope.loginSectionActive = false;
 
         if (window.localStorage['bmadminlogin'] == 1) {
           $rootScope.user = JSON.parse(window.localStorage['bmadminUser']);       
@@ -270,9 +277,18 @@ angular.module('bmadminApp')
           }
           /////////////////////////////////
         }else{
-          $location.path("/login");
-        }
+            if(currentRoute.$$route.originalPath !== '/main'
+                && currentRoute.$$route.originalPath !== '/'
+                &&  currentRoute.$$route.originalPath !== '/package/:name'){
+              $location.path("/login");
+              $rootScope.showRightSidebar = true;
+              $rootScope.fullWidth = false;
+            }
+
+          }
   		}
+
+
   	});
 
 
@@ -316,16 +332,19 @@ angular.module('bmadminApp')
       }
 
       if ( window.localStorage["bmadminlogin"] && window.localStorage["bmadminlogin"] == 1 && window.localStorage["bmadminlevel"] == 1) {
-        var checkLoginUser = {
-          tag:"checkUserSession",
-          email: $scope.user.email
-        }
 
-        httpAccess(checkLoginUser,$http).then(function(result){
-          if (result.data.export.session == 0) {
-            $scope.logout();
-          }
-        });
+        //var checkLoginUser = {
+        //  tag:"checkUserSession",
+        //  email: $scope.user.email
+        //}
+        //
+        //httpAccess(checkLoginUser,$http).then(function(result){
+        //  if (result.data.export.session == 0) {
+        //    $scope.logout();
+        //  }
+        //});
       }
+
+
     });
   });
