@@ -122,22 +122,27 @@
 
 
 </div>
+
 <div class="right-side-text">
-    <div class="right-side-inner">
-        <h1>Edit profile</h1>
-        <p>Your profile is private. Keep it up to date so that you can stay current on your plans and receive regular updates.</p>
+    <div class="green-box">
+        <h4 class="h4">Edit profile</h4>
+        <div class="inner">
+            <p>Your profile is private. Keep it up to date so that you can stay current on your plans and receive regular updates.</p>
+        </div>
     </div>
-    <div class="right-side-inner package-list">
-        <h1>Packages</h1>
-        <ul>
-            <li ng-repeat="item in filterPackages">
-                <a title="{{item.name}}" href="#/paymentsuser/{{item.id}}">{{item.name}} (${{item.price}})</a>
-                <a class="moreinfobutton" href="{{item.url}}" target="_blank">(More Info)</a>
-            </li>
-        </ul>
+
+    <div class="green-box package-list">
+        <h4 class="h4">Packages</h4>
+        <div class="inner">
+            <ul>
+                <li ng-repeat="item in filterPackages">
+                    <a title="{{item.name}}" href="#/paymentsuser/{{item.id}}">{{item.name}} (${{item.price}})</a>
+                    <a class="moreinfobutton" href="{{item.url}}" target="_blank">(More Info)</a>
+                </li>
+            </ul>
+        </div>
     </div>
 </div>
-
 
 
 <div class="user-pages edit-card-info ">

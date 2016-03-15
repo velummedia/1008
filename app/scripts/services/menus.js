@@ -185,8 +185,8 @@ angular.module('bmadminApp')
           name : 'Payments',
           page : 'allpaymentsuser',
           type : 'head',
-          icon : 'images/user/payment.png',
-          iconh : 'images/user/paymenth.png',
+          icon : 'images/user/paymentg.png',
+          iconh : 'images/user/paymentw.png',
           selected : false,
           child: '0'
         },
@@ -194,8 +194,8 @@ angular.module('bmadminApp')
           name : 'Edit Profile',
           page : 'editprofile',
           type : 'head',
-          icon : 'images/user/editprofile.png',
-          iconh : 'images/user/editprofileh.png',
+          icon : 'images/user/editprofileg.png',
+          iconh : 'images/user/editprofilew.png',
           selected : false,
           child : '0'
         },
@@ -203,8 +203,8 @@ angular.module('bmadminApp')
           name : 'Help',
           page : 'contactus',
           type : 'head',
-          icon : 'images/user/help.png',
-          iconh : 'images/user/helph.png',
+          icon : 'images/user/helpg.png',
+          iconh : 'images/user/helpw.png',
           selected : false,
           child : '0'
         }

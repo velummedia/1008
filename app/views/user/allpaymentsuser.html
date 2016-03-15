@@ -6,9 +6,10 @@
 	    </select>
 	</div> -->
 	<div class="col-sm-12  filter-search">
-		<input type="text" name="search" ng-model="form.search" placeholder="Search">
+		<input class="input-txt" type="text" name="search" ng-model="form.search" placeholder="Search">
 	</div>
-	<table class="table">
+	<div class="table-responsive col-xs-12 nopadding">
+		<table class="table gr-table">
 	<tr>
 		<th>#</th>
 		<!-- <th>User</th> -->
@@ -34,21 +35,28 @@
 		</td>
 	</tr>
 </table>
+	</div>
 </div>
 
 
 <div class="right-side-text">
-    <div class="right-side-inner">
-        <h1>All Payments</h1>
-        <p>Use this page to confirm your purchases</p>
-    </div>
-    <div class="right-side-inner package-list">
-        <h1>Packages</h1>
-        <ul>
-            <li ng-repeat="item in filterPackages">
-                <a title="{{item.name}}" href="#/paymentsuser/{{item.id}}">{{item.name}} (${{item.price}})</a>
-                <a class="moreinfobutton" href="{{item.url}}" target="_blank">(More Info)</a>
-            </li>
-        </ul>
-    </div>
+	<div class="green-box">
+		<h4 class="h4">All Payments</h4>
+		<div class="inner">
+			<p>Use this page to confirm your purchases</p>
+		</div>
+	</div>
+
+	<div class="green-box package-list">
+		<h4 class="h4">Packages</h4>
+		<div class="inner">
+			<ul>
+				<li ng-repeat="item in filterPackages">
+					<a title="{{item.name}}" href="#/paymentsuser/{{item.id}}">{{item.name}} (${{item.price}})</a>
+					<a class="moreinfobutton" href="{{item.url}}" target="_blank">(More Info)</a>
+				</li>
+			</ul>
+		</div>
+	</div>
 </div>
+

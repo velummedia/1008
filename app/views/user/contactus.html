@@ -32,20 +32,26 @@
   </form>
     </div>
 </div>
+
+
 <div class="right-side-text">
-    <div class="right-side-inner">
-        <h1>Contact Us</h1>
-        <p>If you are experiencing technical difficulties it would really help our support team if you provide information on the device you are using and any other information about the experience that will give them the details of our experience.
-        <br>
-        <b>Alternatively, you can email helpme@breakingmuscle.com directly.</b> </p>
+    <div class="green-box">
+        <h4 class="h4">Contact Us</h4>
+        <div class="inner">
+            <p>If you are experiencing technical difficulties it would really help our support team if you provide information on the device you are using and any other information about the experience that will give them the details of our experience.</p>
+            <p> Alternatively, you can email helpme@breakingmuscle.com directly. </p>
+        </div>
     </div>
-    <div class="right-side-inner package-list">
-        <h1>Packages</h1>
-        <ul>
-            <li ng-repeat="item in filterPackages">
-                <a title="{{item.name}}" href="#/paymentsuser/{{item.id}}">{{item.name}} (${{item.price}})</a>
-                <a class="moreinfobutton" href="{{item.url}}" target="_blank">(More Info)</a>
-            </li>
-        </ul>
+
+    <div class="green-box package-list">
+        <h4 class="h4">Packages</h4>
+        <div class="inner">
+            <ul>
+                <li ng-repeat="item in filterPackages">
+                    <a title="{{item.name}}" href="#/paymentsuser/{{item.id}}">{{item.name}} (${{item.price}})</a>
+                    <a class="moreinfobutton" href="{{item.url}}" target="_blank">(More Info)</a>
+                </li>
+            </ul>
+        </div>
     </div>
 </div>

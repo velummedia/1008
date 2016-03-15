@@ -76,7 +76,7 @@
                 <a href="#/package/{{createMoreInfo(item.package.name)}}"><img class="img-responsive" ng-src="{{loadBackgroundImage(item.package.name)}}" alt=""></a>
                 <div class="br-main">
                     <div class="img-overlay" ng-style="{'background-color' : colors[$index]}"></div>
-                    <h3 class="limit-txt"><a href="#/package/{{createMoreInfo(item.package.name)}}">{{item.package.name}}</a></h3>
+                    <h3 class="limit-txt"><a href="{{item.package.url}}">{{item.package.name}}</a></h3>
                 </div>
 
                 <footer class="more-buy-wrap clearfix">
@@ -136,17 +136,22 @@
 <!--</div>-->
 
 <div class="right-side-text">
-    <div class="right-side-inner">
-        <h1>Choose a Plan</h1>
-        <p>Pick from of any of the plans available for purchase now or pre-register for upcoming plans and get big savings.</p>
+    <div class="green-box">
+        <h4 class="h4">Choose a Plan</h4>
+        <div class="inner">
+            <p>Pick from of any of the plans available for purchase now or pre-register for upcoming plans and get big savings.</p>
+        </div>
     </div>
-    <div class="right-side-inner package-list">
-        <h1>Packages</h1>
-        <ul>
-            <li ng-repeat="item in filterPackages">
-                <a title="{{item.name}}" href="#/paymentsuser/{{item.id}}">{{item.name}} (${{item.price}})</a>
-                <a class="moreinfobutton" href="{{item.url}}" target="_blank">(More Info)</a>
-            </li>
-        </ul>
+
+    <div class="green-box package-list">
+        <h4 class="h4">Packages</h4>
+        <div class="inner">
+            <ul>
+                <li ng-repeat="item in filterPackages">
+                    <a title="{{item.name}}" href="#/paymentsuser/{{item.id}}">{{item.name}} (${{item.price}})</a>
+                    <a class="moreinfobutton" href="{{item.url}}" target="_blank">(More Info)</a>
+                </li>
+            </ul>
+        </div>
     </div>
 </div>
