@@ -1,0 +1,42 @@
+<div class="manageadminswrap user-pages">
+	<div class="col-sm-12 nopadding filter-search">
+		<input type="text" name="search" ng-model="form.search " placeholder="Search">
+	</div>
+	<table class="table">
+	<tr>
+		<th>Name</th>
+		<th>Email</th>
+		<th>Phone</th>
+		<th>Join Date</th>
+		<th>Pourcentage</th>
+		<th>Credit</th>
+		<th>Status</th>
+		<th>Action</th>
+	</tr>
+	<tr ng-repeat="visitor in admins | filter:form.search">
+		<td>{{visitor.name}}</td>
+		<td>{{visitor.email}}</td>
+		<td>{{visitor.phone}}</td>
+		<td>{{visitor.add_date*1000 | date:'dd/MM/yyyy'}}</td>
+		<td>{{visitor.pourcentage}}%</td>
+		<td>${{visitor.credit}}</td>
+		<td>
+			<span class="label label-success" ng-show="visitor.approved == 1">Active</span>
+			<span class="label label-warning" ng-show="visitor.approved == 0">Pending</span>
+			<span class="label label-danger" ng-show="visitor.approved == 2">Banned</span>
+		</td>
+		<td>
+			<a href="javascript:;" ng-show="visitor.approved == 1"><i class="fa fa-thumbs-down"></i></a>
+			<a href="javascript:;" ng-show="visitor.approved == 2" style="padding: 5px 3px"><i class="fa fa-thumbs-up"></i></a>
+			<a href="#/editreferralsystems/{{visitor.id}}" style="padding: 5px 3px"><i class="fa fa-pencil"></i></a>
+  		</td>
+	</tr>
+</table>
+</div>
+
+<div class="right-side-text">
+    <div class="right-side-inner">
+        <h1>Lorem ipsum.</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia dolorem sint adipisci, commodi enim animi minus debitis, aliquid aspernatur ex soluta maxime sunt, quibusdam. Consequatur officia veniam quam deleniti perspiciatis?</p>
+    </div>
+</div>

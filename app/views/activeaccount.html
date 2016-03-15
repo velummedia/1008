@@ -1,0 +1,18 @@
+<div class="addadminwrap col-sm-5 col-xs-8 col-xs-push-4 col-sm-push-3">
+
+
+  <form name="loginForm" ng-submit="active(loginForm)" ng-hide="hideLoginSection">
+
+      <h4 class="col-xs-12 login-title">Enter new password to active your account</h4>
+
+      <input type="password" class="loginpageinput" name="password" ng-model="form.password" required placeholder="Password">
+
+      <input type="password" class="loginpageinput" name="repassword" ng-model="form.repassword" required placeholder="ReType Password">
+
+      <button type="submit" style="color:#fff;">Active</button>
+
+      <a href="javascript:;" class="registerbutton" ng-click="logout()">Cancel & LogOut</a>
+
+  </form>
+
+</div>

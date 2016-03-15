@@ -1,0 +1,55 @@
+<div class="superadmin-pages user-pages managepackagewrap">
+  <!-- <div class="col-sm-3 nopadding filter-search">
+    <select name="" id="" ng-model="select.filter">
+        <option value="">Packages List</option>
+        <option value="{{item.name}}" ng-repeat="item in filterPackages" >{{item.name}}</option>
+      </select>
+  </div> -->
+  <div class="col-sm-12 nopadding-right filter-search">
+    <input type="text" name="search" ng-model="form.search" placeholder="Search">
+  </div>
+
+<table class="table">
+  <tr>
+  	<th>#</th>
+  	<th>Name</th>
+  	<th>Description</th>
+  	<th>Price</th>
+  	<th>Start</th>
+  	<th>End</th>
+  	<th>Add</th>
+  	<th>Coupon</th>
+  	<th>Status</th>
+  	<th>Actions</th>
+  </tr>
+  	<tr ng-repeat="item in packagesList | filter:form.search | filter:select.filter">
+  		<td>{{$index+1}}</td>
+  		<td>{{item.name}}</td>
+  		<td>{{item.description}}</td>
+  		<td>${{item.price}}</td>
+  		<td>{{item.start_date*1000 | date:'dd/MM/yyyy'}}</td>
+  		<td>{{item.end_date*1000 | date:'dd/MM/yyyy'}}</td>
+  		<td>{{item.add_date*1000 | date:'dd/MM/yyyy'}}</td>
+  		<td>{{item.coupon}}</td>
+  		<td>{{item.approved}}</td>
+  		<td>
+			<a href="javascript:;" ng-show="item.approved == 1" ng-click="disableSystem(item.id)">
+        <i class="fa fa-thumbs-down"></i>
+      </a>
+      <a href="javascript:;" ng-show="item.approved == 0" ng-click="enableSystem(item.id)">
+        <i class="fa fa-thumbs-up"></i>
+      </a>
+			<a href="#/editpackage/{{item.id}}"><i class="fa fa-pencil"></i></a>
+			<!-- <a href="javascript:;"><i class="fa fa-remove"></i></a> -->
+  		</td>
+  	</tr>
+</table>
+</div>
+
+<div class="right-side-text">
+    <div class="right-side-inner">
+        <h1>Lorem ipsum.</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia dolorem sint adipisci, commodi enim animi minus debitis, aliquid aspernatur ex soluta maxime sunt, quibusdam. Consequatur officia veniam quam deleniti perspiciatis?</p>
+    </div>
+
+</div>

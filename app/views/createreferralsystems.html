@@ -1,0 +1,42 @@
+
+    <div class="wh-bg clearfix">
+
+
+
+    <div class="col-md-4 col-md-push-4 col-sm-10 col-sm-push-1 nopadding addnewpackagepage createchildadmin">
+      <form name="createsuperadmin" ng-submit="sendsuperadmin(createsuperadmin)">
+        <div class="form-group">
+          <input type="text" class="input-txt form-control" name="name" ng-model="form.name" placeholder="Name">
+        </div>
+
+        <div class="form-group">
+          <input type="email" class="input-txt form-control" name="email" ng-model="form.email" placeholder="Email">
+        </div>
+
+        <div class="form-group">
+          <input type="text" class="input-txt form-control" name="phone" ng-model="form.phone" placeholder="Phone">
+        </div>
+
+        <div class="form-group" style="text-align:center;">
+          <label for="pwd">Password:</label>
+          <p>Password created by system :<h3 style="border-bottom:1px solid #e1e1e1; border-top:1px solid #e1e1e1;">{{password}}</h3></p>
+        </div>
+
+        <div class="form-group">
+          <label for="pwd">Built-in access To:</label>
+          <br>
+          <label ng-repeat="role in filterPackages" style="width:100%;">
+              <input type="checkbox" checklist-model="user.roles" checklist-value="role.id"> {{role.name}}
+              <input type="text" class="input-txt form-control" maxlength="3" name="dis_{{role.id}}" ng-model="form.dis[role.id]" placeholder="%">
+          </label>
+        </div>
+
+        <div class="form-group" style="text-align:center;">
+          <button type="submit" class="btn btn-default2">Submit</button>
+        </div>
+
+
+      </form>
+
+    </div>
+    </div>

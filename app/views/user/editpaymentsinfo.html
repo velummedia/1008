@@ -1,0 +1,28 @@
+<div class="user-pages editpaymentsinfowrap">
+	<div class="card-button">
+		<div class="eachcard" ng-repeat="item in userCards">
+			<h2 style="text-transform:uppercase;">{{item.brand}}</h2>
+			<h4>XXXX-XXXX-XXXX-{{item.last4}}</h4>
+			<h4>{{item.exp_year}}/{{item.exp_month}}</h4>
+			<i class="fa fa-times remove-card-icon" ng-click="removeCard(item.id)"></i>
+		</div>
+		<!-- <a href="" class="btn btn-default">Delete</a> -->
+	</div>
+</div>
+
+
+<div class="right-side-text">
+    <div class="right-side-inner">
+        <h1>Edit Profile</h1>
+        <p>Your profile is private. Keep it up to date so that you can stay current on your plans and receive regular updates.</p>
+    </div>
+    <div class="right-side-inner package-list">
+        <h1>Packages</h1>
+        <ul>
+            <li ng-repeat="item in filterPackages">
+                <a title="{{item.name}}" href="#/paymentsuser/{{item.id}}">{{item.name}} (${{item.price}})</a>
+                <a class="moreinfobutton" href="{{item.url}}" target="_blank">(More Info)</a>
+            </li>
+        </ul>
+    </div>
+</div>

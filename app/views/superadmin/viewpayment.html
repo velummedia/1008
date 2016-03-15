@@ -1,0 +1,134 @@
+<script type="text/ng-template" id="myModalContent.html">
+    <div class="modal-header">
+        <h3 class="modal-title">Refunding the user :</h3>
+    </div>
+    <div class="modal-body">
+        <h3>Are you sure you want to refund the user ? </h3>
+        <h5>noted: after refunding, user won`t have access to the package anymore.</h5>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" type="button" ng-click="approve()">YES</button>
+        <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+    </div>
+</script>
+
+
+
+
+<div class="superadmin-pages viewpaymentwrap">
+
+	<button class="btn-default2" ng-click="refund(result.payment.id)">Refund/Remove Access</button>
+	<h1>{{result.user.name}}</h1>
+	<!--<hr class="medium-hr">-->
+
+	<h4 class="sectiontitle">Payments</h4>
+	<div class="sectioncontent personpaymentswrap">
+		<div class="eachpayments">
+
+			<div class="col-sm-6">
+				<span>ID:</span> {{result.user.id}}
+			</div>
+			
+			<!-- ------------ -->
+			<div class="col-sm-6">
+				<span>Email:</span> {{result.user.email}}
+			</div>
+			<div class="col-sm-6">
+				<span>User Invoice:</span> {{result.payment.user_invoice}}
+			</div>
+			<div class="col-sm-6">
+				<span>Type:</span> {{result.payment.ptype}}
+			</div>
+			<!-- ------------ -->
+			<div class="col-sm-6">
+				<span>Price:</span> {{result.payment.price}}
+			</div>
+			<div class="col-sm-6">
+				<span>Date:</span> {{result.payment.add_date*1000 | date:'dd/MM/yyyy'}}
+			</div>
+			<div class="col-sm-6">
+				<span>System:</span> {{result.system.name}}
+			</div>
+			<!-- ------------ -->
+			<div class="col-sm-6">
+				<span>Status:</span> 
+				<span class="label label-success" ng-show="result.payment.approved == 1">Success</span>
+				<span class="label label-danger" ng-show="result.payment.approved == 0">Rejected</span>
+				<span class="label label-danger" ng-show="result.payment.approved == 8">Refunded ({{result.payment.refdate*1000 | date:'dd/MM/yyyy'}}</span>
+
+			</div>
+			<div class="col-sm-6">
+				<span>Card ID:</span> {{result.payment.cardid}}
+			</div>
+			<div class="col-sm-6">
+				<span>Customer ID:</span> {{result.payment.customerid}}
+			</div>
+		</div>
+	</div>
+	
+	<h4 class="sectiontitle">Customer Details</h4>
+	<div class="sectioncontent customerdetailwrap">
+		<div class="col-sm-2">
+			<p>User Invoice :</p>
+			<p>Created :</p>
+			<p>Email :</p>
+			<p>Description :</p>
+		</div>
+		<div class="col-sm-10">
+			<p>{{result.payment.user_invoice}}</p>
+			<p>{{result.payment.add_date*1000 | date:'dd/MM/yyyy'}}</p>
+			<p>{{result.user.email}}</p>
+			<p>{{result.system.description}}</p>
+		</div>
+	</div>
+	
+	<h4 class="sectiontitle" ng-show="result.payment.ptype != 'VIP' ">Card Details</h4>
+	<div class="sectioncontent carddetailwrap" ng-show="result.payment.ptype != 'VIP' ">
+		<accordion>
+		    <accordion-group is-open="status.open">
+		        <accordion-heading>
+		            <i class="pull-left glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+		            Visa
+		        </accordion-heading>
+		        <div class="col-sm-6">
+		        	<div class="col-sm-6">
+		        		<h5>ID :</h5>
+		        		<h5>Card Number :</h5>
+		        		<h5>Brand : </h5>
+		        		<h5>Funding : </h5>
+		        	</div>
+		        	<div class="col-sm-6">
+		        		<h5>{{result.card.id}}</h5>
+		        		<h5>**** **** **** {{result.card.last4}}</h5>
+		        		<h5>{{result.card.brand}}</h5>
+		        		<h5>{{result.card.funding}}</h5>
+		        	</div>
+		        </div>
+		        <div class="col-sm-6">
+		        	<div class="col-sm-6">
+		        		<h5>Fingerpring :</h5>
+		        		<h5>Expires :</h5>
+		        		<h5>Origin :</h5>
+		        		<h5>CVC Check :</h5>
+		        	</div>
+		        	<div class="col-sm-6">
+		        		<h5>{{result.card.fingerprint}}</h5>
+		        		<h5>{{result.card.ex_year}}/{{result.card.ex_month}}</h5>
+		        		<h5>{{result.card.country}}</h5>
+		        		<h5>{{result.card.cvc_check}} <i class="glyphicon glyphicon-ok"></i></h5>
+		        	</div>
+		        </div>
+		    </accordion-group>
+		  </accordion>
+	</div>
+
+	
+</div>
+
+<div class="right-side-text">
+    <div class="right-side-inner">
+        <h1>Lorem ipsum.</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia dolorem sint adipisci, commodi enim animi minus debitis, aliquid aspernatur ex soluta maxime sunt, quibusdam. Consequatur officia veniam quam deleniti perspiciatis?</p>
+    </div>
+
+</div>

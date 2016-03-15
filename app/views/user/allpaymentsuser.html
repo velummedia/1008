@@ -1,0 +1,54 @@
+<div class="user-pages allpaymentswrap">
+	<!-- <div class="col-sm-3 nopadding filter-search">
+		<select name="" id="" ng-model="select.filter">
+	      <option value="">Packages List</option>
+	      <option value="{{item.name}}" ng-repeat="item in filterPackages" >{{item.name}}</option>
+	    </select>
+	</div> -->
+	<div class="col-sm-12  filter-search">
+		<input type="text" name="search" ng-model="form.search" placeholder="Search">
+	</div>
+	<table class="table">
+	<tr>
+		<th>#</th>
+		<!-- <th>User</th> -->
+		<th>Systems</th>
+		<th>User Invoice</th>
+		<th>Type</th>
+		<th>Price</th>
+		<th>Date</th>
+		<th>Status</th>
+	</tr>
+	<tr ng-repeat="item in userPayments | filter:form.search | filter:select.filter" ng-class="{'back-red' : item.payment.approved == 8}">
+		<td>{{$index+1}}</td>
+		<!-- <td>{{item.user.email}}</td> -->
+		<td>{{item.system.name}}</td>
+		<td>{{item.payment.user_invoice}}</td>
+		<td>{{item.payment.ptype}}</td>
+		<td>${{item.payment.price}}</td>
+		<td>{{item.payment.add_date*1000 | date:'dd/MM/yyyy'}}</td>
+		<td>
+			<span class="label label-success" ng-show="item.payment.approved == 1">Success</span>
+			<span class="label label-danger" ng-show="item.payment.approved == 0">Rejected</span>
+			<span class="label label-danger" ng-show="item.payment.approved == 8">Refunded ({{item.payment.refdate*1000 | date:'dd/MM/yyyy'}}</span>
+		</td>
+	</tr>
+</table>
+</div>
+
+
+<div class="right-side-text">
+    <div class="right-side-inner">
+        <h1>All Payments</h1>
+        <p>Use this page to confirm your purchases</p>
+    </div>
+    <div class="right-side-inner package-list">
+        <h1>Packages</h1>
+        <ul>
+            <li ng-repeat="item in filterPackages">
+                <a title="{{item.name}}" href="#/paymentsuser/{{item.id}}">{{item.name}} (${{item.price}})</a>
+                <a class="moreinfobutton" href="{{item.url}}" target="_blank">(More Info)</a>
+            </li>
+        </ul>
+    </div>
+</div>

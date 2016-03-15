@@ -1,0 +1,80 @@
+<div class="wh-bg clearfix">
+<div class="superadmin-pages col-md-4 col-md-push-4 col-sm-10 col-sm-push-1 col-xs-12 addnewpackagepage">
+  <form name="addnewpackage" ng-submit="sendnewpackage(addnewpackage)">
+  <div class="form-group">
+    <input type="text" class="form-control  input-txt" name="name" ng-model="form.name" placeholder="Name">
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control input-txt" name="desc" ng-model="form.desc" placeholder="Description">
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control input-txt" name="price" ng-model="form.price" placeholder="$ Price">
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control input-txt" name="url" ng-model="form.url" placeholder="More Info Link">
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control input-txt" name="loginurl" ng-model="form.loginurl" placeholder="Login Link">
+  </div>
+
+  <div class="form-group col-md-6 nopadding">
+    <p class="input-group">
+      <input type="text" class="form-control" datepicker-popup="yyyy/MM/dd" is-open="opened" min-date="minDate" max-date="'2020-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="false" close-text="Close" name="sdate" ng-model="form.sdate" placeholder="Start Date" />
+      <span class="input-group-btn">
+        <button type="button" class="btn btn-default noradius" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+      </span>
+    </p>
+  </div>
+
+  <div class="form-group col-md-6 nopadding">
+    <p class="input-group">
+      <input type="text" class="form-control" datepicker-popup="yyyy/MM/dd" name="edate" ng-model="form.edate" is-open="opened1" min-date="minDate" max-date="'2020-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="false" close-text="Close" name="sdate" placeholder="End Date" />
+      <span class="input-group-btn">
+        <button type="button" class="btn btn-default noradius" ng-click="open1($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+      </span>
+    </p>
+  </div>
+
+  <div class="clearfix"></div>
+
+  <div class="form-group">
+    
+    <div class="col-xs-6 col-xs-push-3" style="text-align:center; margin-top:10px;">
+        <input id="coupon" type="checkbox" name="checkyes" ng-model="form.checkyes" style="vertical-align:top;">
+        <label for="coupon">Coupon</label>
+
+    </div>
+  
+    <div ng-show="form.checkyes">
+      <div style="padding-top: 50px;" ng-repeat="co in couponArray">
+        <div class="col-xs-6 nopadding">
+          <input type="text" class="form-control input-txt" placeholder="Coupon Tag" name="coupontag_{{co}}" ng-model="form.coupontag[co]">
+        </div>
+        <div class="col-xs-6 nopadding">
+          <input type="text" class="form-control input-txt" placeholder="$ Final Price Coupon" name="couponprice_{{co}}" ng-model="form.couponprice[co]">
+        </div>
+        
+      </div>
+      <div class="col-xs-12" style="text-align:center; margin-top:10px;">
+        <a href="javascript:;" ng-click="addCoupon()" class="btn btn-default2 noradius" >Add New</a>
+        <a href="javascript:;" ng-click="removeCoupan(this)" class="btn btn-default2 noradius">Remove</a>
+      </div>
+
+
+      <div class="clearfix"></div>
+      
+    </div>
+  
+  </div>
+
+  <div class="col-xs-12" style="text-align:center; margin-top:10px;">
+    <button type="submit" class="btn btn-default2 noradius">Register</button>
+  </div>
+ 
+  
+  
+</form>
+</div>
+    </div>

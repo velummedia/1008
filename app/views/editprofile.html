@@ -1,0 +1,179 @@
+<!--<br>-->
+
+<div  class="edit-profile user-pages clearfix">
+
+    <div class="user-img"><img src="images/user/comingsoon.png" alt=""/></div>
+
+    <div class="col-lg-9 edit-column">
+        <h2 class="user-name">{{user.name}}</h2>
+        <div class="dt">
+            <span class="dt-title">name</span>
+            <span ng-show="nameEdit">
+                <form name="nameForm" ng-submit="editProfile(nameForm)">
+                    <input class="input-txt" type="text" ng-value="user.name" name="name" ng-model="form.name" required>
+                    <button class="default-button" type="submit">
+                        <img src="images/user/save.png" width="30" height="30">
+                    </button>
+                    <button class="default-button" ng-click="closeEditModal('name')" type="button">
+                        <img src="images/user/cancel.png" width="30" height="30">
+                    </button>
+                </form>
+            </span>
+            <span class="dt-describtion" ng-show="!nameEdit">{{user.name}}
+                <button class="edit-field-botton" ng-click="openEditModal('name')"><span></span></button>
+            </span>
+        </div>
+        <div class="dt">
+            <span class="dt-title">email</span>
+            <span ng-show="emailEdit">
+                <form name="emailForm" ng-submit="editProfile(emailForm)">
+                    <input class="input-txt" type="text" ng-value="user.email" name="email" ng-model="form.email" required>
+                    <button class="default-button" type="submit">
+                        <img src="images/user/save.png" width="30" height="30">
+                    </button>
+                    <button class="default-button" ng-click="closeEditModal('email')" type="button">
+                        <img src="images/user/cancel.png" width="30" height="30">
+                    </button>
+                </form>
+            </span>
+            <span class="dt-describtion" ng-show="!emailEdit">{{user.email}}
+                <button class="edit-field-botton" ng-click="openEditModal('email')"><span></span></button>
+            </span>
+        </div>
+        <div class="dt">
+            <span class="dt-title">Phone</span>
+            <span ng-show="phoneEdit">
+                <form name="phoneForm" ng-submit="editProfile(phoneForm)">
+                    <input class="input-txt" type="text" ng-value="user.phone" name="phone" ng-model="form.phone">
+                    <button class="default-button" type="submit">
+                        <img src="images/user/save.png" width="30" height="30">
+                    </button>
+                    <button class="default-button" ng-click="closeEditModal('phone')" type="button">
+                        <img src="images/user/cancel.png" width="30" height="30">
+                    </button>
+                </form>
+            </span>
+            <span class="dt-describtion" ng-show="!phoneEdit">{{user.phone}}
+                 <button class="edit-field-botton" ng-click="openEditModal('phone')"><span></span></button>
+            </span>
+        </div>
+        <div class="dt">
+            <span class="dt-title">Password</span>
+            <span ng-show="passwordEdit">
+                <form name="changepassword" ng-submit="passUser(changepassword)">
+                    <input class="input-txt" type="password" class="form-control" name="password" ng-model="form.password" placeholder="Password">
+                    <input class="input-txt" type="password" class="form-control" name="repassword" ng-model="form.repassword" placeholder="Retype Password">
+                    <button class="default-button" type="submit">
+                        <img src="images/user/save.png" width="30" height="30">
+                    </button>
+                    <button class="default-button" ng-click="closeEditModal('password')" type="button">
+                        <img src="images/user/cancel.png" width="30" height="30">
+                    </button>
+                </form>
+            </span>
+            <span class="dt-describtion" ng-show="!passwordEdit">**********
+                <button class="edit-field-botton" ng-click="openEditModal('password')"><span></span></button>
+            </span>
+            <div class="dt">
+                <input type="checkbox" ng-checked="true">
+                <span class="dt-title">Receive updates from Breaking Muscle on training plans and relevant articles and events.</span>
+            </div>
+        </div>
+<!--         <div class="dt">
+            <span class="dt-title">ipsum</span>
+            <span class="dt-describtion">corporis deleniti
+                 <button class="edit-field-botton"><span></span></button>
+            </span>
+        </div> -->
+    </div>
+
+
+    <!-- <div class="col-lg-4 col-md-6 edit-column last-column">
+        <div class="dt">
+            <span class="dt-title">email</span>
+            <span class="dt-describtion">aliasghari@gmail.com
+                <button class="edit-field-botton"><span></span></button>
+            </span>
+        </div>
+        <div class="dt">
+            <span class="dt-title">lorem</span>
+            <span class="dt-describtion">Lorem ipsum dolor
+             <button class="edit-field-botton"><span></span></button>
+            </span>
+        </div>
+        <div class="dt">
+            <span class="dt-title">Atque</span>
+            <span class="dt-describtion">consectetur elit
+                 <button class="edit-field-botton"><span></span></button>
+            </span>
+        </div>
+        <div class="dt">
+            <span class="dt-title">ipsa</span>
+            <span class="dt-describtion">corporis deleniti
+               <button class="edit-field-botton"><span></span></button>
+            </span>
+        </div>
+    </div> -->
+<!--     <div class="save-btn">
+        <button type="submit" class="default-button">Save</button>
+    </div> -->
+
+
+
+
+</div>
+<div class="right-side-text">
+    <div class="right-side-inner">
+        <h1>Edit profile</h1>
+        <p>Your profile is private. Keep it up to date so that you can stay current on your plans and receive regular updates.</p>
+    </div>
+    <div class="right-side-inner package-list">
+        <h1>Packages</h1>
+        <ul>
+            <li ng-repeat="item in filterPackages">
+                <a title="{{item.name}}" href="#/paymentsuser/{{item.id}}">{{item.name}} (${{item.price}})</a>
+                <a class="moreinfobutton" href="{{item.url}}" target="_blank">(More Info)</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+
+<div class="user-pages edit-card-info ">
+    <uib-accordion close-others="oneAtATime">
+        <uib-accordion-group is-open="status.open">
+            <uib-accordion-heading>
+                <span class="edit-link">Manage Credit cards</span>
+            </uib-accordion-heading>
+            <div class="edit-profile clearfix ">
+                <div class="card-button col-lg-3 col-md-4 col-sm-6" ng-repeat="item in userCards">
+                    <div class="eachcard">
+                        <h2>{{item.brand}}</h2>
+                        <h4>XXXX-XXXX-XXXX-{{item.last4}}</h4>
+                        <h4>{{item.exp_year}}/{{item.exp_month}}</h4>
+                    </div>
+                    <button class="remove-card-icon" ng-click="removeCard(item.id)">X</button>
+
+                </div>
+            </div>
+        </uib-accordion-group>
+    </uib-accordion>
+</div>
+
+
+<script type="text/ng-template" id="myModalContent.html">
+    <div class="modal-header">
+        <h3 class="modal-title">Delete Confirmation!</h3>
+    </div>
+    <div class="modal-body">
+        Are you sure you want to delete this card ?
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" type="button" ng-click="approve()">YES</button>
+        <button class="btn btn-warning" type="button" ng-click="cancel()">CANCEL</button>
+    </div>
+</script>
+
+
+

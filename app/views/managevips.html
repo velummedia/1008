@@ -1,0 +1,39 @@
+<div class="manageadminswrap">
+	<div class="col-sm-3 nopadding filter-search">
+		<select name="" id="" ng-model="select.filter">
+	      <option value="">Packages List</option>
+	      <option value="{{item.name}}" ng-repeat="item in filterPackages" >{{item.name}}</option>
+	    </select>
+	</div>
+	<div class="col-sm-9 nopadding-right filter-search">
+		<input type="text" name="search" ng-model="form.search" placeholder="Search">
+	</div>
+	<table>
+	<tr>
+		<th>#</th>
+		<th>Email</th>
+		<th>Package</th>
+		<th>Send Date</th>
+		<th>Joined Date</th>
+		<th>Status</th>
+	</tr>
+	<tr ng-repeat="vip in vips | filter:form.search | filter:select.filter">
+		<td>{{$index+1}}</td>
+		<td>{{vip.user.email}}</td>
+		<td>{{vip.package.name}}</td>
+		<td>{{vip.user.add_date*1000 | date:'dd/MM/yyyy'}}</td>
+		<td>
+			<label ng-show="vip.user.update_date == 0">
+				NEVER
+			</label>
+			<label ng-show="vip.user.update_date != 0">
+				{{vip.user.update_date*1000 | date:'dd/MM/yyyy'}}
+			</label>
+		</td>
+		<td>
+			<span ng-show="vip.user.approved == 0">Pending</span>
+			<span ng-show="vip.user.approved == 1">Joined</span>
+		</td>
+	</tr>
+</table>
+</div>

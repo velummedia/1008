@@ -1,0 +1,26 @@
+<div class="col-md-4 col-md-push-4 col-sm-5 col-sm-push-4 col-xs-8 col-xs-push-4 addnewpackagepage">
+  <form name="addnewpackage" ng-submit="sendnewpackage(addnewpackage)">
+  
+    <div class="form-group">
+      <input type="text" class="form-control" name="email" ng-model="form.email" placeholder="Enter user's email">
+    </div>
+
+    <div class="form-group">
+      <select name="plist" ng-model="form.plist">
+        <option value="">Packages List</option>
+        <option value="{{item.id}}" ng-repeat="item in filterPackages" >
+          {{item.name}}
+        </option>
+      </select>
+    </div>
+
+
+
+    <div class="clearfix"></div>
+
+    <div class="col-xs-12" style="text-align:center; margin-top:10px;">
+      <button type="submit" class="btn btn-default noradius">Add</button>
+    </div>
+  
+  </form>
+</div>

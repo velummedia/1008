@@ -1,0 +1,54 @@
+<div class="col-sm-6 col-md-4 col-sm-push-3 col-md-push-4 loginpage">
+
+  <div class="col-sm-12 formwrap nopadding">
+
+    <div class="col-lg-12 guidtext nopadding" ng-hide="hideRegisterSection">
+      <p>Welcome the Breaking Muscle Premium Training Plan registration page. Once you are registered you will be able to gain access to the programs of your choice and manage your account.</p>
+      <br>
+      <p>Thanks for being a part of our community and training with world class Breaking Muscle coaches.</p>
+    </div>
+
+    <form name="loginForm" ng-submit="login(loginForm)" ng-hide="hideLoginSection">
+
+        <h4 class="col-xs-12 login-title">User Login</h4>
+
+      
+        <input type="email" class="loginpageinput" name="email" ng-model="form.email" required placeholder="Email">
+
+        <input type="password" class="loginpageinput" name="password" ng-model="form.password" required placeholder="Password">
+        <a class="registerbutton" href="#/forgotpassword">Forgot Password</a>
+        <div class="clearfix">
+            <a href="" class="login-btn registerbutton" ng-click="hideLoginSectionButton()">REGISTER</a>
+            <button class="login-btn" type="submit">Login</button>
+
+        </div>
+
+
+    </form>
+
+
+
+    <form name="signupForm" ng-submit="signup(signupForm)" ng-hide="hideRegisterSection">
+
+      <!-- <h4 class="col-xs-12 login-title">User Signup</h4> -->
+
+
+            <input type="text" class="loginpageinput" name="name" ng-model="form.name" placeholder="Name" required>
+
+            <input type="email" class="loginpageinput" name="email" ng-model="form.email" placeholder="Email" required>
+
+
+            <input type="password" class="loginpageinput" name="password" ng-model="form.password" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+
+            <input type="password" class="loginpageinput" name="repassword" ng-model="form.repassword" placeholder="Confirm Password" required>
+            <small style="color: #ccc;">Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters</small>
+
+            <input type="text" class="loginpageinput" name="phone" ng-model="form.phone" placeholder="Phone (Optional)">
+
+            <a href="" class="login-btn registerbutton" ng-click="hideRegisterSectionButton()">LOGIN</a>
+            <button class="login-btn" type="submit" onclick="required()">Signup</button>
+
+    </form>
+  </div>
+</div>
+

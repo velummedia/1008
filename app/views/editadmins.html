@@ -1,0 +1,99 @@
+<div class="row">
+	<div class="col-md-6" >
+        <div class="wh-bg">
+            <h4>Admin Profile</h4>
+            <form name="createsuperadmin" ng-submit="editProfile(createsuperadmin)">
+                <div class="form-group">
+                    <input type="text" class=" input-txt" name="name" ng-model="form.name" placeholder="Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" class=" input-txt" name="email" ng-model="form.email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" class=" input-txt" name="phone" ng-model="form.phone" placeholder="Phone" required>
+                </div>
+                <div class="form-group">
+                    <button type="button" style="margin-top: 5px" class="btn-default2">Generate Password</button>
+                    <button type="submit" style="margin-top: 5px" class="btn-default2">Save</button>
+                </div>
+            </form>
+        </div>
+	</div>
+
+	<div class="col-md-6 no-md-left">
+        <div class="wh-bg">
+            <h4>Packages Access</h4>
+            <table width="100%">
+                <tr>
+                    <th>Name</th>
+                    <th>Status</th>
+                    <th>#</th>
+                </tr>
+                <tr ng-repeat="item in packages track by $index">
+                    <td>{{item.package.name}}</td>
+                    <td ng-show="result.adminProfile.export.level == 7">
+                        <span class="label label-success">Access</span>
+                    </td>
+                    <td ng-hide="result.adminProfile.export.level == 7">
+                        <span class="label label-success" ng-show="item.access == 1">Access</span>
+                        <span class="label label-danger" ng-show="item.access == 0">Not Access</span>
+                    </td>
+                    <td ng-hide="result.adminProfile.export.level == 7">
+                        <button class="btn" ng-if="item.access == 1" ng-click="banpackage(item,result.adminProfile.export.id)">
+                            <img src="images/admin/ban.png" alt="">
+                        </button>
+                        <button class="btn" ng-if="item.access == 0" ng-click="unbanpackage(item,result.adminProfile.export.id)">
+                            <img src="images/admin/unban.png" alt="">
+                        </button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-6">
+        <div class="wh-bg" ng-hide="result.adminProfile.export.level == 7">
+            <h4>Roles</h4>
+            <table width="100%">
+                <tr>
+                    <th>Date</th>
+                    <th>Package</th>
+                    <th>Price</th>
+                    <th>Invoice</th>
+                    <th>Status</th>
+                </tr>
+                <tr ng-repeat="item in result.payments">
+                    <td>{{item.payment.add_date * 1000 | date:'M/d/yyyy'}}</td>
+                    <td>{{item.system.name}}</td>
+                    <td>${{item.system.price}}</td>
+                    <td>{{item.payment.user_invoice}}</td>
+                    <td>
+                        <span class="label label-success" ng-show="item.payment.approved == 1">Success</span>
+                        <span class="label label-danger" ng-show="item.payment.approved == 2">Rejected</span>
+                        <span class="label label-danger" ng-show="item.payment.approved == 8">Refunded ({{item.payment.refdate*1000 | date:'dd/MM/yyyy'}}</span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+	</div>
+	<div class="col-md-6 no-md-left">
+        <div class="wh-bg">
+            <h4>Logs</h4>
+            <table width="100%">
+                <tr>
+                    <th>#</th>
+                    <th>Type</th>
+                    <th>Alert</th>
+                    <th>Message</th>
+                    <th>Partial</th>
+                    <th>Date&Time</th>
+                </tr>
+                <tr ng-repeat="item in result.logs" logger-msg log="{{item}}" class="">
+                    <td>{{$index+1}}</td>
+                </tr>
+            </table>
+         </div>
+	</div>
+</div>

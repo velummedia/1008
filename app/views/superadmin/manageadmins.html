@@ -1,0 +1,68 @@
+<div class="superadmin-pages manageadminswrap">
+	<!-- <div class="col-sm-3 nopadding filter-search">
+		<select name="" id="" ng-model="select.filter">
+	      <option value="">Packages List</option>
+	      <option value="{{item.name}}" ng-repeat="item in filterPackages" >{{item.name}}</option>
+	    </select>
+	</div> -->
+	<div class="col-sm-12 nopadding filter-search">
+		<input type="text" name="search" ng-model="form.search" placeholder="Search">
+	</div>
+	<table class="table">
+	<tr>
+		<th>Name</th>
+		<th>Email</th>
+		<th>Phone</th>
+		<th>Join Date</th>
+		<th>Latest Login</th>
+		<th>Level</th>
+		<th>Status</th>
+		<th>Action</th>
+	</tr>
+	<tr ng-repeat="admin in admins | filter:form.search">
+		<td>{{admin.name}}</td>
+		<td>{{admin.email}}</td>
+		<td>{{admin.phone}}</td>
+		<td>{{admin.add_date*1000 | date:'dd/MM/yyyy'}}</td>
+		<td>
+			<label ng-show="admin.last_login == 0">
+				NEVER
+			</label>
+			<label ng-show="admin.last_login != 0">
+				{{admin.last_login*1000 | date:'dd/MM/yyyy'}}
+			</label>
+		</td>
+		<td>
+			<span ng-show="admin.level == 7">Super Admin</span>
+			<span ng-show="admin.level == 6">Child Admin</span>
+			<span ng-show="admin.level == 5 || admin.level == 4 || admin.level == 3 || admin.level == 2">Admin L2</span>
+		</td>
+		<td>
+			<span class="label label-success" ng-show="admin.approved == 1">Active</span>
+			<span class="label label-warning" ng-show="admin.approved == 0">Pending</span>
+			<span class="label label-danger" ng-show="admin.approved == 2">Banned</span>
+		</td>
+		<td>
+			<span ng-show="admin.id == user.id">
+				
+			</span>
+			<span ng-show="admin.id !== user.id">
+				<a href="javascript:;" ng-show="admin.approved == 1"><i class="fa fa-thumbs-down"></i></a>
+				<a href="javascript:;" ng-show="admin.approved == 2"><i class="fa fa-thumbs-up"></i></a>
+				<a href="#/editadmins/{{admin.id}}"><i class="fa fa-pencil"></i></a>
+				<!-- <a href="javascript:;"><i class="fa fa-remove"></i></a> -->
+			</span>
+  		</td>
+	</tr>
+</table>
+</div>
+
+
+
+<div class="right-side-text">
+    <div class="right-side-inner">
+        <h1>Lorem ipsum.</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia dolorem sint adipisci, commodi enim animi minus debitis, aliquid aspernatur ex soluta maxime sunt, quibusdam. Consequatur officia veniam quam deleniti perspiciatis?</p>
+    </div>
+
+</div>

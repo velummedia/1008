@@ -1,0 +1,19 @@
+<div class="manageapis-wrap">
+  <accordion close-others="true">
+    <accordion-group heading="{{item.user.name}}" ng-repeat="item in apis">
+      <table class="table">
+        <tr>
+          <th>#</th>
+          <th>Package</th>
+          <th>API</th>
+        </tr>
+        <tr ng-repeat="p in item.packages">
+          <td>{{$index+1}}</td>
+          <td>{{p.p.name}}</td>
+          <td>http://bmtracker.com/bmadmin/api/?{{p.api.export}}</td>
+        </tr>
+      </table>
+    </accordion-group>
+
+</accordion>
+</div>

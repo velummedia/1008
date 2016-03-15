@@ -1,0 +1,95 @@
+<div class="wh-bg clearfix">
+<div class="superadmin-pages col-md-4 col-md-push-4 col-sm-8 col-sm-push-2 nopadding addnewpackagepage">
+
+
+    <form name="addnewpackage" ng-submit="sendnewpackage(addnewpackage)">
+  <div class="form-group">
+    <input type="text" class="form-control" name="name" ng-model="form.name" placeholder="Name">
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" name="desc" ng-model="form.desc" placeholder="Description">
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" name="price" ng-model="form.price" placeholder="$ Price">
+  </div>
+
+  <div class="form-group col-md-6 nopadding">
+    <p class="input-group">
+      <input type="text" class="form-control" datepicker-popup="yyyy/MM/dd" is-open="opened" min-date="minDate" max-date="'2020-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="false" close-text="Close" name="sdate" ng-model="form.sdate" placeholder="Start Date" />
+      <span class="input-group-btn">
+        <button type="button" class="btn btn-default noradius" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+      </span>
+    </p>
+  </div>
+
+  <div class="form-group col-md-6 nopadding">
+    <p class="input-group">
+      <input type="text" class="form-control" datepicker-popup="yyyy/MM/dd" name="edate" ng-model="form.edate" is-open="opened1" min-date="minDate" max-date="'2020-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="false" close-text="Close" name="sdate" placeholder="End Date" />
+      <span class="input-group-btn">
+        <button type="button" class="btn btn-default noradius" ng-click="open1($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+      </span>
+    </p>
+  </div>
+
+  <div class="clearfix"></div>
+
+  <div class="form-group">
+    
+    <div class="col-xs-4 col-xs-push-4" style="text-align:center; margin-top:10px;">
+      <input type="checkbox" name="checkyes" id="coupon" ng-disabled="true" ng-checked="{'true' : form.checkyes = 1}" ng-model="form.checkyes" style="vertical-align:top;">
+      <label for="coupon">Coupon</label>
+    </div>
+  
+    <div ng-show="form.checkyes">
+      
+      <table class="table" style="height: auto;">
+      	<thead>
+      		<th>#</th>
+      		<th>Tag</th>
+      		<th>Price</th>
+      		<th>Remove</th>
+      	</thead>
+      	<tbody>
+      		<tr ng-repeat="c in coupons">
+      			<td>{{$index+1}}</td>
+      			<td>{{c.tag}}</td>
+      			<td>${{c.price}}</td>
+      			<td>
+      				<i class="fa fa-remove"></i>
+      			</td>
+      		</tr>
+      	</tbody>
+      </table>
+
+      <div ng-repeat="co in couponArray track by $index">
+        <div class="col-xs-6 nopadding">
+          <input type="text" class="form-control" placeholder="Coupon Tag" name="coupontag_{{co}}" ng-model="form.coupontag[co]">
+        </div>
+        <div class="col-xs-5 nopadding">
+          <input type="text" class="form-control" placeholder="$ Final Price Coupon" name="couponprice_{{co}}" ng-model="form.couponprice[co]">
+        </div>
+        <a href="javascript:;" ng-click="removeCoupan($index)" class="btn btn-default noradius col-xs-1 nopadding-left nopadding-right" style="text-align: center;"><i class="fa fa-remove"></i></a>
+        
+      </div>
+      <div class="col-xs-12" style="text-align:center; margin-top:10px;">
+        <a href="javascript:;" ng-click="addCoupon()" class="btn btn-default2 noradius" >Add New</a>
+      </div>
+
+
+      <div class="clearfix"></div>
+      
+    </div>
+  
+  </div>
+
+  <div class="col-xs-12" style="text-align:center; margin-top:10px;">
+    <button type="submit" class="btn btn-default2 noradius">Register</button>
+  </div>
+
+
+  
+</form>
+</div>
+</div>

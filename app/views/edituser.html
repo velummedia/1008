@@ -1,0 +1,99 @@
+<div class="wh-bg clearfix">
+
+
+	<div class="col-md-6">
+		<h4>User Profile</h4>
+		<form name="createsuperadmin" ng-submit="editProfile(createsuperadmin)">
+			<div class="form-group">
+				<input type="text" class="form-control" name="name" ng-model="form.name" placeholder="Name">
+			</div>
+			<div class="form-group">
+				<input type="email" class="form-control" name="email" ng-model="form.email" placeholder="Email">
+			</div>
+			<div class="form-group">
+				<input type="text" class="form-control" name="phone" ng-model="form.phone" placeholder="Phone">
+			</div>
+			<div class="form-group" style="text-align:center;">
+				<button type="button" class="btn-default2" style="margin-top: 5px;">Generate Password</button>
+				<button type="submit" class="btn-default2" style="margin-top: 5px;">Save</button>
+				<button type="button" class="btn-default2" style="margin-top: 5px;">Resend Activation</button>
+			</div>    
+		</form>
+	</div>
+	<div class="col-md-6">
+		<h4>Packages Access</h4>
+
+        <div class="table-responsive">
+
+            <table>
+
+                <tr>
+                    <th>Name</th>
+                    <th>Joined</th>
+                    <th>Status</th>
+                    <th>#</th>
+                </tr>
+                <tr ng-repeat="item in packages">
+                    <td>{{item.name}}</td>
+                    <td>{{item.add_date * 1000 | date:'M/d/yyyy'}}</td>
+                    <td>
+                        <span class="label label-success" ng-show="item.approved == 1">Access</span>
+                        <span class="label label-danger" ng-show="item.approved == 0">Banned</span>
+                        <span class="label label-danger" ng-show="item.approved == 8">Refunded</span>
+                    </td>
+                    <td>
+                        <img src="images/admin/icons/ban.png" ng-if="item.approved == 1" alt="">
+                        <img src="images/admin/icons/unban.png" ng-if="item.approved == 0" alt="">
+                    </td>
+                </tr>
+            </table>
+            </div>
+	</div>
+
+    <div class="col-md-6 ">
+        <h4>Payments</h4>
+        <div class="table-responsive">
+            <table>
+                <tr>
+                    <th>Date</th>
+                    <th>Package</th>
+                    <th>Price</th>
+                    <th>Invoice</th>
+                    <th>Status</th>
+                </tr>
+                <tr ng-repeat="item in result.payments">
+                    <td>{{item.payment.add_date * 1000 | date:'M/d/yyyy'}}</td>
+                    <td>{{item.system.name}}</td>
+                    <td>${{item.system.price}}</td>
+                    <td>{{item.payment.user_invoice}}</td>
+                    <td>
+                        <span class="label label-success" ng-show="item.payment.approved == 1">Success</span>
+                        <span class="label label-danger" ng-show="item.payment.approved == 2">Rejected</span>
+                        <span class="label label-danger" ng-show="item.payment.approved == 8">Refunded ({{item.payment.refdate*1000 | date:'dd/MM/yyyy'}}</span>
+                    </td>
+                </tr>
+            </table>
+         </div>
+    </div>
+
+    <div class="col-md-6">
+        <h4>Logs</h4>
+        <div class="table-responsive">
+            <table width="100%">
+
+                <tr>
+                    <th>#</th>
+                    <th>Type</th>
+                    <th>Alert</th>
+                    <th>Message</th>
+                    <th>Partial</th>
+                    <th>Date&Time</th>
+                </tr>
+                <tr ng-repeat="item in result.logs" logger-msg log="{{item}}" class="">
+                    <td>{{$index+1}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,161 @@
+<!doctype html>
+<html class="no-js" ng-app="bmadminApp" ng-controller="GlobalCtrl">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" /> 
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/textAngular/dist/textAngular.css" />
+    <link rel="stylesheet" href="bower_components/angular-chart.js/dist/angular-chart.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/superadmin.css">
+    <link rel="stylesheet" href="styles/user.css">
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+    <!-- endbuild -->
+  </head>
+  <body class="multicolumn" ng-app="bmadminApp" ng-controller="GlobalCtrl" ng-class="{'singlecolumn' : !sidebarShow}">
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <div class="header" ng-include="'views/header.html'"></div>
+
+
+   
+
+    <div class="main-content">
+
+      <div class="error fx-fade-down fx-easing-bounce fx-speed-800 fx-trigger" ng-class="{'danger' : errorType == 'error', 'success' : errorType == 'success', 'error-full' : sidebarShow == false}" ng-show="errorShowing">
+        {{errorMsg}}
+      </div>
+      <div class="left-sidebar" ng-include="'views/left-side.html'" ng-show="sidebarShow" ng-class="{'show-by-click': isActive}"></div>
+    
+      <div style="width: 100%;height: 100%;background-color: rgba(100,100,100,0.1);position: absolute;z-index: 100;" ng-show="isActive" ng-click="forCloseMenu()"></div>
+
+      <div class="contentside" ng-view="" ng-class="{'contentside-full' : !sidebarShow}">
+      </div>
+
+      <div class="loading-pooup fx-fade-down fx-easing-bounce fx-speed-800 fx-trigger" ng-show="loadingShow">
+          <!-- <h1>{{loadinMsg}}</h1> -->
+          <h1>Please wait...</h1>
+          <img src="images/logo.png" alt="">
+          <h1>LOADING</h1>
+      </div>
+        
+    </div>
+
+
+    
+    <div class="footer">
+        <a href="http://breakingmuscle.com/strength-conditioning/the-breaking-muscle-manifesto" target="_blank">Breaking Muscle Manifesto</a> -
+        <a href="http://breakingmuscle.com/contact" target="_blank">Contact Us</a> - 
+        <a href="http://breakingmuscle.com/contribute" target="_blank">Contribute to Breaking Muscle</a> - 
+        <a href="http://breakingmuscle.com/careers" target="_blank">Careers</a> - 
+        <a href="http://breakingmuscle.com/terms-of-use" target="_blank">Terms of Service</a> - 
+        <a href="http://breakingmuscle.com/privacy" target="_blank">Privacy</a> - 
+        <a href="http://breakingmuscle.co.uk/uk" target="_blank">Breaking Muscle UK</a>
+    </div>
+
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+     <script>
+       // !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+       // (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+       // r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+       // }(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+       // ga('create', 'UA-XXXXX-X');
+       // ga('send', 'pageview');
+    </script>
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/checklist-model/checklist-model.js"></script>
+    <script src="bower_components/rangy/rangy-core.js"></script>
+    <script src="bower_components/rangy/rangy-classapplier.js"></script>
+    <script src="bower_components/rangy/rangy-highlighter.js"></script>
+    <script src="bower_components/rangy/rangy-selectionsaverestore.js"></script>
+    <script src="bower_components/rangy/rangy-serializer.js"></script>
+    <script src="bower_components/rangy/rangy-textrange.js"></script>
+    <script src="bower_components/textAngular/dist/textAngular.js"></script>
+    <script src="bower_components/textAngular/dist/textAngular-sanitize.js"></script>
+    <script src="bower_components/textAngular/dist/textAngularSetup.js"></script>
+    <script src="bower_components/gsap/src/uncompressed/TweenMax.js"></script>
+    <script src="bower_components/ngFx/dist/ngFx.js"></script>
+    <script src="bower_components/Chart.js/Chart.js"></script>
+    <script src="bower_components/angular-chart.js/dist/angular-chart.js"></script>
+    <script src="bower_components/ngFlowGrid/src/ngFlowGrid.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/about.js"></script>
+        <script src="scripts/services/generals.js"></script>
+        <script src="scripts/controllers/global.js"></script>
+        <script src="scripts/services/menus.js"></script>
+        <script src="scripts/controllers/allusers.js"></script>
+        <script src="scripts/controllers/createsuperadmin.js"></script>
+        <script src="scripts/controllers/addnewpackage.js"></script>
+        <script src="scripts/controllers/managepackages.js"></script>
+        <script src="scripts/controllers/createchildadmin.js"></script>
+        <script src="scripts/controllers/login.js"></script>
+        <script src="scripts/controllers/paymentsuser.js"></script>
+        <script src="scripts/controllers/browsepackage.js"></script>
+        <script src="scripts/controllers/allpayments.js"></script>
+        <script src="scripts/controllers/addadmin.js"></script>
+        <script src="scripts/controllers/adminlogin.js"></script>
+        <script src="scripts/controllers/manageadmins.js"></script>
+        <script src="scripts/controllers/editprofile.js"></script>
+        <script src="scripts/controllers/editpaymentsinfo.js"></script>
+        <script src="scripts/controllers/allpaymentsuser.js"></script>
+        <script src="scripts/controllers/viewpayment.js"></script>
+        <script src="scripts/controllers/editpackage.js"></script>
+        <script src="scripts/controllers/activeaccount.js"></script>
+        <script src="scripts/controllers/adminpanels.js"></script>
+        <script src="scripts/controllers/addvip.js"></script>
+        <script src="scripts/controllers/managevips.js"></script>
+        <script src="scripts/controllers/addnewadmin.js"></script>
+        <script src="scripts/controllers/manageadmins2.js"></script>
+        <script src="scripts/controllers/createreferralsystems.js"></script>
+        <script src="scripts/controllers/managereferralsystems.js"></script>
+        <script src="scripts/controllers/editreferralsystems.js"></script>
+        <script src="scripts/services/logger.js"></script>
+        <script src="scripts/services/loading.js"></script>
+        <script src="scripts/directives/loggermsg.js"></script>
+        <script src="scripts/controllers/sendsingle.js"></script>
+        <script src="scripts/controllers/sendbulkpackage.js"></script>
+        <script src="scripts/controllers/sendtoall.js"></script>
+        <script src="scripts/controllers/emailsettings.js"></script>
+        <script src="scripts/controllers/edituser.js"></script>
+        <script src="scripts/controllers/manageapis.js"></script>
+        <script src="scripts/controllers/editadmins.js"></script>
+        <script src="scripts/controllers/testapi.js"></script>
+        <script src="scripts/controllers/contactus.js"></script>
+        <script src="scripts/controllers/sitesettings.js"></script>
+        <script src="scripts/controllers/forgotpassword.js"></script>
+        <script src="scripts/controllers/resetpassword.js"></script>
+        <script src="scripts/controllers/activation.js"></script>
+        <script src="scripts/controllers/dashboard.js"></script>
+        <script src="scripts/controllers/package.js"></script>
+        <script src="scripts/services/pages.js"></script>
+        <!-- endbuild -->
+</body>
+</html>

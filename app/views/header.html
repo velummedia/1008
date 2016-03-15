@@ -1,0 +1,33 @@
+<div class="navigation-wrap" role="navigation">
+	<div class="logo" ng-class="{'header-white-back':loginSectionActive}">
+		<a href="#/login">
+			<img ng-src="images/logo3.png" alt="">
+		</a>
+		<div class="userLogo hidden-xs hidden-sm" ng-hide="loginSectionActive">{{userInitialName}}</div>
+		<i class="fa fa-bars hidden-md hidden-lg mobile-nav" ng-hide="loginSectionActive" ng-click="activeMenu()"></i>
+	</div>
+	<h4 class="pagetitle">{{pageTitle}}</h4>
+	<span ng-show="headerMenusLinks">
+		<!--<h4 class="pagetitle">-->
+			<!--<a href="#/login">Register</a>-->
+		<!--</h4>-->
+<!-- 		<h4 class="pagetitle">
+			<a href="#/login">Login</a>
+		</h4> -->
+		<h4 class="pagetitle">
+			<a href="http://training.breakingmuscle.com" target="_blank">Premium Training Plans</a>
+		</h4>
+		<h4 class="pagetitle">
+			<a href="http://breakingmuscle.com" target="_blank">Breaking Muscle Home</a>
+		</h4>
+	</span>
+	<!--<div class="menuIconic">
+		<div class="logohref" ng-href="#/">
+			<img ng-src="images/profileh.png" alt="" ng-show="headerShow">
+			<ul class="profilesubmenu">
+				<li><a href=""><span class="icongoup icongoup1"></span>Profile</a></li>
+				<li><a href=""><span class="icongoup icongoup2"></span>Setting</a></li>
+				<li><a href="" ng-click="logout()"><span class="icongoup icongoup3"></span>Logout</a></li>  
+			</ul>
+		</div>-->
+</div>  

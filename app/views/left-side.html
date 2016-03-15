@@ -1,0 +1,32 @@
+<div class="left-menu-wrap">
+	<ul class="mainmenu" style="padding-top: 56px;">
+		<li ng-repeat="link in links" ng-class="{'showsubmenu' : link.child != 0}">
+			<a ng-click="clickMe(link.child,this,$index,link.page)" class="main-menu-a" href="javascript:;" ng-class="{'selected-menu' : link.selected == 1}">
+				<img ng-src="{{link.icon}}" alt="" class="nonhovericon">
+				<img ng-src="{{link.iconh}}" alt="" class="hovericon">
+				<p>{{link.name}}</p>
+			</a>
+			<div ng-if="link.child != 0" class="submenuwrap" ng-show="link.selected" ng-class="{'alii' : link.selected}">
+				<ul  class="issubmenu">
+					<li ng-repeat="linked in link.child">
+						<a class="main-submenu-a" ng-click="openPage(linked.page)" href="javascript:;">{{linked.name}}</a>
+					</li>
+				</ul>
+			</div>
+		</li>
+		<li class="for-logout">
+			<a href="http://breakingmuscle.com" target="_blank" class="main-menu-a">
+				<img src="images/user/bm.png" alt="" class="nonhovericon">
+				<img src="images/user/bmh.png" alt="" class="hovericon">
+				<p>BM Home</p>
+			</a>
+		</li>
+		<li class="for-logout">
+			<a href="" class="main-menu-a">
+				<img src="images/admin/profile.png" alt="" class="nonhovericon">
+				<img src="images/admin/profileh.png" alt="" class="hovericon">
+				<p ng-click="logout()">Logout</p>
+			</a>
+		</li>
+	</ul>
+</div>

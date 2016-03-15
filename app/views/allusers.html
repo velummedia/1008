@@ -1,0 +1,58 @@
+<div class="user-pages alluserswrap">
+	<div class="col-sm-6 nopadding filter-search">
+		<select name="" ng-change="changeUsers(select.filter)" ng-model="select.filter">
+	      <option value="">Choose the package</option>
+	      <option value="{{item}}" ng-repeat="item in filterPackages" >{{item.name}}</option>
+	    </select>
+	</div>
+	<div class="col-sm-12 filter-search nopadding">
+		<input type="text" name="search" ng-model="form.search" placeholder="Search">
+	</div>
+	<table class="table">
+	<tr>
+		<th>Name</th>
+		<th>Email</th>
+		<th>Phone</th>
+		<th>Join Date</th>
+		<th>Last Login</th>
+		<th>System</th>
+		<th>Status</th>
+		<th>Action</th>
+	</tr>
+	<tr ng-repeat="user in users | filter:form.search" ng-class="{'back-red' : user.access.approved == 8}">
+		<td>{{user.user.name}}</td>
+		<td>{{user.user.email}}</td>
+		<td>{{user.user.phone}}</td>
+		<td>{{user.user.add_date}}</td>
+		<td>{{user.user.last_login}}</td>
+		<td>{{packName}}</td>
+		<td>
+			<span class="label label-success" ng-show="user.access.approved == 1">Access</span>
+			<span class="label label-danger" ng-show="user.access.approved == 0">Banned</span>
+			<span class="label label-danger" ng-show="user.access.approved == 8">Refunded</span>
+		</td>
+		<td>
+			<span ng-show="userLevel == 7 || userLevel == 6">
+				<a href="javascript:;" ng-show="user.access.approved == 1 && user.access.approved != 8" ng-click="disableSystem(user.user.id,select.filter)">
+					<i class="fa fa-thumbs-down"></i>
+				</a>
+				<a href="javascript:;" ng-show="user.access.approved == 0 && user.access.approved != 8" ng-click="enableSystem(user.user.id,select.filter)">
+					<i class="fa fa-thumbs-up"></i>
+				</a>
+				<a href="#/edituser/{{user.user.id}}"><i class="fa fa-pencil"></i></a>
+			</span>
+			<span ng-show="userLevel != 7 && userLevel != 6">
+			-
+			</span>
+  		</td>
+	</tr>
+</table>
+</div>
+
+
+<div class="right-side-text">
+    <div class="right-side-inner">
+        <h1>Lorem ipsum.</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia dolorem sint adipisci, commodi enim animi minus debitis, aliquid aspernatur ex soluta maxime sunt, quibusdam. Consequatur officia veniam quam deleniti perspiciatis?</p>
+    </div>
+</div>

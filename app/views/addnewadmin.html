@@ -1,0 +1,45 @@
+<form name="createsuperadmin" ng-submit="formSent(createsuperadmin)">
+
+<div class="form-group">
+  <label for="pwd">Built-in access To:</label>
+  <select name="adminLevel" ng-model="form.adminLevel">
+    <option value="5">Payments and Users</option>
+    <option value="4">Payments</option>
+    <option value="3">Users</option>
+  </select>
+</div>
+<div class="form-group">
+  <label for="pwd">Built-in access To:</label>
+  <select name="selectedPackage" ng-model="form.selectedPackage">
+    <option value="">Packages List</option>
+    <option value="{{item.id}}" ng-repeat="item in filterPackages" >{{item.name}}</option>
+  </select>
+</div>
+<div class="col-md-4 col-md-push-4 col-sm-5 col-sm-push-4 col-xs-8 col-xs-push-4 addnewpackagepage createchildadmin">
+    <div class="form-group">
+      <input type="text" class="form-control" name="name" ng-model="form.name" placeholder="Name">
+    </div>
+
+    <div class="form-group">
+      <input type="email" class="form-control" name="email" ng-model="form.email" placeholder="Email">
+    </div>
+
+    <div class="form-group">
+      <input type="text" class="form-control" name="phone" ng-model="form.phone" placeholder="Phone">
+    </div>
+
+    <div class="form-group" style="text-align:center;">
+      <label for="pwd">Password:</label>
+      <p>Password created by system :<h3 style="border-bottom:1px solid #e1e1e1; border-top:1px solid #e1e1e1;">{{password}}</h3></p>
+    </div>
+
+
+    <div class="form-group" style="text-align:center;">
+      <button type="submit" class="btn btn-default">Submit</button>
+    </div>
+    
+    
+
+</div>
+
+  </form>

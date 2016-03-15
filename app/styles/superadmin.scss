@@ -1,0 +1,102 @@
+.addadminwrap{
+  margin-top: 60px;
+}
+
+.addadminwrap .loginpageinput{
+  width:100%;
+  border:none;
+  padding:10px;
+  outline:none;
+  background: #02293a;
+  color: #fff;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.addadminwrap form button{
+  display:block;
+  margin:20px auto;
+  border:none;
+  background:none;
+  padding:10px;
+  color:#02293a;
+  outline: none;
+}
+
+.createchildadmin select { 
+  text-indent: 130px;
+}
+
+.addnewpackagepage input,
+.addnewpackagepage select,
+.addnewpackagepage textarea{
+  color: #c6c6c6;
+  text-align: center;
+}
+
+.addnewpackagepage .form-control:focus{
+  border: 1px solid #ccc;
+  outline: none;
+  box-shadow: none;
+}
+
+.addnewpackagepage .form-control,
+.addnewpackagepage .noradius{
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.addnewpackagepage .ng-isolate-scope table{
+  margin: 0;
+  padding: 0;
+  height: auto;
+}
+
+.viewpaymentwrap{
+  width: 100%;
+  padding: 15px!important;
+  background-color: #fff;
+  margin-bottom: 15px;
+}
+
+@media (min-width: 769px) {
+  .viewpaymentwrap{
+    display: inline-block;
+    width: 80%;
+    float: left;
+  }
+}
+
+.viewpaymentwrap .sectiontitle{
+  background-color: #fff;
+  z-index: 1111;
+  position: relative;
+  display: inline-block;
+  margin-left: 10px;
+  padding: 0 5px;
+}
+
+.viewpaymentwrap .sectioncontent{
+  display: inline-block;
+  width: 100%;
+  border: 1px solid #e1e1e1;
+  padding-top: 30px;
+  margin-top: -20px;
+}
+
+.viewpaymentwrap .panel-group .panel{
+  width: 96%;
+  margin: 0 auto;
+}
+@media (min-width: 1300px) {
+  .viewpaymentwrap .panel-group .panel {
+    width: 98%;
+  }
+}
+.viewpaymentwrap .personpaymentswrap{
+  padding-bottom: 20px;
+}
+
+.viewpaymentwrap .personpaymentswrap .eachpayments span{
+  font-weight: bold;
+}
