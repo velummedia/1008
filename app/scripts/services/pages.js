@@ -5,7 +5,7 @@ angular.module('bmadminApp')
     return [
       {
         name: "THE-COMPLETE-PREGNANCY.-18-MONTH-MEMBERSHIP.",
-        description: "<h1 class='h1'>The Complete Pregnancy:</h1> <h2 class='h3'>Prenatal, Postpartum and Beyond</h2> <p>A safe, effective program for athletic mother and mother-to-be including:</p> <ul> <li>Training Plans</li> <li>Nutrition, Recipes, Advice</li> <li>Breastfeeding Success and birth recovery Plans</li> </ul>",
+        description: "<h2 class='text-uppercase'>The Complete Pregnancy:</h2> <h3>Prenatal, Postpartum and Beyond</h3> <h4>A safe, effective program for athletic mother and mother-to-be including:</h4> <ul> <li>Training Plans</li> <li>Nutrition, Recipes, Advice</li> <li>Breastfeeding Success and birth recovery Plans</li> </ul>",
         cover: "http://res.cloudinary.com/velummedia/image/upload/v1457984431/1009/banners/2.jpg",
         welcome_text: "<p>This is a comprehensive program for maternal, prenatal, and postnatal health. Each warm up, workout, and yoga sequence have been tested and programmed for safety with a system that I personally use myself, with clients and with a test group.</p><p class='h5'>This complete training system, including nutrition and training, has been specifically programmed for optimal results. This is not a program where you spend countless hours following boring and ineffective workouts that require expensive gym memberships and useless equipment. Whether you are currently pregnant, postpartum, or just beginning to plan your family, this program will help you achieve an optimal level of maternal and prenatal health, fitness, and wellness.</p><p>This program is intended for women who experiencing a normal, uncomplicated, and healthy pregnancy. It is imperative that you consult with your OBGYN before beginning any exercise program. It is recommended that you show your OBGYN your training plans and get approval before beginning this or any exercise plan.</p>",
         button_text1: "Buy Now",
@@ -110,7 +110,7 @@ angular.module('bmadminApp')
 
       {
         name: "Warrior-Athlete.-12-month-membership",
-        description: "<h1 class='h1'>Warrior Athlete</h1> <h2 class='h3'>The Ultimate 12 Week Warrior Building Program</h2> <p>Combining strength, strength endurance, and endurance training to build a complete warrior athlet.</p>",
+        description: "<h1>Warrior Athlete</h1> <h3>The Ultimate 12 Week Warrior Building Program</h3> <h4>Combining strength, strength endurance, and endurance training to build a complete warrior athlet.</h4>",
         cover: "http://res.cloudinary.com/velummedia/image/upload/v1457984426/1009/banners/3.jpg",
         welcome_text: "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quibusdam non maiores fuga sed doloremque culpa magni quidem rerum ipsum ipsam porro sequi, corporis aliquam rem vero eius provident itaque.</p><p>Magni architecto quod autem sit rerum quae nostrum sunt voluptas iure tempore illum nesciunt dignissimos, libero ipsam eligendi consequuntur, rem, aliquid quas similique provident velit voluptatibus. Quae eum provident cumque.</p>",
         button_text1: "Buy Now",
@@ -214,7 +214,7 @@ angular.module('bmadminApp')
 
       {
         name: "Olympic-Weightlifting.-12-Month-Membership.",
-        description: "<h1 class='h1'>OLYMPIC WEIGHTLIFTING</h1> <h2 class='h3'> 5 days of programming every week access to all Beginner, Intermediate, and Advanced programs Video Movement Library </h2>",
+        description: "<h1>OLYMPIC WEIGHTLIFTING</h1> <h3> 5 days of programming every week access to all Beginner, Intermediate, and Advanced programs Video Movement Library </h3>",
         cover: "http://res.cloudinary.com/velummedia/image/upload/v1457993197/1009/banners/7.jpg",
         welcome_text: "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quibusdam non maiores fuga sed doloremque culpa magni quidem rerum ipsum ipsam porro sequi, corporis aliquam rem vero eius provident itaque.</p><p>Magni architecto quod autem sit rerum quae nostrum sunt voluptas iure tempore illum nesciunt dignissimos, libero ipsam eligendi consequuntur, rem, aliquid quas similique provident velit voluptatibus. Quae eum provident cumque.</p>",
         button_text1: "Buy Now",
@@ -269,7 +269,7 @@ angular.module('bmadminApp')
 
       {
         name: "The-Complete-Bodyweight-Training-Plan.-12-month-membership",
-        description: " <h1 class='h2'>The 16-Week Ultimate Bodyweight Challenge</h1> <h2 class='h4'>A comprehensive and progressive training plan to build both skill and strength for all levels.</h2> <ul><li>Do it anywhere, from the comfort of your own home or on the road , all you need is access to a pull up</li><li>Learn the skills to master pull ups, push ups, handstands, backbends, bridges, and splits.</li> </ul>",
+        description: " <h2 >The 16-Week Ultimate Bodyweight Challenge</h2> <h4>A comprehensive and progressive training plan to build both skill and strength for all levels.</h4> <ul><li>Do it anywhere, from the comfort of your own home or on the road , all you need is access to a pull up</li><li>Learn the skills to master pull ups, push ups, handstands, backbends, bridges, and splits.</li> </ul>",
         cover: "http://res.cloudinary.com/velummedia/image/upload/v1457964962/1009/banners/6.jpg",
         welcome_text: "<p>Bodyweight training has gained popularity over the last several years. The American College of Sports Medicine ranked it as the number one fitness trend of 2015. It’s easy to see why. There are many advantages, including convenience, low cost, and variety.</p><p class='h4'>The Ultimate Bodyweight Training Plan will build your essential athletic skills and challenge your strength balance and flexibility. No matter how much weight you can squat, pull off the ground, or get over your head - if you cannot pull yourself up to a bar there is a fundamental and functional strength concern that needs to be addressed.</p><p>Bodyweight training is a great choice for gaining strength, building muscle, boosting cardiovascular fitness, and losing weight. This plan focuses on developing the foundational movements – squatting, pushing, and pulling – that will translate across athletic endeavors.</p>",
         button_text1: "Buy Now",
@@ -402,14 +402,14 @@ angular.module('bmadminApp')
         about_coach: {
           bio: "",
           bio2: "",
-          avatar: ""
+          avatar: "http://res.cloudinary.com/velummedia/image/upload/v1457962412/1009/avatars/4.png"
         },
         side_cover: "http://res.cloudinary.com/velummedia/image/upload/v1457964189/1009/side_covers/2.jpg"
       },
 
       {
         name: "Barbell-SHRED.-12-MONTH-MEMBERSHIP",
-        description: "<h1 class='h1'>Build Lean Muscle. Get Strong. Shred Body Fat.</h1>",
+        description: "<h1>Build Lean Muscle. Get Strong. Shred Body Fat.</h1>",
         cover: "http://res.cloudinary.com/velummedia/image/upload/v1457993197/1009/banners/7.jpg",
         welcome_text: '<p><h1 id="page-title" class="title" style="text-align: center;">&nbsp;</h1><div class="region region-content"><div id="block-system-main" class="block block-system clearfix"><div class="content block-content"><div id="node-377961" class="node node-article node-promoted clearfix"><div class="content"><div id="field-intro-field" class="field field-name-field-intro field-type-text-long field-label-hidden" style="text-align: center;">&nbsp;</div><div id="body-field" class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p style="text-align: center;">Barbell Shred is an easy-to-follow, yet challenging program that requires maximum commitment for maximum results. The program is comprised of three main components: strength training, interval training, and moderate intensity conditioning with mobility.</p><p style="text-align: center;">&nbsp;&nbsp;</p><h2 style="text-align: center;">Strength Training (3 days per week)</h2><p style="text-align: center;">The strength training component of is program is designed specifically to to build lean pure strength and muscle.</p><p style="text-align: center;">&nbsp;</p><h2 style="text-align: center;">Interval Training &nbsp;(2 days per week)</h2><p style="text-align: center;">The interval training workouts are short and intense and very effective for fat loss. These are programmed 2 days per week for 5-20 minutes per session.&nbsp;</p></div></div></div></div></div></div></div></div></p>',
         button_text1: "Buy Now",
@@ -466,7 +466,7 @@ angular.module('bmadminApp')
 
       {
         name: "MONSTER-DUMBBELL-WORKOUT.-12-MONTH-MEMBERSHIP",
-        description: "<h1 class='h1'>8 weeks of powerful, intense, strength building workouts</h1>",
+        description: "<h2 class='text-uppercase'>8 weeks of powerful, intense, strength building workouts</h2>",
         cover: "http://res.cloudinary.com/velummedia/image/upload/v1457993197/1009/banners/7.jpg",
         welcome_text: '<p><p style="text-align: center;">Welcome to the Monster Dumbbell Program. These challenging workouts will build strength, power, and endurance. Follow along the with the movement library for video demonstrations and coaching cues of each movement.&nbsp;This training plan covers 12&nbsp;weeks of total body workouts, training 3-4 days per week.</p><p style="text-align: center;"><strong>Benefits of Training With Dumbbells</strong></p><ul><li style="text-align: center;">Inexpensive way to train - no gym membership required.</li><li style="text-align: center;">Train at home, on the go, and while traveling.</li><li style="text-align: center;">Train imbalances in muscle strength, coordination, and mobility.</li><li style="text-align: center;">This is a fantastic alternate workout plan if you are injured on one side of the body.</li><li style="text-align: center;">Complex motor activity.&nbsp;</li><li style="text-align: center;">Provides a unique training stimulus compared with typical barbell training.</li><li style="text-align: center;">Progression to Olympic lifts and barbell work.</li></ul></p>',
         button_text1: "Buy Now",

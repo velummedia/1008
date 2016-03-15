@@ -17,7 +17,7 @@
 <!--</div>&lt;!&ndash;/#main-page&ndash;&gt;-->
 
 
-<div class="user-pages brows-pack">
+<div class="user-pages wh-bg brows-pack">
     <div class="row clearfix">
         <div class="col-sm-4 col-xs-6 packageswrap" ng-repeat="item in packages" ng-if="item.package.approved == 1 && item.approved != 8 && item.access == 1 " ng-class="{'disable' : item.package.approved == 0, 'refund' : item.approved == 8}">
             <div ng-style="{'background-color' : colors[$index]}">
@@ -127,5 +127,21 @@
             </div>
 
         </div>
+    </div>
+</div>
+
+<div class="right-side-text">
+    <div class="right-side-inner">
+        <h1>Choose a Plan</h1>
+        <p>Pick from of any of the plans available for purchase now or pre-register for upcoming plans and get big savings.</p>
+    </div>
+    <div class="right-side-inner package-list">
+        <h1>Packages</h1>
+        <ul>
+            <li ng-repeat="item in filterPackages">
+                <a title="{{item.name}}" href="#/paymentsuser/{{item.id}}">{{item.name}} (${{item.price}})</a>
+                <a class="moreinfobutton" href="{{item.url}}" target="_blank">(More Info)</a>
+            </li>
+        </ul>
     </div>
 </div>

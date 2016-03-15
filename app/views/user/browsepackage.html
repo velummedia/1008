@@ -9,7 +9,7 @@
                 </a>
                 <div class="br-main">
                     <div class="img-overlay" ng-style="{'background-color' : colors[$index]}"></div>
-                    <h3 class="limit-txt"><a href="{{item.package.url}}">{{item.package.name}}</a></h3>
+                    <h3 class="limit-txt"><a href="#/package/{{createMoreInfo(item.package.name)}}">{{item.package.name}}</a></h3>
                 </div>
                 <footer class="more-buy-wrap clearfix">
                     <a href="#/package/{{createMoreInfo(item.package.name)}}">More Info</a>
@@ -32,7 +32,7 @@
                 <a href="#/package/{{createMoreInfo(item.package.name)}}"><img class="img-responsive" ng-src="{{loadBackgroundImage(item.package.name)}}" alt=""></a>
                 <div class="br-main">
                     <div class="img-overlay" ng-style="{'background-color' : colors[$index]}"></div>
-                    <h3 class="limit-txt"><a href="{{item.package.url}}">{{item.package.name}}</a></h3>
+                    <h3 class="limit-txt"><a href="#/package/{{createMoreInfo(item.package.name)}}">{{item.package.name}}</a></h3>
                 </div>
 
                 <footer class="more-buy-wrap clearfix">
@@ -76,7 +76,7 @@
                 <a href="#/package/{{createMoreInfo(item.package.name)}}"><img class="img-responsive" ng-src="{{loadBackgroundImage(item.package.name)}}" alt=""></a>
                 <div class="br-main">
                     <div class="img-overlay" ng-style="{'background-color' : colors[$index]}"></div>
-                    <h3 class="limit-txt"><a href="{{item.package.url}}">{{item.package.name}}</a></h3>
+                    <h3 class="limit-txt"><a href="#/package/{{createMoreInfo(item.package.name)}}">{{item.package.name}}</a></h3>
                 </div>
 
                 <footer class="more-buy-wrap clearfix">
