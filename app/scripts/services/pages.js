@@ -5,9 +5,11 @@ angular.module('bmadminApp')
     return [
       {
         name: "THE-COMPLETE-PREGNANCY.-18-MONTH-MEMBERSHIP.",
-        description: "<h2 class='text-uppercase'>The Complete Pregnancy:</h2> <h3>Prenatal, Postpartum and Beyond</h3> <h4>A safe, effective program for athletic mother and mother-to-be including:</h4> <ul> <li>Training Plans</li> <li>Nutrition, Recipes, Advice</li> <li>Breastfeeding Success and birth recovery Plans</li> </ul>",
+        bg: "#DF708C",
+        description: "<h1>The Complete Pregnancy:</h1> <h3>Prenatal, Postpartum and Beyond</h3> <h4>A safe, effective program for athletic mother and mother-to-be including:<br><br><ul> <li>Training Plans</li> <li>Nutrition, Recipes, Advice</li> <li>Breastfeeding Success and birth recovery Plans</li> </ul></h4> ",
         cover: "http://res.cloudinary.com/velummedia/image/upload/v1457984431/1009/banners/2.jpg",
-        welcome_text: "<p>This is a comprehensive program for maternal, prenatal, and postnatal health. Each warm up, workout, and yoga sequence have been tested and programmed for safety with a system that I personally use myself, with clients and with a test group.</p><p class='h5'>This complete training system, including nutrition and training, has been specifically programmed for optimal results. This is not a program where you spend countless hours following boring and ineffective workouts that require expensive gym memberships and useless equipment. Whether you are currently pregnant, postpartum, or just beginning to plan your family, this program will help you achieve an optimal level of maternal and prenatal health, fitness, and wellness.</p><p>This program is intended for women who experiencing a normal, uncomplicated, and healthy pregnancy. It is imperative that you consult with your OBGYN before beginning any exercise program. It is recommended that you show your OBGYN your training plans and get approval before beginning this or any exercise plan.</p>",
+        welcome_text: "<p>This is a comprehensive program for maternal, prenatal, and postnatal health. Each warm up, workout, and yoga sequence have been tested and programmed for safety with a system that I personally use myself, with clients and with a test group.<br>This complete training system, including nutrition and training, has been specifically programmed for optimal results. This is not a program where you spend countless hours following boring and ineffective workouts that require expensive gym memberships and useless equipment. Whether you are currently pregnant, postpartum, or just beginning to plan your family, this program will help you achieve an optimal level of maternal and prenatal health, fitness, and wellness.<br>This program is intended for women who experiencing a normal, uncomplicated, and healthy pregnancy. It is imperative that you consult with your OBGYN before beginning any exercise program. It is recommended that you show your OBGYN your training plans and get approval before beginning this or any exercise plan.</p>",
+        welcome_more:"https://training.breakingmuscle.com/mindith/complete-pregnancy/getting-started/guidelines/welcome-complete-pregnancy-training-plan",
         button_text1: "Buy Now",
         button_text2: "Buy Now",
         button_text3: "Buy Now",
@@ -34,6 +36,7 @@ angular.module('bmadminApp')
             text: "This program is designed to take you throughout the prenatal, postpartum, and beyond period covering 18 months of workouts."
           }
         ],
+        faq_more: "https://training.breakingmuscle.com/mindith/complete-pregnancy/getting-started/guidelines/frequently-asked-questions",
         moreinfo: [
           {
             cover: "https://training.breakingmuscle.com/sites/training/files/styles/headline_300x188/public/images/headline/201511/workoutsitemapcompletepregnancy.png?itok=1RKtz0_P",
@@ -50,10 +53,15 @@ angular.module('bmadminApp')
             title: "Pregnancy, Birth, Breastfeeding and Babycare Reading List",
             link: "https://training.breakingmuscle.com/mindith/complete-pregnancy/getting-started/guidelines/pregnancy-birth-breastfeeding-and-babycare",
           },
+          {
+            cover: "https://training.breakingmuscle.com/sites/training/files/styles/headline_300x188/public/images/headline/201510/bob-jogging-stroller-giveaw.jpg?itok=3ZkRrAbx",
+            title: "Buying a Jogging Stroller",
+            link: "https://training.breakingmuscle.com/mindith/complete-pregnancy/getting-started/guidelines/buying-jogging-stroller",
+          },
         ],
         about_coach: {
           bio: "Mindith is a born mover. She has spent her life exploring various athletic disciplines, starting with ballet and modern dance from an early age. She went on to become a E-RYT 500 certified yoga therapist and teacher and discovered CrossFit after the birth of her daughter.",
-          bio2:" Mindith is known for exploring new ways to mix disciplines such as kettlebells, bodyweight exercises, and yoga to create effective training programs that force people to adapt and constantly challenge themselves. She is currently studying the principles of Natural Movement and Kettlebell Sport, and is completing an additional 500-hour teacher training in the Taoist art of Yin Yoga with Master Paulie Zink.",
+          bio2:"Mindith is known for exploring new ways to mix disciplines such as kettlebells, bodyweight exercises, and yoga to create effective training programs that force people to adapt and constantly challenge themselves. She is currently studying the principles of Natural Movement and Kettlebell Sport, and is completing an additional 500-hour teacher training in the Taoist art of Yin Yoga with Master Paulie Zink.",
           avatar: "http://res.cloudinary.com/velummedia/image/upload/v1457962412/1009/avatars/4.png"
         },
         side_cover: "http://res.cloudinary.com/velummedia/image/upload/v1457964189/1009/side_covers/2.jpg"
@@ -61,9 +69,11 @@ angular.module('bmadminApp')
 
       {
         name: "Yoga-Strong.-12-month-membership",
-        description: "<h1 class='h1'>YOGA STRONG</h1> <h2 class='h3'>A 20 week strength training program to take your yoga practice to the next level</h2>",
+        bg: "#32D9D1",
+        description: "<h1 class='h1'>YOGA STRONG</h1> <h3>A 20 week strength training program to take your yoga practice to the next level</h3>",
         cover: "http://res.cloudinary.com/velummedia/image/upload/v1457964962/1009/banners/8.jpg",
         welcome_text: "<p>This program is designed for yogis who are looking to increase overall strength, endurance and stamina for their yoga practice as well as to become a stronger, well-rounded athlete. The program is beginner-friendly, and is just as relevant for the more advanced athlete. We will begin practicing the fundamental movements, and move forward each week at a steady pace. Athletes of all experience levels will benefit.</p><p>Each week we will focus on a different functional fitness movement meant to improve overall strength, endurance and stamina. What is a functional movement? A functional movement is a movement that we perform in our everyday lives. For example: when we pick up our groceries, we are performing a deadlift. When we push our luggage into the overhead compartment, we are doing an overhead press. These are movements we as humans are designed to perform. And even though we’re designed to perform them, we still need to practice form and build strength so that these movements come naturally.</p>",
+        welcome_more: "https://training.breakingmuscle.com/yoga/yoga-strong",
         button_text1: "Buy Now",
         button_text2: "Buy Now",
         button_text3: "Buy Now",
@@ -91,12 +101,19 @@ angular.module('bmadminApp')
           }
 
         ],
+        faq_more: "https://training.breakingmuscle.com/yoga/yoga-strong/getting-started/frequently-asked-questions",
         moreinfo: [
           {
             cover: "https://training.breakingmuscle.com/sites/training/files/styles/headline_300x188/public/images/headline/201601/bio2ys.jpg?itok=NgBCn7jv",
             title: "Testimonials",
             text: "Success stories of people who have completed the Yoga Strong Program.",
             link:"https://training.breakingmuscle.com/yoga/yoga-strong/getting-started/testimonials"
+          },
+          {
+            cover: "https://training.breakingmuscle.com/sites/training/files/styles/headline_300x188/public/images/headline/201601/bio2ys.jpg?itok=NgBCn7jv",
+            title: "Meet Your Coach: Stephanie Ring",
+            text: "An introduction to your coach.",
+            link:"https://training.breakingmuscle.com/yoga/yoga-strong/getting-started/meet-your-coach-stephanie-ring"
           },
 
         ],
@@ -110,27 +127,27 @@ angular.module('bmadminApp')
 
       {
         name: "Warrior-Athlete.-12-month-membership",
-        description: "<h1>Warrior Athlete</h1> <h3>The Ultimate 12 Week Warrior Building Program</h3> <h4>Combining strength, strength endurance, and endurance training to build a complete warrior athlet.</h4>",
+        description: "<h1>Warrior Athlete</h1> <h3>The Ultimate 12 Week Warrior Building Program</h3> <h4>Combining strength, strength endurance, and endurance training to build a complete warrior athlete.</h4>",
         cover: "http://res.cloudinary.com/velummedia/image/upload/v1457984426/1009/banners/3.jpg",
-        welcome_text: "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quibusdam non maiores fuga sed doloremque culpa magni quidem rerum ipsum ipsam porro sequi, corporis aliquam rem vero eius provident itaque.</p><p>Magni architecto quod autem sit rerum quae nostrum sunt voluptas iure tempore illum nesciunt dignissimos, libero ipsam eligendi consequuntur, rem, aliquid quas similique provident velit voluptatibus. Quae eum provident cumque.</p>",
+        welcome_text: "<p>Strength does conquer. This training provides warriors with a program to build powerful, injury resistant bodies. The Warrior Athlete is a journey of discovery that pushes you to challenge yourself at every step. At first glance this plan looks like any other 13-week training plan.<br><br> It comes in two main blocks that work on general strength and conditioning to begin with and then moves onto much more taxing sessions designed to test your peak performance in a long duration event. But don’t be fooled. This workout could take an entire year to complete.<br><br> It’s not unusual for some people to get stuck in the first phase for as long as six months. The reason this happens is simple – every workout has a target. If you fail to reach that target you will repeat the workout until the target is reached. It's everything you need to become a Warrior Athlete.</p>",
         button_text1: "Buy Now",
         button_text2: "Buy Now",
         button_text3: "Buy Now",
         cover2: "http://res.cloudinary.com/velummedia/image/upload/v1457965572/1009/secondcovers/3.jpg",
-        faq: [
-          {
-            title: "How often should I do these workouts?",
-            text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci amet consequuntur delectus, deleniti deserunt dolor earum id ipsam iure maiores neque numquam odit omnis perferendis placeat provident quo veniam voluptatum! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci amet consequuntur delectus, deleniti deserunt dolor earum id ipsam iure maiores neque numquam odit"
-          },
-          {
-            title: "How often should I do these workouts?",
-            text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci amet consequuntur delectus, deleniti deserunt dolor earum id ipsam iure maiores neque numquam odit omnis perferendis placeat provident quo veniam voluptatum! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci amet consequuntur delectus, deleniti deserunt dolor earum id ipsam iure maiores neque numquam odit"
-          },
-          {
-            title: "How often should I do these workouts?",
-            text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci amet consequuntur delectus, deleniti deserunt dolor earum id ipsam iure maiores neque numquam odit omnis perferendis placeat provident quo veniam voluptatum! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci amet consequuntur delectus, deleniti deserunt dolor earum id ipsam iure maiores neque numquam odit"
-          },
-        ],
+        // faq: [
+        //   {
+        //     title: "How often should I do these workouts?",
+        //     text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci amet consequuntur delectus, deleniti deserunt dolor earum id ipsam iure maiores neque numquam odit omnis perferendis placeat provident quo veniam voluptatum! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci amet consequuntur delectus, deleniti deserunt dolor earum id ipsam iure maiores neque numquam odit"
+        //   },
+        //   {
+        //     title: "How often should I do these workouts?",
+        //     text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci amet consequuntur delectus, deleniti deserunt dolor earum id ipsam iure maiores neque numquam odit omnis perferendis placeat provident quo veniam voluptatum! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci amet consequuntur delectus, deleniti deserunt dolor earum id ipsam iure maiores neque numquam odit"
+        //   },
+        //   {
+        //     title: "How often should I do these workouts?",
+        //     text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci amet consequuntur delectus, deleniti deserunt dolor earum id ipsam iure maiores neque numquam odit omnis perferendis placeat provident quo veniam voluptatum! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci amet consequuntur delectus, deleniti deserunt dolor earum id ipsam iure maiores neque numquam odit"
+        //   },
+        // ],
         moreinfo: [
           {
             cover: "https://training.breakingmuscle.com/sites/training/files/styles/headline_300x188/public/images/sidebar/201511/trailrunner.jpg?itok=WqXF9rrR",
@@ -147,7 +164,20 @@ angular.module('bmadminApp')
           {
             cover: "https://training.breakingmuscle.com/sites/training/files/styles/headline_300x188/public/images/sidebar/201510/screenshot2015-10-22at51424pm.png?itok=Cd9yvt0q",
             title: "Don't Believe The Hype",
-            text: "Being truly fit means finding your balance of strength and endurance."
+            text: "Being truly fit means finding your balance of strength and endurance.",
+            link: "https://training.breakingmuscle.com/strength-conquers/warrior-athlete/getting-started/dont-believe-hype"
+          },
+          {
+            cover: "https://training.breakingmuscle.com/sites/training/files/styles/headline_300x188/public/images/sidebar/201510/screenshot2015-10-22at50526pm.png?itok=IoL17Edl",
+            title: "Train for Peak Performance",
+            text: "Building strength for combat sports requires more than a barbell. Are you ready to train to be your best?",
+            link: "https://training.breakingmuscle.com/strength-conquers/warrior-athlete/getting-started/train-peak-performance"
+          },
+          {
+            cover: "https://training.breakingmuscle.com/sites/training/files/styles/headline_300x188/public/images/sidebar/201511/farmerscarry.jpg?itok=720njqNb",
+            title: "Meet Coach Andrew Read",
+            text: "Andrew Read knows fitness. Find out more about the man behind the Warrior Athlete Training Plan.",
+            link: "https://training.breakingmuscle.com/strength-conquers/warrior-athlete/getting-started/meet-coach-andrew-read"
           },
         ],
         about_coach: {
@@ -163,6 +193,7 @@ angular.module('bmadminApp')
         description: "<h2>Women’s Kettlebell Transformation</h2><h4>Transform your body in 16 weeks</h4><h5>A Safe, effective, and Scalable Transformation Program from Beginner to Advanced Including:</h5><ul><li>Kettlebell workouts and progressions</li><li>Mobility Drills</li><li>Yoga Recovery Sequences</li></ul>",
         cover: "http://res.cloudinary.com/velummedia/image/upload/v1457984421/1009/banners/4.jpg",
         welcome_text: "<p>This training plan will increase your strength, mobility, as well as aid in fat loss and lean muscle growth. Taking the time to commit to a 16 week program is the first step in creating life long changes in your health and fitness.  Although the next 16 weeks will be challenging, if you stick to the program you will see results that are truly transformational</p><p> This program is designed for women who are looking to increase overall strength, endurance and mobility as well as becoming a stronger, well-rounded lean athlete. The program is beginner-friendly with a modified phase for those new to working out.  The advanced athlete can jump right in and start at phase 1 for a challenging 16 week Program.  We will begin practicing the fundamental movements, techniques and skills needed to move to more advanced drills and challenging workouts. This program is based on my experiences of working with clients and my own training and research.  This program is easy, effective, and empirically based.</p>",
+        welcome_more: "https://training.breakingmuscle.com/mindith/womens-kb-transformation/getting-started/welcome-womens-kettlebell-transformation",
         button_text1: "Buy Now",
         button_text2: "Buy Now",
         button_text3: "Buy Now",
@@ -189,6 +220,7 @@ angular.module('bmadminApp')
             text: "You can start by adding a 4th workout per week. However, be very cautious that you are not over training. After you have mastered the movements included in these workouts, it may be advantageous to move up in weight and try more advanced variations of movements, reps schemes, and tempos."
           }
         ],
+        faq_more: "https://training.breakingmuscle.com/mindith/womens-kb-transformation/getting-started/frequently-asked-questions",
         moreinfo: [
           {
             cover: "https://training.breakingmuscle.com/sites/training/files/styles/headline_300x188/public/images/headline/201512/kbtgu-lungestyle7teaser.jpg?itok=xg1No1FO",
@@ -216,29 +248,29 @@ angular.module('bmadminApp')
         name: "Olympic-Weightlifting.-12-Month-Membership.",
         description: "<h1>OLYMPIC WEIGHTLIFTING</h1> <h3> 5 days of programming every week access to all Beginner, Intermediate, and Advanced programs Video Movement Library </h3>",
         cover: "http://res.cloudinary.com/velummedia/image/upload/v1457993197/1009/banners/7.jpg",
-        welcome_text: "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quibusdam non maiores fuga sed doloremque culpa magni quidem rerum ipsum ipsam porro sequi, corporis aliquam rem vero eius provident itaque.</p><p>Magni architecto quod autem sit rerum quae nostrum sunt voluptas iure tempore illum nesciunt dignissimos, libero ipsam eligendi consequuntur, rem, aliquid quas similique provident velit voluptatibus. Quae eum provident cumque.</p>",
+        welcome_text: "<p>Weightlifting is the purest power sport. It is also a well worn path to strength and conditioning, bodybuilding, and any number of heavy iron pursuits. Master the Olympic snatch or clean and jerk brings a lifetime of achievement.<br><br> The principles of weightlifting can be applied to any sport where there is a requirement for explosive power. But, at the end of the day, it comes down to that singular moment when your body moves in a perfect line, you hoist a heap of metal into the air, drop under it, catch it, and lift, your arms raised high, carrying the weight of the world with ease.<br><br> Coach Bob Takano has 4 decades of experience teaching world champions through to high school athletes. He continues to teach young and old, competitors and casual lifers of all stripes at his facility in Southern California. His weightlifting programming for beginners, intermediate and advanced users is without peer. No matter what level of weightlifting success you are pursuing, there is no better programming.</p>",
         button_text1: "Buy Now",
         button_text2: "Buy Now",
         button_text3: "Buy Now",
         cover2: "http://res.cloudinary.com/velummedia/image/upload/v1457965572/1009/secondcovers/7.jpg",
-        faq: [
-          {
-            title: "Question 1",
-            text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, accusamus."
-          },
-          {
-            title: "Question 2",
-            text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel veniam iusto consectetur esse tempore rerum eum perspiciatis totam ullam soluta. Sapiente ipsam eveniet perspiciatis voluptates ad cumque consectetur labore quod!"
-          },
-          {
-            title: "Question 3",
-            text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt est facere, qui pariatur fugit. Consequuntur perspiciatis blanditiis sed porro, nemo doloribus placeat quasi consequatur veritatis dignissimos ipsum possimus id facilis saepe odio est molestiae, autem provident nobis. Incidunt ipsa harum debitis, veniam, illo alias aliquid velit possimus dignissimos. Deleniti, assumenda."
-          },
-          {
-            title: "Question 4",
-            text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, accusamus."
-          },
-        ],
+        // faq: [
+        //   {
+        //     title: "Question 1",
+        //     text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, accusamus."
+        //   },
+        //   {
+        //     title: "Question 2",
+        //     text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel veniam iusto consectetur esse tempore rerum eum perspiciatis totam ullam soluta. Sapiente ipsam eveniet perspiciatis voluptates ad cumque consectetur labore quod!"
+        //   },
+        //   {
+        //     title: "Question 3",
+        //     text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt est facere, qui pariatur fugit. Consequuntur perspiciatis blanditiis sed porro, nemo doloribus placeat quasi consequatur veritatis dignissimos ipsum possimus id facilis saepe odio est molestiae, autem provident nobis. Incidunt ipsa harum debitis, veniam, illo alias aliquid velit possimus dignissimos. Deleniti, assumenda."
+        //   },
+        //   {
+        //     title: "Question 4",
+        //     text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, accusamus."
+        //   },
+        // ],
         moreinfo: [
           {
             cover: "https://training.breakingmuscle.com/sites/training/files/styles/headline_300x188/public/images/headline/201512/coachtakanotestimonials.jpg?itok=2wKWXaLq",
@@ -258,6 +290,19 @@ angular.module('bmadminApp')
             text: "An important ratio for a weightlifter to know is the ratio of the snatch to the clean and jerk. I'm going to tell you why it's important and how to make appropriate training adjustments.",
             link:"https://training.breakingmuscle.com/olympic-lifting/getting-started/understanding-your-snatch-clean-and-jerk-ratio"
           },
+
+          {
+            cover: "https://training.breakingmuscle.com/sites/training/files/styles/headline_300x188/public/images/headline/201511/bobtakanoatgym.jpeg?itok=7aTdL3cv",
+            title: "The Pantomime Lift",
+            text: "Don't get too excited if you can lift a PVC pipe with perfect form. Learning good technique is just a first stop on the road to weightlifting success, not an end in itself.",
+            link:"https://training.breakingmuscle.com/olympic-lifting/getting-started/pantomime-lift"
+          },
+          {
+            cover: "https://training.breakingmuscle.com/sites/training/files/styles/headline_300x188/public/images/headline/201511/bobtakanocoaching.jpg?itok=XUj7aaLc",
+            title: "Meet Your Coach: Bob Takano",
+            text: "Learn more about one of the best and most respected weightlifting coaches in the country.",
+            link:"https://training.breakingmuscle.com/olympic-lifting/getting-started/meet-your-coach-bob-takano"
+          },
         ],
         about_coach: {
           bio: "<p>Bob is Breaking Muscle's Olympic Weightlifting coach. He is a highly respected member of the USA Weightlifting Hall of Fame having been inducted in 2007 for his enormous contributions to the sport of weightlifting. He is continuously in demand travelling the world giving lectures and seminars on weightlifting.</p>",
@@ -272,6 +317,7 @@ angular.module('bmadminApp')
         description: " <h2 >The 16-Week Ultimate Bodyweight Challenge</h2> <h4>A comprehensive and progressive training plan to build both skill and strength for all levels.</h4> <ul><li>Do it anywhere, from the comfort of your own home or on the road , all you need is access to a pull up</li><li>Learn the skills to master pull ups, push ups, handstands, backbends, bridges, and splits.</li> </ul>",
         cover: "http://res.cloudinary.com/velummedia/image/upload/v1457964962/1009/banners/6.jpg",
         welcome_text: "<p>Bodyweight training has gained popularity over the last several years. The American College of Sports Medicine ranked it as the number one fitness trend of 2015. It’s easy to see why. There are many advantages, including convenience, low cost, and variety.</p><p class='h4'>The Ultimate Bodyweight Training Plan will build your essential athletic skills and challenge your strength balance and flexibility. No matter how much weight you can squat, pull off the ground, or get over your head - if you cannot pull yourself up to a bar there is a fundamental and functional strength concern that needs to be addressed.</p><p>Bodyweight training is a great choice for gaining strength, building muscle, boosting cardiovascular fitness, and losing weight. This plan focuses on developing the foundational movements – squatting, pushing, and pulling – that will translate across athletic endeavors.</p>",
+        welcome_more: "https://training.breakingmuscle.com/complete-bodyweight/getting-started/welcome-ultimate-bodyweight-training-plan",
         button_text1: "Buy Now",
         button_text2: "Buy Now",
         button_text3: "Buy Now",
@@ -282,18 +328,19 @@ angular.module('bmadminApp')
             text: "Yes, these workouts require minimal or no equipment."
           },
           {
-            title: "What equipment will I need?",
-            text: "Pull up bar - Timer - Box - 20-24 inch - Non-slip yoga mat - Two yoga blocks/parallettes are optional"
-          },
-          {
             title: "How should I progress in my workouts?",
             text: "Focus on mastering the basics first: squat, push up, pull up, row, lunge, and your ability to sprint, jump, climb, and crawl. Once you are comfortable with these basics, you can then move on to the more advanced movements. Focus on performing clean movements with immaculate form. Avoid going to complete failure - try to leave a few reps left in your tank each set. Many people want immediate results in bodyweight workouts and train all out until failure, but overtime your central nervous system will be compromised, your results will be limited, and your body will take much longer to recover."
+          },
+          {
+            title: "What equipment will I need?",
+            text: "Pull up bar - Timer - Box - 20-24 inch - Non-slip yoga mat - Two yoga blocks/parallettes are optional"
           },
           {
             title: "How many days a should I workout? Are these workouts enough?",
             text: "These workouts are programmed 3 days per week with the option to add yoga and mobility on off days as well as brisk walking or running. Feel free to structure your workout days to accommodate your personal schedule, but remember to allow time for rest and recovery."
           },
         ],
+        faq_more: "https://training.breakingmuscle.com/complete-bodyweight/getting-started/frequently-asked-questions",
         moreinfo: [
           {
             cover: "https://training.breakingmuscle.com/sites/training/files/styles/headline_300x188/public/images/headline/201512/plankbw_0.jpg?itok=2i7cMbNm",
@@ -318,9 +365,11 @@ angular.module('bmadminApp')
 
       {
         name: "SIZE-OR-SHRED.-12-WEEK-MEMBERSHIP-PLAN",
+        bg: "#3E81C6",
         description: "<h1 class='h1'>Size or Shred</h1><h2 class='h3'>A customized 12 week training & Nutrition Program</h2>",
         cover: "http://res.cloudinary.com/velummedia/image/upload/v1457993182/1009/banners/5.jpg",
         welcome_text: "<p>Size or Shred is an online training program perfect for you if you're seeking a higher level of understanding and control over gaining muscle and losing fat.</p><p class='h4'>Suitable for all fitness levels and designed to teach you in real time how to train and eat, not just hold your hand for three months, Size or Shred will change you forever.</p><p>Sifting through endless theories of nutrition and training that don’t work together can be overwhelming, especially when EVERYONE has an opinion - that’s why Dr. John Rusin (not nicknamed 'The Strength Doc' for nothing!) and Kalli Youngstrom, nutrition expert and weight-management specialist, have teamed up to deliver an easy and effective training and nutrition combination.</p>",
+        welcome_more: "https://training.breakingmuscle.com/size-or-shred/getting-started/size-or-shred-program-overview",
         button_text1: "Buy Now",
         button_text2: "Buy Now",
         button_text3: "Buy Now",
@@ -347,12 +396,19 @@ angular.module('bmadminApp')
             text: "Is there such thing as too ripped? The hypertrophy program developed by John is great for all levels of fitness so even the most experienced lifter can benefit from this program and will likely experience increased development due to the change in stimulus/style. The pain-free training methodology is something very new and exciting that you can apply to all your future training, too."
           },
         ],
+        faq_more: "https://training.breakingmuscle.com/size-or-shred/getting-started/size-or-shred-program-faq",
         moreinfo: [
           {
             cover: "https://training.breakingmuscle.com/sites/training/files/styles/headline_300x188/public/images/sidebar/201506/schedule.jpg?itok=jwtazWgS",
             title: "How to Schedule Your Size or Shred Training Sessions",
             text: "It is easy to set up your Size or Shred training schedule. If you aren't sure how much you can handle, or if you are deconditioned, start with the 3 sessions per week base program and add sessions as you become ready.",
             link:"https://training.breakingmuscle.com/size-or-shred/getting-started/how-schedule-your-size-or-shred-training-sessions"
+          },
+          {
+            cover: "https://training.breakingmuscle.com/sites/training/files/styles/headline_300x188/public/images/headline/201510/phase3week3hypertrophy.jpg?itok=cqVcXkGT",
+            title: "Coach John and Coach Kalli",
+            text: "An introduction to your coaches on Size or Shred.",
+            link:"https://training.breakingmuscle.com/size-or-shred/getting-started/coach-john-and-coach-kalli"
           },
         ],
         about_coach: {
@@ -366,7 +422,7 @@ angular.module('bmadminApp')
       {
         name: "The-Whiteboard.-Free",
         description: "<h1>Comming soon</h1>",
-        cover: "http://res.cloudinary.com/velummedia/image/upload/v1457993182/1009/banners/5.jpg",
+        cover: "http://res.cloudinary.com/velummedia/image/upload/v1458075827/1009/banners/9.jpg",
         welcome_text: "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quibusdam non maiores fuga sed doloremque culpa magni quidem rerum ipsum ipsam porro sequi, corporis aliquam rem vero eius provident itaque.</p><p>Magni architecto quod autem sit rerum quae nostrum sunt voluptas iure tempore illum nesciunt dignissimos, libero ipsam eligendi consequuntur, rem, aliquid quas similique provident velit voluptatibus. Quae eum provident cumque.</p>",
         button_text1: "Buy Now",
         button_text2: "Buy Now",
@@ -409,13 +465,15 @@ angular.module('bmadminApp')
 
       {
         name: "Barbell-SHRED.-12-MONTH-MEMBERSHIP",
-        description: "<h1>Build Lean Muscle. Get Strong. Shred Body Fat.</h1>",
-        cover: "http://res.cloudinary.com/velummedia/image/upload/v1457993197/1009/banners/7.jpg",
-        welcome_text: '<p><h1 id="page-title" class="title" style="text-align: center;">&nbsp;</h1><div class="region region-content"><div id="block-system-main" class="block block-system clearfix"><div class="content block-content"><div id="node-377961" class="node node-article node-promoted clearfix"><div class="content"><div id="field-intro-field" class="field field-name-field-intro field-type-text-long field-label-hidden" style="text-align: center;">&nbsp;</div><div id="body-field" class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p style="text-align: center;">Barbell Shred is an easy-to-follow, yet challenging program that requires maximum commitment for maximum results. The program is comprised of three main components: strength training, interval training, and moderate intensity conditioning with mobility.</p><p style="text-align: center;">&nbsp;&nbsp;</p><h2 style="text-align: center;">Strength Training (3 days per week)</h2><p style="text-align: center;">The strength training component of is program is designed specifically to to build lean pure strength and muscle.</p><p style="text-align: center;">&nbsp;</p><h2 style="text-align: center;">Interval Training &nbsp;(2 days per week)</h2><p style="text-align: center;">The interval training workouts are short and intense and very effective for fat loss. These are programmed 2 days per week for 5-20 minutes per session.&nbsp;</p></div></div></div></div></div></div></div></div></p>',
+        bg: "#F37A5E",
+        description: "<h1>Barbell SHRED.</h1><h3>Build Lean Muscle. Get Strong. Shred Body Fat.</h3>",
+        cover: "http://res.cloudinary.com/velummedia/image/upload/v1458073630/1009/banners/10.jpg",
+        welcome_text: '<p><div class="region region-content"><div id="block-system-main" class="block block-system clearfix"><div class="content block-content"><div id="node-377961" class="node node-article node-promoted clearfix"><div class="content"><div id="field-intro-field" class="field field-name-field-intro field-type-text-long field-label-hidden" style="text-align: center;">&nbsp;</div><div id="body-field" class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p style="text-align: center;">Barbell Shred is an easy-to-follow, yet challenging program that requires maximum commitment for maximum results. The program is comprised of three main components: strength training, interval training, and moderate intensity conditioning with mobility.</p><b>Strength Training (3 days per week)</b><p style="text-align: center;">The strength training component of is program is designed specifically to to build lean pure strength and muscle.</p><b>Interval Training &nbsp;(2 days per week)</b><p style="text-align: center;">The interval training workouts are short and intense and very effective for fat loss. These are programmed 2 days per week for 5-20 minutes per session.&nbsp;</p></div></div></div></div></div></div></div></div></p>',
+        welcome_more: "https://training.breakingmuscle.com/barbell-shred/getting-started/how-use-program",
         button_text1: "Buy Now",
         button_text2: "Buy Now",
         button_text3: "Buy Now",
-        cover2: "http://res.cloudinary.com/velummedia/image/upload/v1457965572/1009/secondcovers/7.jpg",
+        cover2: "http://res.cloudinary.com/velummedia/image/upload/v1458074284/1009/secondcovers/10.jpg",
         faq: [
           {
             title: "What is the best way to warm up for my workouts?",
@@ -442,19 +500,14 @@ angular.module('bmadminApp')
             text: "You can substitute running or swimming for all rowing interval workouts. "
           }
         ],
+        faq_more: "https://training.breakingmuscle.com/barbell-shred/getting-started/frequently-asked-questions",
         moreinfo: [
           {
             cover: "https://training.breakingmuscle.com/sites/training/files/styles/headline_300x188/public/images/headline/201603/barbellweek1-3headlinebw_5.jpg?itok=iuDLNks1",
             title: "How to Use This Program",
             text: "The Barbell Shred Program will build lean muscle, foundational strength, and shred body fat.",
             link: "https://training.breakingmuscle.com/barbell-shred/getting-started/how-use-program"
-          },
-          {
-            cover: "https://training.breakingmuscle.com/sites/training/files/styles/headline_300x188/public/images/headline/201603/barbellweek1-3headlinebw_5.jpg?itok=iuDLNks1",
-            title: "A Guide to All the Workouts in This Program",
-            text: "This is a list of the workouts in this training program with links to help you better navigate the site.",
-            link: "https://training.breakingmuscle.com/barbell-shred/getting-started/guide-all-workouts-program"
-          },
+          }
         ],
         about_coach: {
           bio: " <p>Mindith is a born mover. She has spent her life exploring various athletic disciplines, starting with ballet and modern dance from an early age. She went on to become a E-RYT 500 certified yoga therapist and teacher and discovered CrossFit after the birth of her daughter.</p>",
@@ -466,13 +519,14 @@ angular.module('bmadminApp')
 
       {
         name: "MONSTER-DUMBBELL-WORKOUT.-12-MONTH-MEMBERSHIP",
-        description: "<h2 class='text-uppercase'>8 weeks of powerful, intense, strength building workouts</h2>",
-        cover: "http://res.cloudinary.com/velummedia/image/upload/v1457993197/1009/banners/7.jpg",
+        description: "<h1>MONSTER DB WORKOUT</h1><h3>8 weeks of powerful, intense, strength building workouts</h3>",
+        cover: "http://res.cloudinary.com/velummedia/image/upload/v1458074585/1009/banners/11.jpg",
         welcome_text: '<p><p style="text-align: center;">Welcome to the Monster Dumbbell Program. These challenging workouts will build strength, power, and endurance. Follow along the with the movement library for video demonstrations and coaching cues of each movement.&nbsp;This training plan covers 12&nbsp;weeks of total body workouts, training 3-4 days per week.</p><p style="text-align: center;"><strong>Benefits of Training With Dumbbells</strong></p><ul><li style="text-align: center;">Inexpensive way to train - no gym membership required.</li><li style="text-align: center;">Train at home, on the go, and while traveling.</li><li style="text-align: center;">Train imbalances in muscle strength, coordination, and mobility.</li><li style="text-align: center;">This is a fantastic alternate workout plan if you are injured on one side of the body.</li><li style="text-align: center;">Complex motor activity.&nbsp;</li><li style="text-align: center;">Provides a unique training stimulus compared with typical barbell training.</li><li style="text-align: center;">Progression to Olympic lifts and barbell work.</li></ul></p>',
+        welcome_more: "https://training.breakingmuscle.com/monster-db-workout/getting-started/how-use-program",
         button_text1: "Buy Now",
         button_text2: "Buy Now",
         button_text3: "Buy Now",
-        cover2: "http://res.cloudinary.com/velummedia/image/upload/v1457965572/1009/secondcovers/7.jpg",
+        cover2: "http://res.cloudinary.com/velummedia/image/upload/v1458074517/1009/secondcovers/11.jpg",
         faq: [
           {
             title: "What is the best way to warm up for my workouts?",
@@ -491,18 +545,13 @@ angular.module('bmadminApp')
             text: "Walking - Mobility - Yoga - Swimming"
           }
         ],
+        faq_more: "https://training.breakingmuscle.com/monster-db-workout/getting-started/frequently-asked-questions",
         moreinfo: [
           {
             cover: "https://training.breakingmuscle.com/sites/training/files/styles/headline_300x188/public/images/headline/201603/manmaker4headlinephotoblackandwhite.jpg?itok=YeCvcYeT",
             title: "How to Use This Program",
             text: "This challenging dumbbell workout will build strength, power, and endurance.",
             link: "https://training.breakingmuscle.com/monster-db-workout/getting-started/how-use-program"
-          },
-          {
-            cover: "https://training.breakingmuscle.com/sites/training/files/styles/headline_300x188/public/images/headline/201603/manmaker4headlinephotoblackandwhite.jpg?itok=YeCvcYeT",
-            title: "A Guide to All the Workouts in This Training Program",
-            text: "This is a list of the workouts in this training program with links to help you better navigate the site.",
-            link: "https://training.breakingmuscle.com/monster-db-workout/getting-started/guide-all-workouts-training-program"
           }
         ],
         about_coach: {

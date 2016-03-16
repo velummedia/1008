@@ -128,6 +128,26 @@ angular.module('bmadminApp')
             $scope.sidebarShowPayment = false;
             loading.hide();
           });
+        }else{
+          var go = {
+            tag: "goFreeAccess",
+            id: $scope.user.id,
+            sid: $scope.package.id,
+            price: $scope.package.price,
+            userName: $scope.user.name,
+            userEmail: $scope.user.email,
+            vip: result.data.export.id
+          }
+          httpAccess(go,$http).then(function(result){
+            console.log(result);
+            // console.log(result);
+            $scope.invoiceId = result.data.export.invoice;
+            $scope.donePayment = true;
+            $scope.goPayment = false;
+            $scope.vipUserAccess = false;
+            $scope.sidebarShowPayment = false;
+            loading.hide();
+          });
         }
       });
     }

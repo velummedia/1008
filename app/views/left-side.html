@@ -21,11 +21,18 @@
 				<p>BM Home</p>
 			</a>
 		</li>
-		<li class="for-logout">
-			<a href="" class="main-menu-a">
+		<li class="for-logout" ng-show="userLogin">
+			<a href="javascript:;" class="main-menu-a">
 				<img src="images/admin/logoutg.png" alt="" class="nonhovericon">
 				<img src="images/admin/logoutw.png" alt="" class="hovericon">
 				<p ng-click="logout()">Logout</p>
+			</a>
+		</li>
+		<li class="for-logout" ng-show="!userLogin">
+			<a href="#/login" class="main-menu-a">
+				<img src="images/admin/logoutg.png" alt="" class="nonhovericon">
+				<img src="images/admin/logoutw.png" alt="" class="hovericon">
+				<p>Login</p>
 			</a>
 		</li>
 	</ul>

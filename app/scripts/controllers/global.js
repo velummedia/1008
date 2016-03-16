@@ -36,7 +36,7 @@ angular.module('bmadminApp')
         $rootScope.headerMenusLinks = false;
       }else{
         $rootScope.headerMenusLinks = true;
-        $scope.userInitialName = "WELCOME";
+        $scope.userInitialName = "BM";
       }
     });
     
@@ -44,7 +44,7 @@ angular.module('bmadminApp')
       "#913ccd",
       "#f15f74",
       "#f76d3c",
-      "#f7d842",
+      "#f39c12",
       "#2ca8c2",
       "#98cb4a",
       "#839098",
@@ -52,7 +52,7 @@ angular.module('bmadminApp')
       "#913ccd",
       "#f15f74",
       "#f76d3c",
-      "#f7d842",
+      "#f39c12",
       "#2ca8c2",
       "#98cb4a",
       "#839098",
@@ -60,13 +60,12 @@ angular.module('bmadminApp')
       "#913ccd",
       "#f15f74",
       "#f76d3c",
-      "#f7d842",
+      "#f39c12",
       "#2ca8c2",
       "#98cb4a",
       "#839098",
       "#5481e6"
-
-      ];
+    ];
   	
     function checkAccess(menus,ulevel,currentPage) {
       var keys = [];
@@ -109,6 +108,7 @@ angular.module('bmadminApp')
     $rootScope.fullWidth = true;
 
   	$rootScope.$on("$routeChangeSuccess", function (event, currentRoute, previousRoute) {
+      window.scrollTo(0,0);
       // For Page Title
       switch(currentRoute.$$route.originalPath){
         case '/browsepackage':
@@ -201,6 +201,7 @@ angular.module('bmadminApp')
         if (window.localStorage['bmadminlogin'] == 1) {
           $rootScope.user = JSON.parse(window.localStorage['bmadminUser']);       
           $rootScope.userLevel = window.localStorage['bmadminlevel'];
+          $rootScope.userLogin = true;
           //FIND INITIALS//
           if ($scope.user) {
             var name = $scope.user.name.split(" "),
@@ -284,7 +285,6 @@ angular.module('bmadminApp')
               $rootScope.showRightSidebar = true;
               $rootScope.fullWidth = false;
             }
-
           }
   		}
 
@@ -296,6 +296,7 @@ angular.module('bmadminApp')
   		window.localStorage["bmadminUser"] = 0;
   		window.localStorage["bmadminlogin"] = 0;
   		window.localStorage["bmadminlevel"] = 0;
+      $rootScope.userLogin = false;
   		$location.path("login");
       $route.reload();
     }
