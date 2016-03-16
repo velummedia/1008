@@ -1165,13 +1165,9 @@ input[type='checkbox']:focus{outline: none;}
 @media (min-width: 1400px) {
   .edit-profile .dt-title{font-size: 15px;}
   .edit-profile .dt-describtion{ font-size: 17px;}
-//  .edit-profile .edit-column{width: 37.333333%;}
 }
+
 @media (max-width: 800px) {
-  .navigation-wrap .pagetitle{
-    font-size: 14px;
-    line-height: 55px;
-  }
   .main-content{
     padding-bottom: 66px;
   }

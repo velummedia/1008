@@ -4,7 +4,7 @@
         <div class="col-sm-4 col-xs-6 packageswrap" ng-repeat="item in packages" ng-if="item.package.approved == 1 && item.approved != 8 && item.access == 1 " ng-class="{'disable' : item.package.approved == 0, 'refund' : item.approved == 8}">
             <div ng-style="{'background-color' : colors[$index]}">
                 <span class="order-flag"><em>Purchased</em></span>
-                <a href="#/package/{{createMoreInfo(item.package.name)}}">
+                <a class="img-container" href="#/package/{{createMoreInfo(item.package.name)}}">
                     <img class="img-responsive" ng-src="{{loadBackgroundImage(item.package.name)}}" alt="">
                 </a>
                 <div class="br-main">
@@ -21,8 +21,12 @@
 
             <div ng-style="{'background-color' : colors[$index]}">
                 <span class="order-flag y-flag"><em>Buy Now</em></span>
-                <a href="#/package/{{createMoreInfo(item.package.name)}}"><img class="img-responsive" ng-src="{{loadBackgroundImage(item.package.name)}}" ng-show="item.package.price !== '0'" alt=""></a>
-                <a href="javascript:;" ng-show="item.package.price == '0'"><img class="img-responsive" ng-src="{{loadBackgroundImage(item.package.name)}}" alt=""></a>
+                <a class="img-container" href="#/package/{{createMoreInfo(item.package.name)}}">
+                    <img class="img-responsive" ng-src="{{loadBackgroundImage(item.package.name)}}" ng-show="item.package.price !== '0'" alt="">
+                </a>
+                <a class="img-responsive" href="javascript:;" ng-show="item.package.price == '0'">
+                    <img class="img-responsive" ng-src="{{loadBackgroundImage(item.package.name)}}" alt="">
+                </a>
                 
                 <div class="br-main">
                     <div class="img-overlay" ng-style="{'background-color' : colors[$index]}"></div>

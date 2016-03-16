@@ -7,7 +7,7 @@
 
             <div ng-style="{'background-color' : colors[$index]}">
                 <span class="order-flag y-flag"><em>Buy Now</em></span>
-                <a href="#/package/{{createMoreInfo(item.package.name)}}"><img class="img-responsive" ng-src="{{loadBackgroundImage(item.package.name)}}" ng-show="item.package.price !== '0'" alt=""></a>
+                <a class="img-container" href="#/package/{{createMoreInfo(item.package.name)}}"><img class="img-responsive" ng-src="{{loadBackgroundImage(item.package.name)}}" ng-show="item.package.price !== '0'" alt=""></a>
                 <a href="javascript:;" ng-show="item.package.price == '0'"><img class="img-responsive" ng-src="{{loadBackgroundImage(item.package.name)}}" alt=""></a>
                 
                 <div class="br-main">
@@ -57,7 +57,7 @@
 
             <div ng-style="{'background-color' : colors[$index]}">
                 <span class="order-flag y-flag"><em>Buy Now</em></span>
-                <a href="#/package/{{createMoreInfo(item.package.name)}}"><img class="img-responsive" ng-src="{{loadBackgroundImage(item.package.name)}}" alt=""></a>
+                <a class="img-container" href="#/package/{{createMoreInfo(item.package.name)}}"><img class="img-responsive" ng-src="{{loadBackgroundImage(item.package.name)}}" alt=""></a>
                 <div class="br-main">
                     <div class="img-overlay" ng-style="{'background-color' : colors[$index]}"></div>
                     <h3 class="limit-txt"><a href="{{item.package.url}}">{{item.package.name}}</a></h3>
