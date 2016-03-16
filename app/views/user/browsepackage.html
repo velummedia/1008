@@ -12,16 +12,8 @@
                     <h3 class="limit-txt"><a href="#/package/{{createMoreInfo(item.package.name)}}">{{item.package.name}}</a></h3>
                 </div>
                 <footer class="more-buy-wrap clearfix">
-                    <!-- <a href="#/package/{{createMoreInfo(item.package.name)}}">More Info</a> -->
-                    <!-- <a href="{{item.package.url}}" target="_blank">More Info</a> -->
                     <a class="buy-btn" href="{{item.package.loginurl}}" style="width:100%;">LOGIN</a>
                 </footer>
-
-                <!--<div class="more-buy-wrap clearfix">-->
-                <!--<h6 class="date">{{item.package.start_date*1000 | date:'MM/dd/yyyy'}}</h6>-->
-                <!--<a class="buybutton" ng-style="{'color' : colors[$index]}"  href="{{item.package.loginurl}}" style="padding-top: 32px;-->
-                <!--font-size: 20px;" target="_blank" >login</a>-->
-                <!--</div>-->
             </div>
         </div>
 
@@ -43,7 +35,6 @@
                 <footer class="more-buy-wrap clearfix">
                     <a href="#/package/{{createMoreInfo(item.package.name)}}" ng-show="item.package.price !== '0'">More Info</a>
                     <a href="javscript:;" ng-show="item.package.price == '0'">More Info</a>
-                    <!-- <a href="{{item.package.url}}" target="_blank">More Info</a> -->
                     <a class="buy-btn" href="#/paymentsuser/{{item.package.id}}" ng-show="item.package.price !== '0'">Buy For ${{item.package.price}}</a>
                     <a class="buy-btn" href="#/paymentsuser/{{item.package.id}}" ng-show="item.package.price == '0'">
                         Access
@@ -54,67 +45,9 @@
                         <span ng-show="!item.package.vip && item.package.price == '0'">Free</span>
                     </a>
                 </footer>
-
-                <!--<div class="more-buy-wrap clearfix">-->
-                <!--<h6 class="date">{{item.package.start_date*1000 | date:'MM/dd/yyyy'}}</h6>-->
-
-                <!--<a class="buybutton" ng-style="{'color' : colors[$index]}" href="#/paymentsuser/{{item.package.id}}" ng-hide="item.access == '1'" >-->
-                <!--<span ng-show="item.package.price !== '0'">buy now</span>-->
-                <!--<span ng-show="item.package.price == '0'">access</span>-->
-                <!--<h1 class="">-->
-                <!--<span ng-show="!item.package.vip && item.package.price !== '0'">-->
-                <!--${{item.package.price}}-->
-                <!--</span>-->
-                <!--<span ng-show="item.package.vip">VIP</span>-->
-                <!--<span ng-show="!item.package.vip && item.package.price == '0'">Free</span>-->
-                <!--</h1>-->
-                <!--</a>-->
-                <!--</div>-->
             </div>
 
         </div>
-
-
-        <!-- <div class="col-sm-4 col-xs-6 packageswrap" ng-repeat="item in packages" ng-if="item.package.approved == 1 && item.approved != 8 && item.access == 0 && item.package.start_date > todayTime">
-
-            <div ng-style="{'background-color' : colors[$index]}">
-                <span class="order-flag y-flag"><em>Buy Now</em></span>
-                <a href="#/package/{{createMoreInfo(item.package.name)}}"><img class="img-responsive" ng-src="{{loadBackgroundImage(item.package.name)}}" alt=""></a>
-                <div class="br-main">
-                    <div class="img-overlay" ng-style="{'background-color' : colors[$index]}"></div>
-                    <h3 class="limit-txt"><a href="{{item.package.url}}">{{item.package.name}}</a></h3>
-                </div>
-
-                <footer class="more-buy-wrap clearfix">
-                    <a href="#/package/{{createMoreInfo(item.package.name)}}">More Info</a> -->
-                    <!-- <a href="{{item.package.url}}" target="_blank">More Info</a> -->
-                   <!--  <a class="buy-btn" href="#" ng-show="item.package.price == '0'">
-                        Access
-                        <span ng-show="!item.package.vip && item.package.price !== '0'">
-                            ${{item.package.price}}
-                        </span>
-                        <span ng-show="item.package.vip">VIP</span>
-                        <span ng-show="!item.package.vip && item.package.price == '0'">Free</span>
-                    </a>
-                </footer> -->
-                <!--<div class="more-buy-wrap clearfix">-->
-                <!--<h6 class="date">{{item.package.start_date*1000 | date:'MM/dd/yyyy'}}</h6>-->
-
-                <!--<a class="buybutton" ng-style="{'color' : colors[$index]}" href="#/paymentsuser/{{item.package.id}}" ng-hide="item.access == '1'" >-->
-                <!--<span ng-show="item.package.price !== '0'">buy now</span>-->
-                <!--<span ng-show="item.package.price == '0'">access</span>-->
-                <!--<h1 class="">-->
-                <!--<span ng-show="!item.package.vip && item.package.price !== '0'">-->
-                <!--${{item.package.price}}-->
-                <!--</span>-->
-                <!--<span ng-show="item.package.vip">VIP</span>-->
-                <!--<span ng-show="!item.package.vip && item.package.price == '0'">Free</span>-->
-                <!--</h1>-->
-                <!--</a>-->
-                <!--</div>-->
-            <!-- </div> -->
-
-        <!-- </div> -->
     </div>
 </div>
 

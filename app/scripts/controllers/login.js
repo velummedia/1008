@@ -85,6 +85,7 @@ angular.module('bmadminApp')
 				    			window.localStorage["bmadminUser"] = angular.toJson(result.data.export.user);
 				    			window.localStorage["bmadminlogin"] = 1;
 				    			window.localStorage["bmadminlevel"] = result.data.export.user.level;
+				    			$scope.userLogin = true;
 				    			$location.path("browsepackage");
 				    		}else{
 				    			logger.error("Invalid username or password.");

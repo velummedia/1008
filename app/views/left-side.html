@@ -1,6 +1,6 @@
 <div class="left-menu-wrap">
 	<ul class="mainmenu" style="padding-top: 56px;">
-		<li ng-repeat="link in links" ng-class="{'showsubmenu' : link.child != 0}">
+		<li ng-repeat="link in links" ng-class="{'showsubmenu' : link.child != 0}" ng-show="userLogin">
 			<a ng-click="clickMe(link.child,this,$index,link.page)" class="main-menu-a" href="javascript:;" ng-class="{'selected-menu' : link.selected == 1}">
 				<img ng-src="{{link.icon}}" alt="" class="nonhovericon">
 				<img ng-src="{{link.iconh}}" alt="" class="hovericon">

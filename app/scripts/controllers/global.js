@@ -28,7 +28,7 @@ angular.module('bmadminApp')
     $rootScope.loadingShow = false;
     $rootScope.isActive = false;
     $rootScope.loginSectionActive = false;
-
+    $rootScope.userLogin = false;
 
 
     $scope.$watch(function () { return window.localStorage["bmadminlogin"]; },function(newVal,oldVal){
@@ -199,9 +199,10 @@ angular.module('bmadminApp')
             $rootScope.loginSectionActive = false;
 
         if (window.localStorage['bmadminlogin'] == 1) {
+          $scope.userLogin = true;
           $rootScope.user = JSON.parse(window.localStorage['bmadminUser']);       
           $rootScope.userLevel = window.localStorage['bmadminlevel'];
-          $rootScope.userLogin = true;
+          // $scope.userLogin = true;
           //FIND INITIALS//
           if ($scope.user) {
             var name = $scope.user.name.split(" "),
@@ -278,6 +279,7 @@ angular.module('bmadminApp')
           }
           /////////////////////////////////
         }else{
+            $scope.userLogin = false;
             if(currentRoute.$$route.originalPath !== '/main'
                 && currentRoute.$$route.originalPath !== '/'
                 &&  currentRoute.$$route.originalPath !== '/package/:name'){
@@ -296,8 +298,8 @@ angular.module('bmadminApp')
   		window.localStorage["bmadminUser"] = 0;
   		window.localStorage["bmadminlogin"] = 0;
   		window.localStorage["bmadminlevel"] = 0;
-      $rootScope.userLogin = false;
-  		$location.path("login");
+      $scope.userLogin = false;
+  		$location.path("/");
       $route.reload();
     }
 
