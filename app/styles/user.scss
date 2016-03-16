@@ -236,13 +236,13 @@ ul{padding: 0;list-style: none}
 		font-size: 16px;
 	}
 
-	tr:nth-of-type(odd){
+	tr:nth-of-type(even){
 		background-color: #f7f7f7;
 
 	}
-	tr:first-child{
-		background-color: transparent;
-	}
+	//tr:first-child{
+	//	background-color: transparent;
+	//}
 }
 
 
@@ -276,6 +276,61 @@ ul{padding: 0;list-style: none}
 		padding-bottom: 15px;
 	}
 }
+
+.table-responsive .table {
+	width: 100%;
+	border-collapse: collapse;
+	//tr:nth-of-type(odd) {
+	//	background: #eee;
+	//}
+
+	//td, th {
+	//	padding: 6px;
+	//	border: 1px solid #ccc;
+	//	text-align: left;
+	//}
+
+	@media only screen and (max-width: 840px) {
+		thead, tbody, th, td, tr {
+			display: block;
+		}
+
+		thead tr {
+			position: absolute;
+			top: -9999px;
+			left: -9999px;
+		}
+
+
+		td {
+			border: none;
+			border-bottom: 1px solid #eee;
+			position: relative;
+			padding-left: 50%;
+			white-space: normal!important;
+		}
+
+		td:before {
+			position: absolute;
+			top: 6px;
+			left: 6px;
+			width: 45%;
+			color: $green;
+			padding-right: 10px;
+			white-space: nowrap;
+		}
+	}
+}
+
+/*--------All Payment Thead ---------*/
+td:nth-of-type(1):before { content: "#"; }
+td:nth-of-type(2):before { content: "Systems"; }
+td:nth-of-type(3):before { content: "User Invoice"; }
+td:nth-of-type(4):before { content: "Type"; }
+td:nth-of-type(5):before { content: "Price"; }
+td:nth-of-type(6):before { content: "Date"; }
+td:nth-of-type(7):before { content: "Status"; }
+
 /*------------- brows-pack ---------------*/
 
 $font-size: 20px;
@@ -427,9 +482,13 @@ $lines-to-show-2: 3;
 	border: $border;
 	padding: 15px!important;
 	margin-bottom: 15px;
-	.welcome-txt .h4{
-		font-size: 15px;
+	.welcome-txt {
+		font-size: 16px;
+		.h4{
+			font-size: 15px;
+		}
 	}
+
 	ul{
 		padding: 0;
 		list-style: none;
@@ -447,8 +506,6 @@ $lines-to-show-2: 3;
 				margin-top: 0;
 				text-transform: uppercase;
 			}
-
-
 		}
 		img{
 			width: 100%;
@@ -502,7 +559,10 @@ $lines-to-show-2: 3;
 				display: table-cell;
 				vertical-align: middle;
 				text-align: left;
-				font-size: 40px;
+				font-size: 25px;
+				@media (min-width: $desktop-width) {
+					font-size: 40px;
+				}
 			}
 			.load-more-ic{
 				text-align: right;
@@ -518,7 +578,6 @@ $lines-to-show-2: 3;
 		}
 
 	}
-
 
 	.intro-banner{
 		padding-top: 30px;
@@ -600,7 +659,7 @@ $lines-to-show-2: 3;
 		}
 
 		.about-couch{
-			background-color: #acacac;
+			background-color: #747474;
 			padding-top: 15px;
 			margin-top: 15px;
 			img{
@@ -611,6 +670,9 @@ $lines-to-show-2: 3;
 				height: 150px;
 				display: block;
 			}
+			h3{
+				color: #FFFFFF;
+			}
 
 			p{
 				padding: 8px;
@@ -619,11 +681,7 @@ $lines-to-show-2: 3;
 				font-size: 16px;
 				text-align: left;
 			}
-			.bottom-txt{
-				background-color: #747474;
-				padding: 50px 15px;
-				text-align: center;
-			}
+
 		}
 
 		.link-bar {
@@ -645,6 +703,26 @@ $lines-to-show-2: 3;
 		}
 
 	}
+
+	@media (min-width: 768px) {
+		.pack-btm{
+			display: table;
+			.btm{
+				display: table-cell;
+				float: none;
+			}
+			.right-side{
+				vertical-align: bottom;
+				.link-bar{
+					margin: 0;
+					a{
+						font-size: 34px;
+					}
+				}
+			}
+		}
+	}
+
 
 	/*---grid---*/
 	.flowGrid:before,.flowGrid:after{

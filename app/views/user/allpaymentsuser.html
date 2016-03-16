@@ -10,31 +10,34 @@
 	</div>
 	<div class="table-responsive col-xs-12 nopadding">
 		<table class="table gr-table">
-	<tr>
-		<th>#</th>
-		<!-- <th>User</th> -->
-		<th>Systems</th>
-		<th>User Invoice</th>
-		<th>Type</th>
-		<th>Price</th>
-		<th>Date</th>
-		<th>Status</th>
-	</tr>
-	<tr ng-repeat="item in userPayments | filter:form.search | filter:select.filter" ng-class="{'back-red' : item.payment.approved == 8}">
-		<td>{{$index+1}}</td>
-		<!-- <td>{{item.user.email}}</td> -->
-		<td>{{item.system.name}}</td>
-		<td>{{item.payment.user_invoice}}</td>
-		<td>{{item.payment.ptype}}</td>
-		<td>${{item.payment.price}}</td>
-		<td>{{item.payment.add_date*1000 | date:'dd/MM/yyyy'}}</td>
-		<td>
-			<span class="label label-success" ng-show="item.payment.approved == 1">Success</span>
-			<span class="label label-danger" ng-show="item.payment.approved == 0">Rejected</span>
-			<span class="label label-danger" ng-show="item.payment.approved == 8">Refunded ({{item.payment.refdate*1000 | date:'dd/MM/yyyy'}}</span>
-		</td>
-	</tr>
-</table>
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>Systems</th>
+					<th>User Invoice</th>
+					<th>Type</th>
+					<th>Price</th>
+					<th>Date</th>
+					<th>Status</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="item in userPayments | filter:form.search | filter:select.filter" ng-class="{'back-red' : item.payment.approved == 8}">
+					<td>{{$index+1}}</td>
+					<!-- <td>{{item.user.email}}</td> -->
+					<td>{{item.system.name}}</td>
+					<td>{{item.payment.user_invoice}}</td>
+					<td>{{item.payment.ptype}}</td>
+					<td>${{item.payment.price}}</td>
+					<td>{{item.payment.add_date*1000 | date:'dd/MM/yyyy'}}</td>
+					<td>
+						<span class="label label-success" ng-show="item.payment.approved == 1">Success</span>
+						<span class="label label-danger" ng-show="item.payment.approved == 0">Rejected</span>
+						<span class="label label-danger" ng-show="item.payment.approved == 8">Refunded ({{item.payment.refdate*1000 | date:'dd/MM/yyyy'}}</span>
+					</td>
+				</tr>
+			</tbody>
+		</table>
 	</div>
 </div>
 
