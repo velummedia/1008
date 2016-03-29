@@ -15,7 +15,6 @@ angular
         'ngResource',
         'ngRoute',
         'ngSanitize',
-        'ngTouch',
         'ui.bootstrap',
         'checklist-model',
         'textAngular',
@@ -24,15 +23,20 @@ angular
         'ngFlowGrid',
         'colorpicker.module',
         'cloudinary',
-        'ngFileUpload'
+        'ngFileUpload',
+        'ngMaterial'
 
     ])
-    .config(function (cloudinaryProvider,$sceDelegateProvider,$routeProvider) {
+    .config(function (cloudinaryProvider,$sceDelegateProvider,$routeProvider,$mdThemingProvider) {
         $sceDelegateProvider.resourceUrlWhitelist(['**']);
         
         cloudinaryProvider
           .set("cloud_name", "velummedia")
           .set("upload_preset", "r45kpdzi");
+
+        $mdThemingProvider.theme('default')
+          .primaryPalette('green')
+          .accentPalette('red');
 
         $routeProvider
             .when('/', {
