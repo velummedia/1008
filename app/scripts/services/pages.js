@@ -189,7 +189,7 @@ angular.module('bmadminApp')
       },
 
       {
-        name: "Women’s-Kettlebell-Transformation.-12-month-membership",
+        name: "Women's-Kettlebell-Transformation.-12-month-membership",
         description: "<h2>Women’s Kettlebell Transformation</h2><h4>Transform your body in 16 weeks</h4><h5>A Safe, effective, and Scalable Transformation Program from Beginner to Advanced Including:</h5><ul><li>Kettlebell workouts and progressions</li><li>Mobility Drills</li><li>Yoga Recovery Sequences</li></ul>",
         cover: "http://res.cloudinary.com/velummedia/image/upload/v1457984421/1009/banners/4.jpg",
         welcome_text: "<p>This training plan will increase your strength, mobility, as well as aid in fat loss and lean muscle growth. Taking the time to commit to a 16 week program is the first step in creating life long changes in your health and fitness.  Although the next 16 weeks will be challenging, if you stick to the program you will see results that are truly transformational</p><p> This program is designed for women who are looking to increase overall strength, endurance and mobility as well as becoming a stronger, well-rounded lean athlete. The program is beginner-friendly with a modified phase for those new to working out.  The advanced athlete can jump right in and start at phase 1 for a challenging 16 week Program.  We will begin practicing the fundamental movements, techniques and skills needed to move to more advanced drills and challenging workouts. This program is based on my experiences of working with clients and my own training and research.  This program is easy, effective, and empirically based.</p>",

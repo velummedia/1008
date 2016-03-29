@@ -1,0 +1,109 @@
+<div class="user-pages pack wh-bg" ng-class="{'full-width' : fullWidth}">
+    <div class="banner clearfix" ng-style="{'background-color': pdata.bg}">
+        <div class="col-lg-6 col-lg-push-6 nopadding">
+            <img class="img-responsive" src="{{pdata.cover}}" alt="Banner">
+        </div>
+        <div class="col-lg-6 left-box col-lg-pull-6 ">
+            <p ng-bind-html="pdata.description"></p>
+        </div>
+
+    </div>
+
+    <div class="clearfix row">
+
+        <div class="col-sm-8 col-lg-9 text-center">
+            <h2 class="h1 text-center green-txt">Welcome</h2>
+            <p class="text-center welcome-txt" ng-bind-html="pdata.welcome_text">
+
+            </p>
+            <a href="{{pdata.welcome_more}}" target="_blank" ng-show="pdata.welcome_more" class="h3">Read More</a>
+
+
+            <div class="link-bar">
+                <div class="h3">
+                    <a href="#/paymentsuser/{{pdata.pid}}">Start your training today!</a>
+                    <a class="load-more-ic" href="#/paymentsuser/{{pdata.pid}}"><i class="fa fa-angle-right green-txt"></i></a>
+                </div>
+            </div>
+
+            <div class="intro-banner">
+                <img src="{{pdata.cover2}}" alt="Banner">
+            </div>
+
+            <div class="frq-section">
+                <h3 class="h1 text-center bold green-txt" ng-show="pdata.faq">Frequently Asked Questions</h3>
+                <div class="grid-gallery">
+
+                    <section class="grid-wrap">
+                        <ul class="grid clearfix flowGrid" ng-flow-grid="homePageGrid" min-item-width="270">
+                            <li class="flowGridItem" ng-repeat="item in pdata.faq">
+                                <h3 class="h4">{{item.title}}</h3>
+                                <p>{{item.text}}</p>
+                            </li>
+                        </ul>
+                    </section>
+                </div><!-- / grid-gallery -->
+                <a href="{{pdata.faq_more}}" target="_blank" ng-show="pdata.faq_more" class="h3">Read More</a>
+            </div>
+
+            <div class="link-bar">
+                <div class="h3">
+                    <a href="#/paymentsuser/{{pdata.pid}}">I want to start my training!</a>
+                    <a class="load-more-ic" href="#/paymentsuser/{{pdata.pid}}"><i class="fa fa-angle-right green-txt"></i></a>
+                </div>
+            </div>
+
+
+
+        </div>
+
+        <div class="col-sm-4 col-lg-3 right-side">
+            <!--<div class="info">-->
+                <!--<img src="{{pdata.side_cover}}" alt="Photo">-->
+            <!--</div>-->
+            <div class="about-couch">
+                <img src="{{pdata.about_coach.avatar}}" alt="Coach Pic">
+                <h3 class="text-center">Meet your coach</h3>
+                <p ng-bind-html="pdata.about_coach.bio">
+
+                </p>
+                <p ng-bind-html="pdata.about_coach.bio2">
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="clearfix row pack-btm">
+        <div class="col-sm-8 col-lg-9 text-center btm">
+            <div class="more-dt">
+                <h4 class="h1 bold text-center green-txt">More Information</h4>
+                <br>
+                <ul class="row clearfix">
+
+                    <li class="col-xs-4" ng-repeat="it in pdata.moreinfo">
+                        <a href="{{it.link}}" target=“_blank">
+                            <img class="img-responsive" src="{{it.cover}}" alt="">
+                        </a>
+                        <h2 class="h4 text-center">
+                            <a href="{{it.link}}" target=“_blank">{{it.title}}</a>
+                        </h2>
+                        <p class="limit-txt-2">{{it.text}}</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-sm-4 col-lg-3 right-side btm">
+            <div class="link-bar">
+                <div class="h3">
+                    <div class="price">${{pdata.price}}</div>
+                    <a href="#/paymentsuser/{{pdata.pid}}">Buy Now</a>
+                    <a class="load-more-ic" href="#/paymentsuser/{{pdata.pid}}"><i class="fa fa-angle-right green-txt"></i></a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

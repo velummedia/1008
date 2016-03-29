@@ -8,78 +8,154 @@
  * Controller of the bmadminApp
  */
 angular.module('bmadminApp')
-  .controller('AddnewpackageCtrl', function ($scope,$http,logger) {
-    var coupon = [1];
-    $scope.couponArray = coupon;
-
+  .controller('AddnewpackageCtrl', function ($scope,$http,logger,Upload,cloudinary) {
     $scope.open = function($event) {
 		$scope.opened = true;
 	};
 
-	$scope.open1 = function($event) {
-		$scope.opened1 = true;
-	};
-
-    $scope.addCoupon = function() {
-    	var l = coupon[coupon.length-1];
-    	coupon.push(l+1);
-    	$scope.couponArray = coupon;
+    $scope.topBanner = function(f) {
+        console.log(f);
+        $scope.form.topCover = f;
     }
 
-    $scope.removeCoupan = function(d) {
-    	var r = d.$index+1;
-    	coupon.splice(r, 1);
-    	$scope.coupon = coupon;
+    $scope.faqdata = [];
+    $scope.faqTitle = [];
+    $scope.faqText = [];
+    $scope.addFaq = function() {
+        $scope.faqdata.push($scope.faqdata.length+1);
+    }
+
+
+    $scope.moreinfo = [];
+    $scope.moreInfoImage = [];
+    $scope.moreInfoTitle = [];
+    $scope.moreInfoDesc = [];
+    $scope.moreInfoLink = [];
+
+    $scope.addMoreInfo = function() {
+        $scope.moreinfo.push($scope.faqdata.length+1);
     }
 
     $scope.sendnewpackage = function(form) {
-    	if (form.$valid) {
-    		var data = {
-    			tag: "createNewSystem",
-    			name: form.name.$modelValue,
-    			description: form.desc.$modelValue,
-                price: form.price.$modelValue,
-                url: form.url.$modelValue,
-    			loginurl: form.loginurl.$modelValue,
-    			start_date: Date.parse(form.sdate.$modelValue)/1000,
-    			end_date: Date.parse(form.edate.$modelValue)/1000,
-    			uid: 1,
-    		}
+        if (form.$valid){
+            var coach = {
+                name: form.coachname.$modelValue,
+                bio: form.coachbio.$modelValue
+            }
+            var prevewData = "sysname=" + $scope.sysname +
+                "&button1text=" + form.button1text.$modelValue +
+                "&coach=" + JSON.stringify(coach) +
+                "&desc=" + form.desc.$modelValue +
+                "&name=" + form.name.$modelValue +
+                "&price=" + form.price.$modelValue +
+                "&welcomemore=" + form.welcomemore.$modelValue +
+                "&welcometext=" + form.welcometext.$modelValue +
+                "&fontcolor=" + form.fontcolor.$modelValue +
+                "&bgcolor=" + form.bgcolor.$modelValue;
 
-    		if (form.checkyes.$modelValue) {
-    			var coupansToSend = [];
-    			angular.forEach(coupon, function(index) {
-				  coupansToSend.push({
-				  	ctag: $scope.form.coupontag[index],
-				  	cprice: $scope.form.couponprice[index]
-				  })
-				});
+            if ($scope.faqdata.length !== 0) {
+                var faq = [];
+                angular.forEach($scope.faqdata,function(a,k){
+                    var nf = {
+                        title: $scope.faqTitle[k],
+                        text: $scope.faqText[k]
+                    }
+                    faq.push(nf);
+                })
+                prevewData += "&faq=" + JSON.stringify(faq);
+            }
 
-				data["coupons"] = coupansToSend;
-    		}
-
-    		httpAccess(data,$http).then(function(result) {
-    			if (result.data.error == 0) {
-                    logger.success("The package has been added successfully.")
-                    
-                    var defaultForm = {
-                        name:'',
-                        description:'',
-                        price:'',
-                        url:'',
-                        loginurl:'',
-                    };
-                    $scope.addnewpackage.$setPristine();
-                    $scope.addnewpackage = defaultForm;
-    			}else{
-                    logger.error("There's an error with adding the package.");
-    			}
-    		});
+            if ($scope.moreinfo.length !== 0) {
+                var moreinfo = [];
+                angular.forEach($scope.moreinfo,function(a,k){
+                    var nf = {
+                        title: $scope.moreInfoTitle[k],
+                        desc: $scope.moreInfoDesc[k],
+                        link: $scope.moreInfoLink[k]
+                    }
+                    moreinfo.push(nf);
+                    // console.log($scope.moreInfoImage[k]);
+                })
+                prevewData += "&moreinfo=" + JSON.stringify(moreinfo);
 
 
-    	}else{
+            }
+            // console.log(prevewData);
 
-    	}
+            httpAccess(prevewData,"membersNewPackage",$http).then(function(result){
+                console.log(result);
+                if (result.data.e == 100) {
+                    var id = result.data.export.insertedIds[1];
+
+                    var avatar = "members_" + id + "_coachAvatar";
+                    var topCover = "members_" + id + "_topCover";
+                    var secondBanner = "members_" + id + "_secondBanner";
+
+
+                    if ($scope.avatar) {
+                        $scope.avatar.upload = Upload.upload({
+                                url: "https://api.cloudinary.com/v1_1/" + cloudinary.config().cloud_name + "/upload",
+                                data: {
+                                    upload_preset: cloudinary.config().upload_preset,
+                                    tags: 'members',
+                                    context: 'photo=' + avatar,
+                                    public_id: avatar,
+                                    file: $scope.avatar
+                                }
+                        });
+                    }
+
+                    if ($scope.topCover) {
+                        $scope.topCover.upload = Upload.upload({
+                                url: "https://api.cloudinary.com/v1_1/" + cloudinary.config().cloud_name + "/upload",
+                                data: {
+                                    upload_preset: cloudinary.config().upload_preset,
+                                    tags: 'members',
+                                    context: 'photo=' + topCover,
+                                    public_id: topCover,
+                                    file: $scope.topCover
+                                }
+                        });
+                    }
+
+                    if ($scope.secondBanner) {
+                        $scope.secondBanner.upload = Upload.upload({
+                                url: "https://api.cloudinary.com/v1_1/" + cloudinary.config().cloud_name + "/upload",
+                                data: {
+                                    upload_preset: cloudinary.config().upload_preset,
+                                    tags: 'members',
+                                    context: 'photo=' + secondBanner,
+                                    public_id: secondBanner,
+                                    file: $scope.secondBanner
+                                }
+                        });
+                    }
+
+                    if ($scope.moreinfo.length !== 0) {
+                        angular.forEach($scope.moreinfo,function(a,k){
+                            // console.log($scope.moreInfoImage[k]);
+                            var nn = "members_" + id + "_moreinfo_" + k;
+                            $scope.moreInfoImage[k].upload = Upload.upload({
+                                    url: "https://api.cloudinary.com/v1_1/" + cloudinary.config().cloud_name + "/upload",
+                                    data: {
+                                        upload_preset: cloudinary.config().upload_preset,
+                                        tags: 'members',
+                                        context: 'photo=' + nn,
+                                        public_id: nn,
+                                        file: $scope.moreInfoImage[k]
+                                    }
+                            });
+                        })
+                    }
+                }//Success Add Record
+                
+
+                
+            });
+
+        }
     }
+
+
 
   });

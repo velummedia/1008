@@ -21,9 +21,19 @@ angular
         'textAngular',
         'ngFx',
         'chart.js',
-        'ngFlowGrid'
+        'ngFlowGrid',
+        'colorpicker.module',
+        'cloudinary',
+        'ngFileUpload'
+
     ])
-    .config(function ($routeProvider) {
+    .config(function (cloudinaryProvider,$sceDelegateProvider,$routeProvider) {
+        $sceDelegateProvider.resourceUrlWhitelist(['**']);
+        
+        cloudinaryProvider
+          .set("cloud_name", "velummedia")
+          .set("upload_preset", "r45kpdzi");
+
         $routeProvider
             .when('/', {
                 templateUrl: 'views/main.html',
@@ -215,8 +225,11 @@ angular
             })
             .when('/package/:name', {
                 templateUrl: 'views/package.html',
-                controller: 'PackageCtrl',
-                controllerAs: 'package'
+                controller: 'PackageCtrl'
+            })
+            .when('/prevpackage', {
+              templateUrl: 'views/prevpackage.html',
+              controller: 'PrevpackageCtrl'
             })
             .otherwise({
                 redirectTo: '/'

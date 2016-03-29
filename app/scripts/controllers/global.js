@@ -1,44 +1,25 @@
 'use strict';
 
-/*
-vAdmin - Beta 2
-Version 0.1.2
-Release date : 12/19/2015
-Velum Media 
-http://velummedia.com
- */
-
-function httpAccess(data,$http) {
-	return $http({
-		    // url: 'https://bmtracker.com/bmadmin/mirror/api.php',
-		    url: 'https://bmtracker.com/bmadmin/api.php',
-		    method: 'POST',
-		    data: data,
-		    headers: {
-				'Content-Type': 'application/x-www-form-urlencoded',
-			}
-		})
-		.then(function(result) {
-		        return result;
-		    }
-		);
+function httpAccess(data,pagename,$http) {
+  return $http({
+        url: 'http://52.27.24.218:3005/' + pagename,
+        method: 'POST',
+        data: data,
+        headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      }
+    })
+    .then(function(result) {
+            return result;
+        }
+    );
 }
 angular.module('bmadminApp')
-  .controller('GlobalCtrl', function ($scope,generals,menus,$http,$rootScope,$location,$route,$window,logger) {
+  .controller('GlobalCtrl', function ($scope,generals,menus,$http,$rootScope,$location,$route,$window,logger,$cookies) {
     $rootScope.loadingShow = false;
     $rootScope.isActive = false;
     $rootScope.loginSectionActive = false;
     $rootScope.userLogin = false;
-
-
-    $scope.$watch(function () { return window.localStorage["bmadminlogin"]; },function(newVal,oldVal){
-      if (newVal == 1) {
-        $rootScope.headerMenusLinks = false;
-      }else{
-        $rootScope.headerMenusLinks = true;
-        $scope.userInitialName = "BM";
-      }
-    });
     
   	$rootScope.colors = [
       "#913ccd",
@@ -98,7 +79,7 @@ angular.module('bmadminApp')
         $scope.isActive = false;
         $location.path(p);
       }
-    }  		
+    }
   	////////////////
 
   	$rootScope.sidebarShow = true;
@@ -108,6 +89,8 @@ angular.module('bmadminApp')
     $rootScope.fullWidth = true;
 
   	$rootScope.$on("$routeChangeSuccess", function (event, currentRoute, previousRoute) {
+      $rootScope.sysname = "members";
+
       window.scrollTo(0,0);
       // For Page Title
       switch(currentRoute.$$route.originalPath){
@@ -184,7 +167,8 @@ angular.module('bmadminApp')
       // 
 
       if (currentRoute.$$route.originalPath == '/login' ||
-  		  currentRoute.$$route.originalPath == '/login/:key' ||
+          currentRoute.$$route.originalPath == '' ||
+  		    currentRoute.$$route.originalPath == '/login/:key' ||
           currentRoute.$$route.originalPath == '/adminlogin' || 
           currentRoute.$$route.originalPath == '/vlogin' || 
           currentRoute.$$route.originalPath == '/forgotpassword' || 
@@ -196,88 +180,21 @@ angular.module('bmadminApp')
   		}else{
   			$rootScope.sidebarShow = true;
   			$rootScope.headerShow = true;
-            $rootScope.loginSectionActive = false;
+        $rootScope.loginSectionActive = false;
 
-        if (window.localStorage['bmadminlogin'] == 1) {
-          $scope.userLogin = true;
-          $rootScope.user = JSON.parse(window.localStorage['bmadminUser']);       
-          $rootScope.userLevel = window.localStorage['bmadminlevel'];
-          // $scope.userLogin = true;
-          //FIND INITIALS//
-          if ($scope.user) {
-            var name = $scope.user.name.split(" "),
-            initial = "";
-            angular.forEach(name, function(value) {
-              initial += value[0] + ".";
-          });
-          $scope.userInitialName = initial;
-          };
-          /////////////////
-          if (window.localStorage['bmadminlevel'] == 6) {
-            $rootScope.roles = JSON.parse(window.localStorage['bmadminroles']);
-          }
-          /////////////////
-          var r = checkAccess($scope.links,$scope.userLevel,currentRoute.$$route.originalPath);
-          if (!r) {
-            // $location.path(r.red);
-          }
+        if ($cookies.get('theiapanel')){
+          //Check if user is login and cookie has set//
+          $rootScope.userinfo = JSON.parse($cookies.get('theiapanel'));
+          $rootScope.userLogin = true;
+          switch($scope.userinfo.level) {
+            case 7: 
+              $rootScope.links = menus.superAdmin();
+              // console.log(menus);
+            break;
+            default:
 
-
-          // Load Packages By USER LEVEL //
-          switch(window.localStorage['bmadminlevel']){
-            case '1': 
-              $rootScope.links= menus.userMenu($scope);
-              var data = {tag:"fetchPackages",approved: "1"}
-              httpAccess(data,$http).then(function(result){
-                $rootScope.filterPackages = result.data.export;
-              });
-              // $location.path('/browsepackage');
             break;
-            case '6': 
-              $rootScope.links= menus.adminMenu($scope);
-              var data = {tag:"fetchPackagesAdmin",approved: "1", id:$scope.user.id}
-              httpAccess(data,$http).then(function(result){
-                $rootScope.filterPackages = result.data.export;
-              });
-            break;
-            case '5': 
-              $rootScope.links= menus.loadAdmin5($scope);
-              var data = {tag:"fetchPackagesAdmin",approved: "1", id:$scope.user.id}
-              httpAccess(data,$http).then(function(result){
-                $rootScope.filterPackages = result.data.export;
-              });
-              
-            break;
-            case '4': 
-              $rootScope.links= menus.loadAdmin4($scope);
-              var data = {tag:"fetchPackagesAdmin",approved: "1", id:$scope.user.id}
-              httpAccess(data,$http).then(function(result){
-                $rootScope.filterPackages = result.data.export;
-              });
-            break;
-            case '3': 
-              $rootScope.links= menus.loadAdmin3($scope);
-              var data = {tag:"fetchPackagesAdmin",approved: "1", id:$scope.user.id}
-              httpAccess(data,$http).then(function(result){
-                $rootScope.filterPackages = result.data.export;
-              });
-            break;
-            case '2': 
-              $rootScope.links= menus.loadAdmin2($scope);
-              var data = {tag:"fetchPackagesAdmin",approved: "1", id:$scope.user.id}
-              httpAccess(data,$http).then(function(result){
-                $rootScope.filterPackages = result.data.export;
-              });
-            break;
-            case '7': 
-              $rootScope.links= menus.superAdmin($scope);
-              var data = {tag:"fetchPackages",approved: "all"}
-              httpAccess(data,$http).then(function(result){
-                $rootScope.filterPackages = result.data.export;
-              });
-            break;
-          }
-          /////////////////////////////////
+          } 
         }else{
             $scope.userLogin = false;
             if(currentRoute.$$route.originalPath !== '/main'

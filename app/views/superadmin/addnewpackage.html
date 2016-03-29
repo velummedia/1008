@@ -1,80 +1,131 @@
+
 <div class="wh-bg clearfix">
-<div class="superadmin-pages col-md-4 col-md-push-4 col-sm-10 col-sm-push-1 col-xs-12 addnewpackagepage">
+
   <form name="addnewpackage" ng-submit="sendnewpackage(addnewpackage)">
-  <div class="form-group">
-    <input type="text" class="form-control  input-txt" name="name" ng-model="form.name" placeholder="Name">
-  </div>
-
-  <div class="form-group">
-    <input type="text" class="form-control input-txt" name="desc" ng-model="form.desc" placeholder="Description">
-  </div>
-
-  <div class="form-group">
-    <input type="text" class="form-control input-txt" name="price" ng-model="form.price" placeholder="$ Price">
-  </div>
-  <div class="form-group">
-    <input type="text" class="form-control input-txt" name="url" ng-model="form.url" placeholder="More Info Link">
-  </div>
-  <div class="form-group">
-    <input type="text" class="form-control input-txt" name="loginurl" ng-model="form.loginurl" placeholder="Login Link">
-  </div>
-
-  <div class="form-group col-md-6 nopadding">
-    <p class="input-group">
-      <input type="text" class="form-control" datepicker-popup="yyyy/MM/dd" is-open="opened" min-date="minDate" max-date="'2020-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="false" close-text="Close" name="sdate" ng-model="form.sdate" placeholder="Start Date" />
-      <span class="input-group-btn">
-        <button type="button" class="btn btn-default noradius" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
-      </span>
-    </p>
-  </div>
-
-  <div class="form-group col-md-6 nopadding">
-    <p class="input-group">
-      <input type="text" class="form-control" datepicker-popup="yyyy/MM/dd" name="edate" ng-model="form.edate" is-open="opened1" min-date="minDate" max-date="'2020-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="false" close-text="Close" name="sdate" placeholder="End Date" />
-      <span class="input-group-btn">
-        <button type="button" class="btn btn-default noradius" ng-click="open1($event)"><i class="glyphicon glyphicon-calendar"></i></button>
-      </span>
-    </p>
-  </div>
-
-  <div class="clearfix"></div>
-
-  <div class="form-group">
     
-    <div class="col-xs-6 col-xs-push-3" style="text-align:center; margin-top:10px;">
-        <input id="coupon" type="checkbox" name="checkyes" ng-model="form.checkyes" style="vertical-align:top;">
-        <label for="coupon">Coupon</label>
-
-    </div>
-  
-    <div ng-show="form.checkyes">
-      <div style="padding-top: 50px;" ng-repeat="co in couponArray">
-        <div class="col-xs-6 nopadding">
-          <input type="text" class="form-control input-txt" placeholder="Coupon Tag" name="coupontag_{{co}}" ng-model="form.coupontag[co]">
+    <div class="row">
+      <div class="col-md-5">
+        <div class="form-group">
+          <button colorpicker type="button" colorpicker-position="bottom" colorpicker-position="top" name="bgcolor" ng-model="form.bgcolor" ng-style="{'background-color': mybackground}">Change Theme Color</button> <span></span>
         </div>
-        <div class="col-xs-6 nopadding">
-          <input type="text" class="form-control input-txt" placeholder="$ Final Price Coupon" name="couponprice_{{co}}" ng-model="form.couponprice[co]">
+        <div class="form-group">
+          <button colorpicker type="button" colorpicker-position="bottom" colorpicker-position="top" name="fontcolor" ng-model="form.fontcolor" ng-style="{'background-color': fontColor}">Change Font Color</button>
         </div>
-        
+        <div class="form-group">
+          <input type="text" class="form-control input-txt" name="name" ng-model="form.name" placeholder="Name">
+        </div>
+        <div class="form-group">
+          <textarea class="form-control input-txt" rows="5" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." name="desc" ng-model="form.desc">
+          </textarea>
+        </div>
       </div>
-      <div class="col-xs-12" style="text-align:center; margin-top:10px;">
-        <a href="javascript:;" ng-click="addCoupon()" class="btn btn-default2 noradius" >Add New</a>
-        <a href="javascript:;" ng-click="removeCoupan(this)" class="btn btn-default2 noradius">Remove</a>
+      <div class="col-md-6">
+        <div class="form-group" style="border: 1px solid; padding: 25%;">
+          Top Banner Photo Upload : 
+          <input type="file" class="button" ng-model="topCover" ngf-accept="'image/*'">
       </div>
-
-
-      <div class="clearfix"></div>
-      
     </div>
-  
-  </div>
 
-  <div class="col-xs-12" style="text-align:center; margin-top:10px;">
-    <button type="submit" class="btn btn-default2 noradius">Register</button>
-  </div>
- 
+    <div class="row">
+      <div class="col-md-8">
+        <h2>Welcome</h2>
+        <div class="form-group">
+          <textarea class="form-control input-txt" rows="8" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." name="welcometext" ng-model="form.welcometext">
+          </textarea>
+        </div>
+        <small>Do you have More Info link?</small>
+        <div class="form-group">
+          <input type="text" class="form-control input-txt" name="welcomemore" ng-model="form.welcomemore" placeholder="More info link">
+        </div>
+
+        <div class="form-group">
+          <input type="text" class="form-control input-txt" name="button1text" ng-model="form.button1text" placeholder="First button link">
+        </div>
+
+        <div class="form-group" style="border: 1px solid; padding: 10%;">
+          Second Banner Photo Upload : 
+          <input type="file" ngf-select class="button" name="secondBanner" ng-model="secondBanner" ngf-accept="'image/*'">
+        </div>
+
+        <div class="form-group">
+          <div style="font-size: 30px;">
+            <button type="button" ng-click="addFaq()"><i class="fa fa-plus"></i> </button>
+            FAQ
+          </div>
+
+          <div class="grid-gallery">
+            <section class="grid-wrap">
+                <ul class="grid clearfix flowGrid" ng-flow-grid="homePageGrid" min-item-width="270">
+                    <li class="flowGridItem col-md-4" ng-repeat="item in faqdata">
+                        <h3 class="h4">
+                          <input type="text" class="form-control input-txt" name="faqTitle" ng-model="faqTitle[$index]" placeholder="First button link">
+                        </h3>
+                        <p>
+                          <textarea class="form-control input-txt" rows="8" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." name="faqText" ng-model="faqText[$index]">
+                          </textarea>
+                        </p>
+                    </li>
+                </ul>
+            </section>
+          </div>
+
+        </div>
+
+        <div class="form-group">
+          <div style="font-size: 30px;">
+            <button type="button" ng-click="addMoreInfo()"><i class="fa fa-plus"></i> </button>
+            More Information
+          </div>
+          <div class="more-dt">
+              <ul class="row clearfix">
+                  <li class="col-xs-4" ng-repeat="it in moreinfo track by $index">
+                      <input type="file" ngf-select class="button" name="moreInfoImage" ng-model="moreInfoImage[$index]" ngf-accept="'image/*'">
+                      <h2 class="h4 text-center">
+                        <input type="text" class="form-control input-txt" name="moreInfoTitle" ng-model="moreInfoTitle[$index]" placeholder="Title">
+                      </h2>
+                      <p class="limit-txt-2">
+                        <input type="text" class="form-control input-txt" name="moreInfoDesc" ng-model="moreInfoDesc[$index]" placeholder="Description">
+                      </p>
+                      <input type="text" class="form-control input-txt" name="moreInfoLink" ng-model="moreInfoLink[$index]" placeholder="Link">
+                  </li>
+              </ul>
+          </div>
+        </div>
+
+
+
+
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          Avatar : 
+          <input type="file" ngf-select class="button" name="avatar" ng-model="avatar" ngf-accept="'image/*'">
+
+          <input type="text" class="form-control input-txt" name="coachname" ng-model="form.coachname" placeholder="Coach Name">
+
+          <textarea class="form-control input-txt" rows="8" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." name="coachbio" ng-model="form.coachbio">
+          </textarea>
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control input-txt" name="price" ng-model="form.price" placeholder="00.00">
+          <h1>Buy Now</h1>
+        </div>
+      </div>
+    </div>
+
+
+
   
-  
-</form>
+
+    
+
+    
+
+
+    <div class="row text-center">
+      <!-- <button type="button" ng-click="goPreview(addnewpackage)">Preview</button> -->
+      <button type="submit">Save</button>
+    </div>
+
+  </form>
 </div>
-    </div>

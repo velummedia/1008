@@ -26,15 +26,6 @@ angular.module('bmadminApp')
             child: '0'
           },
           {
-            name : 'Users',
-            page : 'allusers',
-            type : 'head',
-            icon : 'images/admin/users.png',
-            iconh : 'images/admin/usersh.png',
-            selected : false,
-            child: '0'
-          },
-          {
             name : 'Settings',
             page : 'sitesettings',
             type : 'head',
@@ -52,44 +43,6 @@ angular.module('bmadminApp')
             selected : false,
             child:0,
           },
-          {
-            name : 'Admins',
-            page : 'superadmins',
-            type : 'head',
-            icon : 'images/admin/superadmin.png',
-            iconh : 'images/admin/superadminh.png',
-            selected : false,
-            child: [
-              {
-                name : 'Add C-Admin',
-                page : 'createchildadmin',
-                type : 'child',
-                icon : ''
-              },
-              {
-                name : 'Add S-Admin',
-                page : 'createsuperadmin',
-                type : 'child',
-                icon : ''
-              },
-              {
-                name : 'Manage',
-                page : 'manageadmins',
-                type : 'child',
-                icon : ''
-              },
-            ]
-          },
-          
-          // {
-          //   name : 'Analytics',
-          //   page : 'allanalytics',
-          //   type : 'head',
-          //   icon : 'images/admin/analytics.png',
-          //   iconh : 'images/admin/analyticsh.png',
-          //   selected : false,
-          //   child: '0'
-          // },
           {
             name : 'Package',
             page : '',
@@ -112,35 +65,6 @@ angular.module('bmadminApp')
                 },
             ]
           },
-         
-          // {
-          //   name : 'Referral',
-          //   page : 'referralsystems',
-          //   type : 'head',
-          //   icon : 'images/admin/referral.png',
-          //   iconh : 'images/admin/referralh.png',
-          //   selected : false,
-          //   child: [
-          //       {
-          //         name : 'Create',
-          //         page : 'createreferralsystems',
-          //         type : 'child',
-          //         icon : ''
-          //       },
-          //       {
-          //         name : 'Manage',
-          //         page : 'managereferralsystems',
-          //         type : 'child',
-          //         icon : ''
-          //       },
-          //       {
-          //         name : 'Statistics',
-          //         page : 'statisticsreferralsystems',
-          //         type : 'child',
-          //         icon : ''
-          //       }
-          //   ]
-          // },
           {
             name : 'APIs',
             page : '0',
@@ -149,12 +73,6 @@ angular.module('bmadminApp')
             iconh : 'images/admin/referralh.png',
             selected : false,
             child: [
-                // {
-                //   name : 'New API',
-                //   page : 'newapi',
-                //   type : 'child',
-                //   icon : ''
-                // },
                 {
                   name : 'Manage',
                   page : 'manageapis',
@@ -214,15 +132,6 @@ angular.module('bmadminApp')
 
     men.adminMenu = function($scope) {
       var adminMenu = [
-        // {
-        //   name : 'Panels',
-        //   page : 'adminpanels',
-        //   type : 'head',
-        //   icon : 'images/user/browse.png',
-        //   iconh : 'images/user/browseh.png',
-        //   selected : false,
-        //   child : '0'
-        // },
         {
           name : 'Dashboard',
           page : 'dashboard',
@@ -250,28 +159,6 @@ angular.module('bmadminApp')
           selected : false,
           child: '0'
         },
-        // {
-        //   name : 'Admin',
-        //   page : 'addnewadmin',
-        //   type : 'head',
-        //   icon : 'images/admin/users.png',
-        //   iconh : 'images/admin/usersh.png',
-        //   selected : false,
-        //   child: [
-        //         {
-        //           name : 'Add New Admin',
-        //           page : 'addnewadmin',
-        //           type : 'child',
-        //           icon : ''
-        //         },
-        //         {
-        //           name : 'Manage',
-        //           page : 'manageadmins2',
-        //           type : 'child',
-        //           icon : ''
-        //         }
-        //     ]
-        // }
       ];
       if ($scope.roles.vip == true) {
         adminMenu.push({
@@ -320,70 +207,6 @@ angular.module('bmadminApp')
         //               });
       }
       return adminMenu;
-    }
-
-    men.adminMenu5 = function($scope) {
-      var adminMenu5 = [
-        {
-          name : 'Dashboard',
-          page : 'dashboard',
-          type : 'head',
-          icon : 'images/admin/payment.png',
-          iconh : 'images/admin/paymenth.png',
-          selected : false,
-          child: '0'
-        },
-        {
-          name : 'Payments',
-          page : 'allpayments',
-          type : 'head',
-          icon : 'images/admin/payment.png',
-          iconh : 'images/admin/paymenth.png',
-          selected : false,
-          child: '0'
-        },
-        {
-          name : 'Users',
-          page : 'allusers',
-          type : 'head',
-          icon : 'images/admin/users.png',
-          iconh : 'images/admin/usersh.png',
-          selected : false,
-          child: '0'
-        },
-      ];
-
-      return adminMenu5;
-    }
-
-    men.adminMenu4 = function($scope) {
-      var adminMenu4 = [
-        {
-          name : 'Payments',
-          page : 'allpayments',
-          type : 'head',
-          icon : 'images/admin/payment.png',
-          iconh : 'images/admin/paymenth.png',
-          selected : false,
-          child: '0'
-        },
-      ];
-
-      return adminMenu4;
-    }
-
-    men.adminMenu3 = function($scope) {
-      var adminMenu3 = [
-        {
-          name : 'Users',
-          page : 'allusers',
-          type : 'head',
-          icon : 'images/admin/users.png',
-          iconh : 'images/admin/usersh.png',
-          selected : false,
-          child: '0'
-        },
-      ];
     }
 
     return men;
