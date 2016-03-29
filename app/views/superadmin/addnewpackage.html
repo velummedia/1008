@@ -1,131 +1,259 @@
 
-<div class="wh-bg clearfix">
+<div class="wh-bg clearfix add-package">
+  <div class="col-md-7 nopadding">
+    <form name="addnewpackage" ng-submit="sendnewpackage(addnewpackage)">
 
-  <form name="addnewpackage" ng-submit="sendnewpackage(addnewpackage)">
-    
-    <div class="row">
-      <div class="col-md-5">
-        <div class="form-group">
-          <button colorpicker type="button" colorpicker-position="bottom" colorpicker-position="top" name="bgcolor" ng-model="form.bgcolor" ng-style="{'background-color': mybackground}">Change Theme Color</button> <span></span>
-        </div>
-        <div class="form-group">
-          <button colorpicker type="button" colorpicker-position="bottom" colorpicker-position="top" name="fontcolor" ng-model="form.fontcolor" ng-style="{'background-color': fontColor}">Change Font Color</button>
-        </div>
-        <div class="form-group">
-          <input type="text" class="form-control input-txt" name="name" ng-model="form.name" placeholder="Name">
-        </div>
-        <div class="form-group">
-          <textarea class="form-control input-txt" rows="5" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." name="desc" ng-model="form.desc">
-          </textarea>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="form-group" style="border: 1px solid; padding: 25%;">
-          Top Banner Photo Upload : 
-          <input type="file" class="button" ng-model="topCover" ngf-accept="'image/*'">
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-8">
-        <h2>Welcome</h2>
-        <div class="form-group">
-          <textarea class="form-control input-txt" rows="8" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." name="welcometext" ng-model="form.welcometext">
-          </textarea>
-        </div>
-        <small>Do you have More Info link?</small>
-        <div class="form-group">
-          <input type="text" class="form-control input-txt" name="welcomemore" ng-model="form.welcomemore" placeholder="More info link">
-        </div>
-
-        <div class="form-group">
-          <input type="text" class="form-control input-txt" name="button1text" ng-model="form.button1text" placeholder="First button link">
-        </div>
-
-        <div class="form-group" style="border: 1px solid; padding: 10%;">
-          Second Banner Photo Upload : 
-          <input type="file" ngf-select class="button" name="secondBanner" ng-model="secondBanner" ngf-accept="'image/*'">
-        </div>
-
-        <div class="form-group">
-          <div style="font-size: 30px;">
-            <button type="button" ng-click="addFaq()"><i class="fa fa-plus"></i> </button>
-            FAQ
+        <div class="clearfix">
+          <div class="col-md-5 nopadding">
+            <div class="form-group">
+              <button class="btn green-btn" colorpicker type="button" colorpicker-position="bottom" colorpicker-position="top" name="bgcolor" ng-model="form.bgcolor" ng-style="{'background-color': mybackground}">Change Theme Color</button> <span></span>
+            </div>
+            <div class="form-group">
+              <button class="btn green-btn" colorpicker type="button" colorpicker-position="bottom" colorpicker-position="top" name="fontcolor" ng-model="form.fontcolor" ng-style="{'background-color': fontColor}">Change Font Color</button>
+            </div>
+            <div class="form-group">
+              <input type="text" class="input-txt" name="name" ng-model="form.name" placeholder="Name">
+            </div>
+            <div class="form-group">
+              <textarea class="form-control input-txt" rows="5" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." name="desc" ng-model="form.desc">
+              </textarea>
+            </div>
           </div>
+          <div class="col-md-7">
+          <div class="form-group gr-border" style=" padding: 25%;">
+            Top Banner Photo Upload :
+            <input type="file" class="button" ng-model="topCover" ngf-accept="'image/*'">
+          </div>
+        </div>
+        </div>
 
-          <div class="grid-gallery">
-            <section class="grid-wrap">
-                <ul class="grid clearfix flowGrid" ng-flow-grid="homePageGrid" min-item-width="270">
+        <div class="clearfix">
+
+          <div class="col-md-8 nopadding">
+            <h2 class="h3">Welcome</h2>
+
+            <div class="form-group">
+              <textarea class="form-control input-txt" rows="8" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." name="welcometext" ng-model="form.welcometext">
+              </textarea>
+            </div>
+
+            <small>Do you have More Info link?</small>
+
+            <div class="form-group">
+              <input type="text" class="form-control input-txt" name="welcomemore" ng-model="form.welcomemore" placeholder="More info link">
+            </div>
+
+            <div class="form-group">
+              <input type="text" class="form-control input-txt" name="button1text" ng-model="form.button1text" placeholder="First button link">
+            </div>
+
+            <div class="form-group gr-border" style="padding: 10%;">
+              Second Banner Photo Upload :
+              <input type="file" ngf-select class="button" name="secondBanner" ng-model="secondBanner" ngf-accept="'image/*'">
+            </div>
+
+            <div class="form-group">
+              <div class="h4">
+                <button class="btn plus-btn" type="button" ng-click="addFaq()"><i class="fa fa-plus"></i> </button>
+                FAQ
+              </div>
+
+              <div class="grid-gallery">
+                <section class="grid-wrap">
+                  <ul class="grid row clearfix flowGrid" ng-flow-grid="homePageGrid" min-item-width="270">
                     <li class="flowGridItem col-md-4" ng-repeat="item in faqdata">
-                        <h3 class="h4">
-                          <input type="text" class="form-control input-txt" name="faqTitle" ng-model="faqTitle[$index]" placeholder="First button link">
-                        </h3>
-                        <p>
+                      <h3 class="h4">
+                        <input type="text" class="form-control input-txt" name="faqTitle" ng-model="faqTitle[$index]" placeholder="First button link">
+                      </h3>
+                      <p>
                           <textarea class="form-control input-txt" rows="8" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." name="faqText" ng-model="faqText[$index]">
                           </textarea>
-                        </p>
-                    </li>
-                </ul>
-            </section>
-          </div>
-
-        </div>
-
-        <div class="form-group">
-          <div style="font-size: 30px;">
-            <button type="button" ng-click="addMoreInfo()"><i class="fa fa-plus"></i> </button>
-            More Information
-          </div>
-          <div class="more-dt">
-              <ul class="row clearfix">
-                  <li class="col-xs-4" ng-repeat="it in moreinfo track by $index">
-                      <input type="file" ngf-select class="button" name="moreInfoImage" ng-model="moreInfoImage[$index]" ngf-accept="'image/*'">
-                      <h2 class="h4 text-center">
-                        <input type="text" class="form-control input-txt" name="moreInfoTitle" ng-model="moreInfoTitle[$index]" placeholder="Title">
-                      </h2>
-                      <p class="limit-txt-2">
-                        <input type="text" class="form-control input-txt" name="moreInfoDesc" ng-model="moreInfoDesc[$index]" placeholder="Description">
                       </p>
+                    </li>
+                  </ul>
+                </section>
+              </div>
+
+            </div>
+
+            <div class="form-group">
+              <div class="h4">
+                <button class="btn plus-btn" type="button" ng-click="addMoreInfo()"><i class="fa fa-plus"></i></button>
+                More Information
+              </div>
+              <div class="more-dt">
+                <ul class="row clearfix">
+                  <li class="col-xs-4" ng-repeat="it in moreinfo track by $index">
+                    <input type="file" ngf-select class="button" name="moreInfoImage" ng-model="moreInfoImage[$index]" ngf-accept="'image/*'">
+                    <h2 class="h4 text-center">
+                      <input type="text" class="form-control input-txt" name="moreInfoTitle" ng-model="moreInfoTitle[$index]" placeholder="Title">
+
+                      <input type="text" class="form-control input-txt" name="moreInfoDesc" ng-model="moreInfoDesc[$index]" placeholder="Description">
                       <input type="text" class="form-control input-txt" name="moreInfoLink" ng-model="moreInfoLink[$index]" placeholder="Link">
+
+                    </h2>
+
                   </li>
-              </ul>
+                </ul>
+              </div>
+            </div>
+
+
+
+
+          </div>
+
+          <div class="col-md-4">
+            <div class="form-group">
+              <h3 class="h3">Avatar :</h3>
+
+              <input type="file" ngf-select class="button" name="avatar" ng-model="avatar" ngf-accept="'image/*'">
+            </div>
+
+            <div class="form-group">
+                <input type="text" class="form-control input-txt" name="coachname" ng-model="form.coachname" placeholder="Coach Name">
+              </div>
+
+            <div class="form-group">
+                <textarea class="form-control input-txt" rows="8" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." name="coachbio" ng-model="form.coachbio">
+                </textarea>
+              </div>
+
+            <div class="form-group">
+              <input type="text" class="form-control input-txt" name="price" ng-model="form.price" placeholder="00.00">
+              <h4 class="h3">Buy Now</h4>
+            </div>
           </div>
         </div>
 
 
 
 
-      </div>
-      <div class="col-md-4">
-        <div class="form-group">
-          Avatar : 
-          <input type="file" ngf-select class="button" name="avatar" ng-model="avatar" ngf-accept="'image/*'">
 
-          <input type="text" class="form-control input-txt" name="coachname" ng-model="form.coachname" placeholder="Coach Name">
 
-          <textarea class="form-control input-txt" rows="8" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." name="coachbio" ng-model="form.coachbio">
-          </textarea>
+
+
+
+
+        <div class=" ">
+          <!-- <button type="button" ng-click="goPreview(addnewpackage)">Preview</button> -->
+          <button class="green-btn btn" type="submit">Save</button>
         </div>
-        <div class="form-group">
-          <input type="text" class="form-control input-txt" name="price" ng-model="form.price" placeholder="00.00">
-          <h1>Buy Now</h1>
+
+
+    </form>
+  </div>
+  <div class="col-md-5 nopadding">
+    <div class=" pack wh-bg">
+      <div class="banner clearfix" ng-style="{'background-color': pdata.bg}">
+        <div class="col-lg-6 col-lg-push-6 nopadding">
+          <img class="img-responsive" src="images/banner.jpg" alt="Banner">
+        </div>
+        <div class="col-lg-6 left-box col-lg-pull-6 ">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci alias aspernatur aut, cum earum eos fuga fugiat hic incidunt inventore ipsum mollitia quia quo sint </p>
+        </div>
+
+      </div>
+
+      <div class="clearfix row">
+
+        <div class="col-sm-8 col-lg-9 text-center">
+          <h2 class="h4 text-center green-txt">Welcome</h2>
+          <p class="text-center welcome-txt" ng-bind-html="pdata.welcome_text">
+
+          </p>
+          <a href="{{pdata.welcome_more}}" target="_blank" ng-show="pdata.welcome_more" class="h3">Read More</a>
+
+
+          <div class="link-bar">
+            <div class="h3">
+              <a href="#/paymentsuser/{{pdata.pid}}">Start your training today!</a>
+              <a class="load-more-ic" href="#/paymentsuser/{{pdata.pid}}"><i class="fa fa-angle-right green-txt"></i></a>
+            </div>
+          </div>
+
+          <div class="intro-banner">
+            <img src="images/banner-2.jpg" alt="Banner">
+          </div>
+
+          <div class="frq-section">
+            <h3 class="h3 text-center bold green-txt" ng-show="pdata.faq">Frequently Asked Questions</h3>
+            <div class="grid-gallery">
+
+              <section class="grid-wrap">
+                <ul class="grid clearfix flowGrid" ng-flow-grid="homePageGrid" min-item-width="270">
+                  <li class="flowGridItem" ng-repeat="item in pdata.faq">
+                    <h3 class="h5">{{item.title}}</h3>
+                    <p>{{item.text}}</p>
+                  </li>
+                </ul>
+              </section>
+            </div><!-- / grid-gallery -->
+            <a href="{{pdata.faq_more}}" target="_blank" ng-show="pdata.faq_more" class="h3">Read More</a>
+          </div>
+
+          <div class="link-bar">
+            <div class="h3">
+              <a href="#/paymentsuser/{{pdata.pid}}">I want to start my training!</a>
+              <a class="load-more-ic" href="#/paymentsuser/{{pdata.pid}}"><i class="fa fa-angle-right green-txt"></i></a>
+            </div>
+          </div>
+
+
+
+        </div>
+
+        <div class="col-sm-4 col-lg-3 right-side">
+          <!--<div class="info">-->
+          <!--<img src="{{pdata.side_cover}}" alt="Photo">-->
+          <!--</div>-->
+          <div class="about-couch">
+            <img src="images/coach-test.png" alt="Coach Pic">
+            <h3 class="h5 text-center">Meet your coach</h3>
+            <p ng-bind-html="pdata.about_coach.bio">
+
+            </p>
+            <p ng-bind-html="pdata.about_coach.bio2">
+            </p>
+          </div>
+
         </div>
       </div>
+
+      <div class="clearfix row pack-btm">
+        <div class="col-sm-8 col-lg-9 text-center btm">
+          <div class="more-dt">
+            <h4 class="h4 bold text-center green-txt">More Information</h4>
+            <br>
+            <ul class="row clearfix">
+
+              <li class="col-xs-4" ng-repeat="it in pdata.moreinfo">
+                <a href="{{it.link}}" target=“_blank">
+                  <img class="img-responsive" src="{{it.cover}}" alt="">
+                </a>
+                <h2 class="h4 text-center">
+                  <a href="{{it.link}}" target=“_blank">{{it.title}}</a>
+                </h2>
+                <p class="limit-txt-2">{{it.text}}</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-sm-4 col-lg-3 right-side btm">
+          <div class="link-bar">
+            <div class="h3">
+              <div class="price">${{pdata.price}}</div>
+              <a href="#/paymentsuser/{{pdata.pid}}">Buy Now</a>
+              <a class="load-more-ic" href="#/paymentsuser/{{pdata.pid}}"><i class="fa fa-angle-right green-txt"></i></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
     </div>
 
 
-
-  
-
-    
-
-    
-
-
-    <div class="row text-center">
-      <!-- <button type="button" ng-click="goPreview(addnewpackage)">Preview</button> -->
-      <button type="submit">Save</button>
-    </div>
-
-  </form>
+  </div>
 </div>
