@@ -23,8 +23,107 @@ angular.module('bmadminApp')
     $scope.faqText = [];
     $scope.addFaq = function() {
         $scope.faqdata.push($scope.faqdata.length+1);
+        $scope.liveFaq();
     }
 
+    
+    //DEFAULT DATA//
+    $scope.defaultTopCover = "http://res.cloudinary.com/velummedia/image/upload/v1458828609/members/banner_default.jpg";
+    $scope.defaultAvatar = "http://res.cloudinary.com/velummedia/image/upload/v1458829160/members/avatar_default.jpg";
+    $scope.secondAvatar = "http://res.cloudinary.com/velummedia/image/upload/v1458829161/members/second_default.jpg";
+    $scope.moreInfoCover = "http://res.cloudinary.com/velummedia/image/upload/v1458828609/members/banner_default.jpg";
+    $scope.prevTitle = "TITLE";
+    $scope.prevDescription = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate dolores, earum quidem odit, quibusdam odio perferendis esse architecto maiores, sequi dolorem voluptatum suscipit fugit laborum assumenda fuga nam consectetur molestias.";
+    $scope.prevWelcome = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae harum laboriosam distinctio et suscipit, rerum pariatur unde natus hic eum cupiditate, alias laudantium labore magni voluptate voluptatibus nesciunt laborum esse.";
+    $scope.prevCoachBio = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae harum laboriosam distinctio et suscipit.";
+    $scope.PrevCoachName = "John Smith";
+    $scope.prevPrice = "00.00";
+    $scope.prevWelcomeReadMore = false;
+    $scope.prevButton1Text = "Start your training today!";
+    $scope.prevFaqTitle = false;
+    $scope.prevMoreInfoTitle = false;
+
+    ////////////////
+
+    //PREVIEW TRAINING//
+    $scope.liveTitle = function(a) {
+        if (a.length == 0) {
+            $scope.prevTitle = "TITLE";            
+        }else{
+            $scope.prevTitle = a;
+        }
+    }
+    $scope.liveDescription = function(a) {
+        if (a.length == 0) {
+            $scope.prevDescription = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate dolores, earum quidem odit, quibusdam odio perferendis esse architecto maiores, sequi dolorem voluptatum suscipit fugit laborum assumenda fuga nam consectetur molestias.";
+        }else{
+            $scope.prevDescription = a;
+        }
+    }
+    $scope.liveWelcome = function(a) {
+        if (a.length == 0) {
+            $scope.prevWelcome = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate dolores, earum quidem odit, quibusdam odio perferendis esse architecto maiores, sequi dolorem voluptatum suscipit fugit laborum assumenda fuga nam consectetur molestias.";
+        }else{
+            $scope.prevWelcome = a;
+        }
+    }
+    $scope.liveCoachBio = function(a) {
+        if (a.length == 0) {
+            $scope.prevCoachBio = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate dolores, earum quidem odit,";
+        }else{
+            $scope.prevCoachBio = a;
+        }
+    }
+    $scope.liveCoachName = function(a) {
+        if (a.length == 0) {
+            $scope.PrevCoachName = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate dolores, earum quidem odit,";
+        }else{
+            $scope.PrevCoachName = a;
+        }
+    }
+    $scope.livePrice = function(a) {
+        if (a.length == 0) {
+            $scope.prevPrice = "00.00";
+        }else{
+            $scope.prevPrice = a;
+        }
+    }
+    $scope.liveWelcomeReadMore = function(a) {
+        if (a.length == 0) {
+            $scope.prevWelcomeReadMore = false;
+        }else{
+            $scope.prevWelcomeReadMore = true;
+        }
+    }
+    $scope.liveButton1Text = function(a) {
+        if (a.length == 0) {
+            $scope.prevButton1Text = "Start your training today!";
+        }else{
+            $scope.prevButton1Text = a;
+        }
+    }
+
+    $scope.liveFaq = function() {
+        if (faqdata.length == 0) {
+            $scope.prevFaqTitle = false;
+        }else{
+            $scope.prevFaqTitle = true;
+        }
+    }
+    $scope.liveMoreInfo = function() {
+        if (faqdata.length == 0) {
+            $scope.prevMoreInfoTitle = false;
+        }else{
+            $scope.prevMoreInfoTitle = true;
+        }
+    }
+
+
+
+
+
+
+    ///////////////////
 
     $scope.moreinfo = [];
     $scope.moreInfoImage = [];
@@ -33,7 +132,9 @@ angular.module('bmadminApp')
     $scope.moreInfoLink = [];
 
     $scope.addMoreInfo = function() {
-        $scope.moreinfo.push($scope.faqdata.length+1);
+        $scope.moreinfo.push($scope.moreinfo.length+1);
+        $scope.liveMoreInfo();
+        
     }
 
     $scope.sendnewpackage = function(form) {

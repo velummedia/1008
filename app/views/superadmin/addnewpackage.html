@@ -12,19 +12,19 @@
               <button class="btn green-btn" colorpicker type="button" colorpicker-position="bottom" colorpicker-position="top" name="fontcolor" ng-model="form.fontcolor" ng-style="{'background-color': fontColor}">Change Font Color</button>
             </div>
             <div class="form-group">
-              <input type="text" class="input-txt" name="name" ng-model="form.name" placeholder="Name">
+              <input type="text" class="input-txt" name="name" ng-model="form.name" placeholder="Name" ng-keyup="liveTitle(form.name)">
             </div>
             <div class="form-group">
-              <textarea class="form-control input-txt" rows="5" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." name="desc" ng-model="form.desc">
+              <textarea class="form-control input-txt" rows="5" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." name="desc" ng-model="form.desc" ng-keyup="liveDescription(form.desc)">
               </textarea>
             </div>
           </div>
           <div class="col-md-7">
-          <div class="form-group gr-border" style=" padding: 25%;">
-            Top Banner Photo Upload :
-            <input type="file" class="button" ng-model="topCover" ngf-accept="'image/*'">
+            <div class="form-group gr-border" style=" padding: 25%;">
+              Top Banner Photo Upload :
+              <div class="button" ngf-select ng-model="topCover" name="topCover" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="20MB">Select</div>
+            </div>
           </div>
-        </div>
         </div>
 
         <div class="clearfix">
@@ -33,23 +33,23 @@
             <h2 class="h3">Welcome</h2>
 
             <div class="form-group">
-              <textarea class="form-control input-txt" rows="8" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." name="welcometext" ng-model="form.welcometext">
+              <textarea class="form-control input-txt" rows="8" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." name="welcometext" ng-model="form.welcometext" ng-keyup="liveWelcome(form.welcometext)">
               </textarea>
             </div>
 
             <small>Do you have More Info link?</small>
 
             <div class="form-group">
-              <input type="text" class="form-control input-txt" name="welcomemore" ng-model="form.welcomemore" placeholder="More info link">
+              <input type="text" class="form-control input-txt" name="welcomemore" ng-model="form.welcomemore" ng-keyup="liveWelcomeReadMore(form.welcomemore)" placeholder="More info link">
             </div>
 
             <div class="form-group">
-              <input type="text" class="form-control input-txt" name="button1text" ng-model="form.button1text" placeholder="First button link">
+              <input type="text" class="form-control input-txt" name="button1text" ng-model="form.button1text" placeholder="First button link" ng-keyup="liveButton1Text(form.button1text)">
             </div>
 
             <div class="form-group gr-border" style="padding: 10%;">
               Second Banner Photo Upload :
-              <input type="file" ngf-select class="button" name="secondBanner" ng-model="secondBanner" ngf-accept="'image/*'">
+              <div class="button" ngf-select ng-model="secondBanner" name="secondBanner" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="20MB">Select</div>
             </div>
 
             <div class="form-group">
@@ -84,7 +84,7 @@
               <div class="more-dt">
                 <ul class="row clearfix">
                   <li class="col-xs-4" ng-repeat="it in moreinfo track by $index">
-                    <input type="file" ngf-select class="button" name="moreInfoImage" ng-model="moreInfoImage[$index]" ngf-accept="'image/*'">
+                    <div class="button" ngf-select ng-model="moreInfoImage[$index]" name="moreInfoImage" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="20MB">Select Photo</div>
                     <h2 class="h4 text-center">
                       <input type="text" class="form-control input-txt" name="moreInfoTitle" ng-model="moreInfoTitle[$index]" placeholder="Title">
 
@@ -106,96 +106,88 @@
           <div class="col-md-4">
             <div class="form-group">
               <h3 class="h3">Avatar :</h3>
-
-              <input type="file" ngf-select class="button" name="avatar" ng-model="avatar" ngf-accept="'image/*'">
+              <div class="button" ngf-select ng-model="avatar" name="avatar" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="20MB">Select</div>
             </div>
 
             <div class="form-group">
-                <input type="text" class="form-control input-txt" name="coachname" ng-model="form.coachname" placeholder="Coach Name">
+                <input type="text" class="form-control input-txt" name="coachname" ng-model="form.coachname" placeholder="Coach Name" ng-keyup="liveCoachName(form.coachname)">
               </div>
 
             <div class="form-group">
-                <textarea class="form-control input-txt" rows="8" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." name="coachbio" ng-model="form.coachbio">
+                <textarea class="form-control input-txt" rows="8" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." name="coachbio" ng-model="form.coachbio" ng-keyup="liveCoachBio(form.coachbio)">
                 </textarea>
               </div>
 
             <div class="form-group">
-              <input type="text" class="form-control input-txt" name="price" ng-model="form.price" placeholder="00.00">
+              <input type="text" class="form-control input-txt" name="price" ng-model="form.price" placeholder="00.00" ng-keyup="livePrice(form.price)" >
               <h4 class="h3">Buy Now</h4>
             </div>
           </div>
         </div>
 
-
-
-
-
-
-
-
-
-
         <div class=" ">
-          <!-- <button type="button" ng-click="goPreview(addnewpackage)">Preview</button> -->
           <button class="green-btn btn" type="submit">Save</button>
         </div>
 
 
     </form>
   </div>
+
+
+  <!-- ///////////////////// PREVIEW SECTION ////////////////////////////// -->
   <div class="col-md-5 nopadding">
     <div class=" pack wh-bg">
       <div class="banner clearfix" ng-style="{'background-color': pdata.bg}">
         <div class="col-lg-6 col-lg-push-6 nopadding">
-          <img class="img-responsive" src="images/banner.jpg" alt="Banner">
+          <img class="img-responsive" ngf-src="topCover || defaultTopCover" alt="Banner">
         </div>
         <div class="col-lg-6 left-box col-lg-pull-6 ">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci alias aspernatur aut, cum earum eos fuga fugiat hic incidunt inventore ipsum mollitia quia quo sint </p>
+          <h3>{{prevTitle}}</h3>
+          <p style="white-space: pre-line">{{prevDescription}}</p>
         </div>
-
       </div>
 
       <div class="clearfix row">
 
         <div class="col-sm-8 col-lg-9 text-center">
           <h2 class="h4 text-center green-txt">Welcome</h2>
-          <p class="text-center welcome-txt" ng-bind-html="pdata.welcome_text">
-
+          <p class="text-center welcome-txt" style="white-space: pre-line">
+            {{prevWelcome}}  
           </p>
-          <a href="{{pdata.welcome_more}}" target="_blank" ng-show="pdata.welcome_more" class="h3">Read More</a>
+          <a href="javascript:;" target="_blank" ng-show="prevWelcomeReadMore" class="h3">Read More</a>
 
 
           <div class="link-bar">
             <div class="h3">
-              <a href="#/paymentsuser/{{pdata.pid}}">Start your training today!</a>
-              <a class="load-more-ic" href="#/paymentsuser/{{pdata.pid}}"><i class="fa fa-angle-right green-txt"></i></a>
+              <a href="javascript:;">{{prevButton1Text}}</a>
+              <a class="load-more-ic" href="javascript:;"><i class="fa fa-angle-right green-txt"></i></a>
             </div>
           </div>
 
           <div class="intro-banner">
-            <img src="images/banner-2.jpg" alt="Banner">
+            <img ngf-src="secondBanner || secondAvatar" alt="Banner">
           </div>
 
           <div class="frq-section">
-            <h3 class="h3 text-center bold green-txt" ng-show="pdata.faq">Frequently Asked Questions</h3>
+            <h3 class="h3 text-center bold green-txt" ng-show="prevFaqTitle">Frequently Asked Questions</h3>
             <div class="grid-gallery">
 
               <section class="grid-wrap">
                 <ul class="grid clearfix flowGrid" ng-flow-grid="homePageGrid" min-item-width="270">
-                  <li class="flowGridItem" ng-repeat="item in pdata.faq">
-                    <h3 class="h5">{{item.title}}</h3>
-                    <p>{{item.text}}</p>
+                  <li class="flowGridItem" ng-repeat="item in faqdata">
+                    <h3 class="h5">{{faqTitle[$index] || "Question"}}</h3>
+                    <p>{{faqText[$index] || "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque vitae officiis at repellat, temporibus incidunt doloribus laboriosam deleniti et voluptatibus dolorem quasi dolor minima natus rerum cumque voluptates, praesentium debitis."}}</p>
                   </li>
                 </ul>
               </section>
             </div><!-- / grid-gallery -->
-            <a href="{{pdata.faq_more}}" target="_blank" ng-show="pdata.faq_more" class="h3">Read More</a>
+            <!-- <a href="{{pdata.faq_more}}" target="_blank" ng-show="pdata.faq_more" class="h3">Read More</a> -->
           </div>
 
           <div class="link-bar">
             <div class="h3">
-              <a href="#/paymentsuser/{{pdata.pid}}">I want to start my training!</a>
-              <a class="load-more-ic" href="#/paymentsuser/{{pdata.pid}}"><i class="fa fa-angle-right green-txt"></i></a>
+              <a href="javascript:;">I want to start my training!</a>
+              <a class="load-more-ic" href="javascript:;"><i class="fa fa-angle-right green-txt"></i></a>
             </div>
           </div>
 
@@ -208,13 +200,13 @@
           <!--<img src="{{pdata.side_cover}}" alt="Photo">-->
           <!--</div>-->
           <div class="about-couch">
-            <img src="images/coach-test.png" alt="Coach Pic">
+            <img ngf-src="avatar || defaultAvatar" alt="Coach Pic">
             <h3 class="h5 text-center">Meet your coach</h3>
-            <p ng-bind-html="pdata.about_coach.bio">
-
+            <h4 class="h5 text-center">{{PrevCoachName}}</h4>
+            <p style="white-space: pre-line; font-size: 12px;">
+              {{prevCoachBio}}
             </p>
-            <p ng-bind-html="pdata.about_coach.bio2">
-            </p>
+            
           </div>
 
         </div>
@@ -223,18 +215,18 @@
       <div class="clearfix row pack-btm">
         <div class="col-sm-8 col-lg-9 text-center btm">
           <div class="more-dt">
-            <h4 class="h4 bold text-center green-txt">More Information</h4>
+            <h4 class="h4 bold text-center green-txt" ng-show="prevMoreInfoTitle">More Information</h4>
             <br>
             <ul class="row clearfix">
 
-              <li class="col-xs-4" ng-repeat="it in pdata.moreinfo">
-                <a href="{{it.link}}" target=“_blank">
-                  <img class="img-responsive" src="{{it.cover}}" alt="">
+              <li class="col-xs-4" ng-repeat="it in moreinfo">
+                <a href="javascript:;" target="_blank">
+                  <img class="img-responsive" ngf-src="moreInfoImage[$index] || moreInfoCover" alt="">
                 </a>
                 <h2 class="h4 text-center">
-                  <a href="{{it.link}}" target=“_blank">{{it.title}}</a>
+                  <a href="{{it.link}}" target="_blank">{{moreInfoTitle[$index] || "title"}}</a>
                 </h2>
-                <p class="limit-txt-2">{{it.text}}</p>
+                <p class="limit-txt-2">{{moreInfoDesc[$index] || "short text"}}</p>
               </li>
             </ul>
           </div>
@@ -243,7 +235,7 @@
         <div class="col-sm-4 col-lg-3 right-side btm">
           <div class="link-bar">
             <div class="h3">
-              <div class="price">${{pdata.price}}</div>
+              <div class="price">${{prevPrice}}</div>
               <a href="#/paymentsuser/{{pdata.pid}}">Buy Now</a>
               <a class="load-more-ic" href="#/paymentsuser/{{pdata.pid}}"><i class="fa fa-angle-right green-txt"></i></a>
             </div>
