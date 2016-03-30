@@ -61,12 +61,12 @@
               <div class="grid-gallery">
                 <section class="grid-wrap">
                   <ul class="grid row clearfix flowGrid" ng-flow-grid="homePageGrid" min-item-width="270">
-                    <li class="flowGridItem col-md-4" ng-repeat="item in faqdata">
+                    <li class="flowGridItem" ng-repeat="item in faqdata">
                       <h3 class="h4">
-                        <input type="text" class="form-control input-txt" name="faqTitle" ng-model="faqTitle[$index]" placeholder="First button link">
+                        <input type="text" class="form-control input-txt" name="faqTitle" ng-model="faqTitle[$index]" placeholder="Question">
                       </h3>
                       <p>
-                          <textarea class="form-control input-txt" rows="8" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." name="faqText" ng-model="faqText[$index]">
+                          <textarea class="form-control input-txt" rows="8" placeholder="Answer" name="faqText" ng-model="faqText[$index]">
                           </textarea>
                       </p>
                     </li>
@@ -137,11 +137,11 @@
   <!-- ///////////////////// PREVIEW SECTION ////////////////////////////// -->
   <div class="col-md-5 nopadding">
     <div class=" pack wh-bg">
-      <div class="banner clearfix" ng-style="{'background-color': pdata.bg}">
+      <div class="banner clearfix" ng-style="{'background-color': form.bgcolor || '#000'}">
         <div class="col-lg-6 col-lg-push-6 nopadding">
           <img class="img-responsive" ngf-src="topCover || defaultTopCover" alt="Banner">
         </div>
-        <div class="col-lg-6 left-box col-lg-pull-6 ">
+        <div class="col-lg-6 left-box col-lg-pull-6" ng-style="{'color': form.fontcolor || '#fff'}">
           <h3>{{prevTitle}}</h3>
           <p style="white-space: pre-line">{{prevDescription}}</p>
         </div>

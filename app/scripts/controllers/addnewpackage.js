@@ -26,6 +26,8 @@ angular.module('bmadminApp')
         $scope.liveFaq();
     }
 
+
+
     
     //DEFAULT DATA//
     $scope.defaultTopCover = "http://res.cloudinary.com/velummedia/image/upload/v1458828609/members/banner_default.jpg";
@@ -117,6 +119,7 @@ angular.module('bmadminApp')
             $scope.prevMoreInfoTitle = true;
         }
     }
+
 
 
 
