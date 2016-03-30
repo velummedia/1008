@@ -4,27 +4,39 @@
     <form name="addnewpackage" ng-submit="sendnewpackage(addnewpackage)">
 
         <div class="clearfix">
-          <div class="col-md-5 nopadding">
+
+          <div class="form-group">
+            <md-button colorpicker type="button" colorpicker-position="bottom" colorpicker-position="top" name="bgcolor" ng-model="form.bgcolor" ng-style="{'background-color': mybackground}" class="md-raised">
+              Change Theme Color
+            </md-button>
+          </div>
+
+          <div class="form-group">
+            <md-button class="md-raised" colorpicker type="button" colorpicker-position="bottom" colorpicker-position="top" name="fontcolor" ng-model="form.fontcolor" ng-style="{'background-color': fontColor}">
+              Change Font Color
+            </md-button>
+          </div>
+
+          <div class="col-xs-6 col-sm-5 nopadding">
+
+            <md-input-container>
+              <label>Title</label>
+              <input type="text" class="input-txt" name="name" ng-model="form.name" ng-keyup="liveTitle(form.name)">
+            </md-input-container>
+
             <div class="form-group">
-              <button class="btn green-btn" colorpicker type="button" colorpicker-position="bottom" colorpicker-position="top" name="bgcolor" ng-model="form.bgcolor" ng-style="{'background-color': mybackground}">Change Theme Color</button> <span></span>
-            </div>
-            <div class="form-group">
-              <button class="btn green-btn" colorpicker type="button" colorpicker-position="bottom" colorpicker-position="top" name="fontcolor" ng-model="form.fontcolor" ng-style="{'background-color': fontColor}">Change Font Color</button>
-            </div>
-            <div class="form-group">
-              <input type="text" class="input-txt" name="name" ng-model="form.name" placeholder="Name" ng-keyup="liveTitle(form.name)">
-            </div>
-            <div class="form-group">
-              <textarea class="form-control input-txt" rows="5" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." name="desc" ng-model="form.desc" ng-keyup="liveDescription(form.desc)">
+              <textarea class="form-control input-txt" style="height: 152px" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." name="desc" ng-model="form.desc" ng-keyup="liveDescription(form.desc)">
               </textarea>
             </div>
+
           </div>
-          <div class="col-md-7">
-            <div class="form-group gr-border" style=" padding: 25%;">
-              Top Banner Photo Upload :
-              <div class="button" ngf-select ng-model="topCover" name="topCover" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="20MB">Select</div>
+
+          <div class="col-xs-6 col-sm-7 no-r-padding-xs">
+            <div class="form-group gr-border" style="height: 249px">
+              <div class="button" ngf-select ng-model="topCover" name="topCover" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="20MB">Select Top Banner Photo Upload </div>
             </div>
           </div>
+
         </div>
 
         <div class="clearfix">
@@ -39,17 +51,22 @@
 
             <small>Do you have More Info link?</small>
 
-            <div class="form-group">
-              <input type="text" class="form-control input-txt" name="welcomemore" ng-model="form.welcomemore" ng-keyup="liveWelcomeReadMore(form.welcomemore)" placeholder="More info link">
+            <div>
+              <md-input-container>
+                <label>More info link</label>
+                <input type="text" name="welcomemore" ng-model="form.welcomemore" ng-keyup="liveWelcomeReadMore(form.welcomemore)">
+              </md-input-container>
             </div>
 
-            <div class="form-group">
-              <input type="text" class="form-control input-txt" name="button1text" ng-model="form.button1text" placeholder="First button link" ng-keyup="liveButton1Text(form.button1text)">
+            <div>
+              <md-input-container>
+                <label>First button link</label>
+                <input type="text" name="button1text" ng-model="form.button1text" ng-keyup="liveButton1Text(form.button1text)">
+              </md-input-container>
             </div>
 
             <div class="form-group gr-border" style="padding: 10%;">
-              Second Banner Photo Upload :
-              <div class="button" ngf-select ng-model="secondBanner" name="secondBanner" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="20MB">Select</div>
+              <div class="button" ngf-select ng-model="secondBanner" name="secondBanner" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="20MB">Select Second Banner Photo Upload</div>
             </div>
 
             <div class="form-group">
@@ -58,40 +75,57 @@
                 FAQ
               </div>
 
-              <div class="grid-gallery">
-                <section class="grid-wrap">
-                  <ul class="grid row clearfix flowGrid" ng-flow-grid="homePageGrid" min-item-width="270">
-                    <li class="flowGridItem" ng-repeat="item in faqdata">
-                      <h3 class="h4">
-                        <input type="text" class="form-control input-txt" name="faqTitle" ng-model="faqTitle[$index]" placeholder="Question">
-                      </h3>
-                      <p>
+              <div>
+                <ul ng-flow-grid="homePageGrid" min-item-width="270">
+                  <li class="flowGridItem" ng-repeat="item in faqdata">
+                    <div>
+                      <md-input-container>
+                        <label>Question</label>
+                        <input type="text" name="faqTitle" ng-model="faqTitle[$index]">
+                      </md-input-container>
+                    </div>
+                    <p>
                           <textarea class="form-control input-txt" rows="8" placeholder="Answer" name="faqText" ng-model="faqText[$index]">
                           </textarea>
-                      </p>
-                    </li>
-                  </ul>
-                </section>
+                    </p>
+                  </li>
+                </ul>
               </div>
 
             </div>
 
             <div class="form-group">
+
               <div class="h4">
                 <button class="btn plus-btn" type="button" ng-click="addMoreInfo()"><i class="fa fa-plus"></i></button>
                 More Information
               </div>
+
               <div class="more-dt">
                 <ul class="row clearfix">
                   <li class="col-xs-4" ng-repeat="it in moreinfo track by $index">
                     <div class="button" ngf-select ng-model="moreInfoImage[$index]" name="moreInfoImage" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="20MB">Select Photo</div>
-                    <h2 class="h4 text-center">
-                      <input type="text" class="form-control input-txt" name="moreInfoTitle" ng-model="moreInfoTitle[$index]" placeholder="Title">
 
-                      <input type="text" class="form-control input-txt" name="moreInfoDesc" ng-model="moreInfoDesc[$index]" placeholder="Description">
-                      <input type="text" class="form-control input-txt" name="moreInfoLink" ng-model="moreInfoLink[$index]" placeholder="Link">
+                      <div>
+                        <md-input-container>
+                          <label>Title</label>
+                          <input type="text" name="moreInfoTitle" ng-model="moreInfoTitle[$index]">
+                        </md-input-container>
+                      </div>
 
-                    </h2>
+                      <div>
+                        <md-input-container>
+                          <label>Description</label>
+                          <input type="text" name="moreInfoDesc" ng-model="moreInfoDesc[$index]">
+                        </md-input-container>
+                      </div>
+
+                      <div>
+                        <md-input-container>
+                          <label>Link</label>
+                          <input type="text" name="moreInfoLink" ng-model="moreInfoLink[$index]">
+                        </md-input-container>
+                      </div>
 
                   </li>
                 </ul>
@@ -99,34 +133,38 @@
             </div>
 
 
-
-
           </div>
 
-          <div class="col-md-4">
+          <div class="col-md-4 xs-nopadding">
             <div class="form-group">
               <h3 class="h3">Avatar :</h3>
-              <div class="button" ngf-select ng-model="avatar" name="avatar" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="20MB">Select</div>
+              <div class="avatar gr-border" ngf-select ng-model="avatar" name="avatar" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="20MB">Select An Avatar</div>
             </div>
 
-            <div class="form-group">
-                <input type="text" class="form-control input-txt" name="coachname" ng-model="form.coachname" placeholder="Coach Name" ng-keyup="liveCoachName(form.coachname)">
-              </div>
+            <div>
+              <md-input-container>
+                <label>Coach Name</label>
+                <input type="text" name="coachname" ng-model="form.coachname" ng-keyup="liveCoachName(form.coachname)">
+              </md-input-container>
+            </div>
 
             <div class="form-group">
                 <textarea class="form-control input-txt" rows="8" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." name="coachbio" ng-model="form.coachbio" ng-keyup="liveCoachBio(form.coachbio)">
                 </textarea>
               </div>
 
-            <div class="form-group">
-              <input type="text" class="form-control input-txt" name="price" ng-model="form.price" placeholder="00.00" ng-keyup="livePrice(form.price)" >
+            <div>
+              <md-input-container>
+                <label>Price</label>
+                <input type="text" name="price" ng-model="form.price" ng-keyup="livePrice(form.price)" >
+              </md-input-container>
               <h4 class="h3">Buy Now</h4>
             </div>
           </div>
         </div>
 
-        <div class=" ">
-          <button class="green-btn btn" type="submit">Save</button>
+        <div class="mg-bottom">
+          <md-button class="md-raised" type="submit">Save</md-button>
         </div>
 
 
@@ -135,21 +173,26 @@
 
 
   <!-- ///////////////////// PREVIEW SECTION ////////////////////////////// -->
+
   <div class="col-md-5 nopadding">
-    <div class=" pack wh-bg">
+    <div class="pack wh-bg">
       <div class="banner clearfix" ng-style="{'background-color': form.bgcolor || '#000'}">
-        <div class="col-lg-6 col-lg-push-6 nopadding">
+        <div class="banner-inner">
           <img class="img-responsive" ngf-src="topCover || defaultTopCover" alt="Banner">
+
+          <div class="col-xs-6 left-box" ng-style="{'color': form.fontcolor || '#fff'}">
+            <h3>{{prevTitle}}</h3>
+            <p style="white-space: pre-line">{{prevDescription}}</p>
+          </div>
+
         </div>
-        <div class="col-lg-6 left-box col-lg-pull-6" ng-style="{'color': form.fontcolor || '#fff'}">
-          <h3>{{prevTitle}}</h3>
-          <p style="white-space: pre-line">{{prevDescription}}</p>
-        </div>
+
+
       </div>
 
       <div class="clearfix row">
 
-        <div class="col-sm-8 col-lg-9 text-center">
+        <div class="col-xs-7 col-sm-8 text-center">
           <h2 class="h4 text-center green-txt">Welcome</h2>
           <p class="text-center welcome-txt" style="white-space: pre-line">
             {{prevWelcome}}  
@@ -178,6 +221,7 @@
                     <h3 class="h5">{{faqTitle[$index] || "Question"}}</h3>
                     <p>{{faqText[$index] || "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque vitae officiis at repellat, temporibus incidunt doloribus laboriosam deleniti et voluptatibus dolorem quasi dolor minima natus rerum cumque voluptates, praesentium debitis."}}</p>
                   </li>
+
                 </ul>
               </section>
             </div><!-- / grid-gallery -->
@@ -195,7 +239,7 @@
 
         </div>
 
-        <div class="col-sm-4 col-lg-3 right-side">
+        <div class="col-xs-5 col-sm-4 right-side">
           <!--<div class="info">-->
           <!--<img src="{{pdata.side_cover}}" alt="Photo">-->
           <!--</div>-->
@@ -213,14 +257,14 @@
       </div>
 
       <div class="clearfix row pack-btm">
-        <div class="col-sm-8 col-lg-9 text-center btm">
+        <div class="col-xs-7 col-sm-8 text-center btm">
           <div class="more-dt">
             <h4 class="h4 bold text-center green-txt" ng-show="prevMoreInfoTitle">More Information</h4>
             <br>
             <ul class="row clearfix">
 
               <li class="col-xs-4" ng-repeat="it in moreinfo">
-                <a href="javascript:;" target="_blank">
+                <a class="more-img" href="javascript:;" target="_blank">
                   <img class="img-responsive" ngf-src="moreInfoImage[$index] || moreInfoCover" alt="">
                 </a>
                 <h2 class="h4 text-center">
@@ -232,7 +276,7 @@
           </div>
         </div>
 
-        <div class="col-sm-4 col-lg-3 right-side btm">
+        <div class="col-xs-5 col-sm-4 right-side btm">
           <div class="link-bar">
             <div class="h3">
               <div class="price">${{prevPrice}}</div>

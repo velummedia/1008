@@ -236,6 +236,6 @@ angular
               controller: 'PrevpackageCtrl'
             })
             .otherwise({
-                redirectTo: '/'
+                redirectTo: '/login'
             });
     });
