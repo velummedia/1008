@@ -779,12 +779,11 @@ $lines-to-show-2: 3;
 
 /*------------- Add New Package ---------------*/
 
-
-.md-button{
-	margin: 0;
-}
 .mg-bottom{
 	margin-bottom: 15px;
+}
+.mg-top{
+	margin-top: 15px;
 }
 md-input-container{
 	width: 100%;
@@ -792,7 +791,36 @@ md-input-container{
 textarea{
 	resize: none;
 }
+
 .add-package{
+	.gr-border{
+		border: 1px solid $green;
+		padding: 15px;
+	}
+
+	.md-button{
+		margin: 0 10px 0 0;
+		text-transform: capitalize;
+	}
+
+	@media (max-width: 991px) {
+		.nopadding-left{
+			padding-right: 0;
+		}
+	}
+	.section .h4{
+		color: $green;
+	}
+	.section .h4 span{
+		border: 2px solid $green;
+		display: inline-block;
+		border-radius: 50%;
+		width: 25px;
+		height: 25px;
+		text-align: center;
+		line-height: 21px;
+	}
+
 	.pack .link-bar .h3 a{
 		font-size: 14px;
 	}
@@ -818,18 +846,6 @@ textarea{
 		color: $wh;
 	}
 
-	.gr-border{
-		border: 1px solid $green;
-		display: table;
-		width: 100%;
-		text-align: center;
-		div{
-			display: table-cell;
-			vertical-align: middle;
-			line-height: 50px;
-		}
-	}
-
 	.pack .banner .left-box p{
 		padding: 0;
 	}
@@ -838,6 +854,7 @@ textarea{
 		padding-bottom: 33%;
 		position: relative;
 	}
+
 	.pack .banner .banner-inner{
 		position: absolute;
 		left: 0;
@@ -855,10 +872,12 @@ textarea{
 	.pack .banner .left-box{
 		padding: 15px;
 	}
+
 	.pack .banner h3{
 		font-size: 1.5vw;
 		margin-top: 0;
 	}
+
 	.pack .banner p{
 		font-size: 1vw;
 	}
@@ -866,6 +885,7 @@ textarea{
 	.pack .right-side .link-bar div{
 		font-size: 15px;
 	}
+
 	.pack .more-dt ul li .h4{
 		padding-top: 5px;
 		padding-bottom: 5px;
@@ -875,28 +895,34 @@ textarea{
 	.pack .more-dt ul li{
 		width: 33.3333%;
 	}
+
 	.pack .welcome-txt {
 		font-size: 0.8vw;
 	}
 
-	.avatar{
-		border-radius:50%;
-		height: 100px;
-		width: 100px;
-		margin: 0 auto;
-		padding-top: 30px;
-	}
 	.pack .link-bar .h3{
 		padding: 10px;
 	}
 
-	@media (max-width: $medium-width) {
-		.no-r-padding-xs{
-			padding-right: 0;
+	@media (min-width: $medium-width) {
+		.scrollbar{
+			height: 1000px;
+			overflow: auto;
+			padding-right: 10px;
 		}
-		.xs-nopadding{
-			padding: 0;
+		.scrollbar::-webkit-scrollbar {
+			width: 5px;
+		}
+		.scrollbar::-webkit-scrollbar-thumb {
+			border-radius: 0px;
+			-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+		}
+		.scrollbar::-webkit-scrollbar-track {
+			-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+			border-radius: 0px;
 		}
 	}
+
+
 
 }

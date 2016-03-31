@@ -269,6 +269,7 @@ hr {
   height: 56px;
   z-index: 111111;
   background: #fff;
+  backface-visibility: hidden;
 }
 .header-white-back {
   background-color: #fff !important;
@@ -439,6 +440,7 @@ hr {
   text-align: center;
   line-height: 30px;
   padding: 10px;
+  backface-visibility: hidden;
 }
 .footer a {
   color: #000;
@@ -454,12 +456,12 @@ hr {
 .singlecolumn .navigation-wrap{background-color: #ffffff;}
 .main-content .left-sidebar{
   position: fixed;
-  float: left;
   width: 140px;
   height: 100%;
   padding: 0 0 56px 0;
   z-index: 99999;
   background-color: #302D2D;
+  backface-visibility: hidden;
 }
 
 .main-content .contentside {

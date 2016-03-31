@@ -1,62 +1,100 @@
 
 <div class="wh-bg clearfix add-package">
-  <div class="col-md-7 nopadding">
-    <form name="addnewpackage" ng-submit="sendnewpackage(addnewpackage)">
+  <div class="col-md-6 nopadding-left">
+    <form name="addnewpackage" class="scrollbar" ng-submit="sendnewpackage(addnewpackage)">
 
-        <div class="clearfix">
+      <div class="section">
+        <h4 class="h4"><span>A</span> General Setting</h4>
+        <div class="gr-border">
 
           <div class="form-group">
-            <md-button colorpicker type="button" colorpicker-position="bottom" colorpicker-position="top" name="bgcolor" ng-model="form.bgcolor" ng-style="{'background-color': mybackground}" class="md-raised">
+            <md-button class="md-raised" colorpicker type="button" colorpicker-position="bottom" colorpicker-position="top" name="bgcolor" ng-model="form.bgcolor" ng-style="{'background-color': mybackground}">
               Change Theme Color
             </md-button>
-          </div>
 
-          <div class="form-group">
             <md-button class="md-raised" colorpicker type="button" colorpicker-position="bottom" colorpicker-position="top" name="fontcolor" ng-model="form.fontcolor" ng-style="{'background-color': fontColor}">
               Change Font Color
             </md-button>
           </div>
 
-          <div class="col-xs-6 col-sm-5 nopadding">
-
+          <div>
             <md-input-container>
-              <label>Title</label>
-              <input type="text" class="input-txt" name="name" ng-model="form.name" ng-keyup="liveTitle(form.name)">
+              <label>Price</label>
+              <input type="text" name="price" ng-model="form.price" ng-keyup="livePrice(form.price)" >
             </md-input-container>
-
-            <div class="form-group">
-              <textarea class="form-control input-txt" style="height: 152px" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." name="desc" ng-model="form.desc" ng-keyup="liveDescription(form.desc)">
-              </textarea>
-            </div>
-
-          </div>
-
-          <div class="col-xs-6 col-sm-7 no-r-padding-xs">
-            <div class="form-group gr-border" style="height: 249px">
-              <div class="button" ngf-select ng-model="topCover" name="topCover" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="20MB">Select Top Banner Photo Upload </div>
-            </div>
           </div>
 
         </div>
+      </div>
 
-        <div class="clearfix">
+      <div class="section">
+        <h4 class="h4"><span>B</span> Package info</h4>
+        <div class="gr-border">
 
-          <div class="col-md-8 nopadding">
-            <h2 class="h3">Welcome</h2>
+          <md-input-container>
+            <label>Title</label>
+            <input type="text" class="input-txt" name="name" ng-model="form.name" ng-keyup="liveTitle(form.name)">
+          </md-input-container>
 
-            <div class="form-group">
+
+          <div class="form-group">
+              <textarea class="form-control input-txt" style="height: 152px" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." name="desc" ng-model="form.desc" ng-keyup="liveDescription(form.desc)">
+              </textarea>
+          </div>
+
+          <div>
+            <md-button class="md-raised" ngf-select ng-model="topCover" name="topCover" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="20MB">Select Top Banner Photo Upload </md-button>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h4 class="h4"><span>C</span> Welcome & Intro</h4>
+
+        <div class="gr-border">
+          <div class="form-group">
               <textarea class="form-control input-txt" rows="8" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." name="welcometext" ng-model="form.welcometext" ng-keyup="liveWelcome(form.welcometext)">
               </textarea>
-            </div>
+          </div>
 
-            <small>Do you have More Info link?</small>
+          <small>Do you have More Info link?</small>
 
-            <div>
-              <md-input-container>
-                <label>More info link</label>
-                <input type="text" name="welcomemore" ng-model="form.welcomemore" ng-keyup="liveWelcomeReadMore(form.welcomemore)">
-              </md-input-container>
-            </div>
+          <div>
+            <md-input-container>
+              <label>More info link</label>
+              <input type="text" name="welcomemore" ng-model="form.welcomemore" ng-keyup="liveWelcomeReadMore(form.welcomemore)">
+            </md-input-container>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h4 class="h4"><span>D</span> Meet the Coach</h4>
+        <div class="gr-border">
+
+          <div class="form-group">
+            <h3 class="h3">Avatar :</h3>
+            <md-button class="md-raised" ngf-select ng-model="avatar" name="avatar" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="20MB">Select An Avatar</md-button>
+          </div>
+
+          <div>
+            <md-input-container>
+              <label>Coach Name</label>
+              <input type="text" name="coachname" ng-model="form.coachname" ng-keyup="liveCoachName(form.coachname)">
+            </md-input-container>
+          </div>
+
+          <div class="form-group">
+            <textarea class="form-control input-txt" rows="8" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." name="coachbio" ng-model="form.coachbio" ng-keyup="liveCoachBio(form.coachbio)">
+            </textarea>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="section">
+          <h4 class="h4"><span>E</span> Call to Actions</h4>
+          <div class="gr-border">
 
             <div>
               <md-input-container>
@@ -65,108 +103,95 @@
               </md-input-container>
             </div>
 
-            <div class="form-group gr-border" style="padding: 10%;">
-              <div class="button" ngf-select ng-model="secondBanner" name="secondBanner" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="20MB">Select Second Banner Photo Upload</div>
+            <div>
+              <md-input-container>
+                <label>Second button link</label>
+                <input type="text" name="button2text" ng-model="form.button2text" ng-keyup="liveButton1Text(form.button2text)">
+              </md-input-container>
             </div>
 
-            <div class="form-group">
-              <div class="h4">
-                <button class="btn plus-btn" type="button" ng-click="addFaq()"><i class="fa fa-plus"></i> </button>
-                FAQ
-              </div>
+          </div>
+        </div>
 
+      <div class="section">
+          <h4 class="h4"><span>E</span> Banners</h4>
+          <div class="gr-border">
+            <md-button class="md-raised" ngf-select ng-model="secondBanner" name="secondBanner" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="20MB">Select Second Banner Photo Upload</md-button>
+          </div>
+        </div>
+
+      <div class="section">
+        <h4 class="h4"><span>F</span> Add FAQ</h4>
+        <div class="gr-border">
+
+          <div class="h4">
+            <button class="btn plus-btn" type="button" ng-click="addFaq()"><i class="fa fa-plus"></i> </button>
+            FAQ
+          </div>
+
+          <ul>
+            <li ng-repeat="item in faqdata">
               <div>
-                <ul ng-flow-grid="homePageGrid" min-item-width="270">
-                  <li class="flowGridItem" ng-repeat="item in faqdata">
-                    <div>
-                      <md-input-container>
-                        <label>Question</label>
-                        <input type="text" name="faqTitle" ng-model="faqTitle[$index]">
-                      </md-input-container>
-                    </div>
-                    <p>
-                          <textarea class="form-control input-txt" rows="8" placeholder="Answer" name="faqText" ng-model="faqText[$index]">
-                          </textarea>
-                    </p>
-                  </li>
-                </ul>
+                <md-input-container>
+                  <label>Question</label>
+                  <input type="text" name="faqTitle" ng-model="faqTitle[$index]">
+                </md-input-container>
               </div>
+              <textarea class="form-control input-txt" rows="8" placeholder="Answer" name="faqText" ng-model="faqText[$index]">
+              </textarea>
+            </li>
+          </ul>
 
-            </div>
+        </div>
+      </div>
 
-            <div class="form-group">
-
-              <div class="h4">
-                <button class="btn plus-btn" type="button" ng-click="addMoreInfo()"><i class="fa fa-plus"></i></button>
-                More Information
-              </div>
-
-              <div class="more-dt">
-                <ul class="row clearfix">
-                  <li class="col-xs-4" ng-repeat="it in moreinfo track by $index">
-                    <div class="button" ngf-select ng-model="moreInfoImage[$index]" name="moreInfoImage" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="20MB">Select Photo</div>
-
-                      <div>
-                        <md-input-container>
-                          <label>Title</label>
-                          <input type="text" name="moreInfoTitle" ng-model="moreInfoTitle[$index]">
-                        </md-input-container>
-                      </div>
-
-                      <div>
-                        <md-input-container>
-                          <label>Description</label>
-                          <input type="text" name="moreInfoDesc" ng-model="moreInfoDesc[$index]">
-                        </md-input-container>
-                      </div>
-
-                      <div>
-                        <md-input-container>
-                          <label>Link</label>
-                          <input type="text" name="moreInfoLink" ng-model="moreInfoLink[$index]">
-                        </md-input-container>
-                      </div>
-
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-
+      <div class="section">
+        <h4 class="h4"><span>H</span> Add More Info</h4>
+        <div class="gr-border">
+          <div class="h4">
+            <button class="btn plus-btn" type="button" ng-click="addMoreInfo()"><i class="fa fa-plus"></i></button>
+            More Information
           </div>
 
-          <div class="col-md-4 xs-nopadding">
-            <div class="form-group">
-              <h3 class="h3">Avatar :</h3>
-              <div class="avatar gr-border" ngf-select ng-model="avatar" name="avatar" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="20MB">Select An Avatar</div>
-            </div>
+          <div class="more-dt">
+            <ul class="row clearfix">
+              <li class="col-xs-4" ng-repeat="it in moreinfo track by $index">
+                <div class="button" ngf-select ng-model="moreInfoImage[$index]" name="moreInfoImage" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="20MB">Select Photo</div>
 
-            <div>
-              <md-input-container>
-                <label>Coach Name</label>
-                <input type="text" name="coachname" ng-model="form.coachname" ng-keyup="liveCoachName(form.coachname)">
-              </md-input-container>
-            </div>
+                <div>
+                  <md-input-container>
+                    <label>Title</label>
+                    <input type="text" name="moreInfoTitle" ng-model="moreInfoTitle[$index]">
+                  </md-input-container>
+                </div>
 
-            <div class="form-group">
-                <textarea class="form-control input-txt" rows="8" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." name="coachbio" ng-model="form.coachbio" ng-keyup="liveCoachBio(form.coachbio)">
-                </textarea>
-              </div>
+                <div>
+                  <md-input-container>
+                    <label>Description</label>
+                    <input type="text" name="moreInfoDesc" ng-model="moreInfoDesc[$index]">
+                  </md-input-container>
+                </div>
 
-            <div>
-              <md-input-container>
-                <label>Price</label>
-                <input type="text" name="price" ng-model="form.price" ng-keyup="livePrice(form.price)" >
-              </md-input-container>
-              <h4 class="h3">Buy Now</h4>
-            </div>
+                <div>
+                  <md-input-container>
+                    <label>Link</label>
+                    <input type="text" name="moreInfoLink" ng-model="moreInfoLink[$index]">
+                  </md-input-container>
+                </div>
+
+              </li>
+            </ul>
           </div>
+
+
         </div>
 
-        <div class="mg-bottom">
-          <md-button class="md-raised" type="submit">Save</md-button>
-        </div>
+      </div>
 
+
+      <div class="mg-top mg-bottom">
+        <md-button class="md-raised" type="submit">Save</md-button>
+      </div>
 
     </form>
   </div>
@@ -174,8 +199,9 @@
 
   <!-- ///////////////////// PREVIEW SECTION ////////////////////////////// -->
 
-  <div class="col-md-5 nopadding">
-    <div class="pack wh-bg">
+  <div class="col-sm-6 nopadding">
+
+    <div class="pack wh-bg scrollbar">
       <div class="banner clearfix" ng-style="{'background-color': form.bgcolor || '#000'}">
         <div class="banner-inner">
           <img class="img-responsive" ngf-src="topCover || defaultTopCover" alt="Banner">
@@ -288,7 +314,6 @@
       </div>
 
     </div>
-
 
   </div>
 </div>
