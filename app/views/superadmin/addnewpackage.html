@@ -161,9 +161,10 @@
 
           <ul class="more-dt">
             <li ng-repeat="it in moreinfo track by $index">
+
               <md-button class="md-raised" ngf-select ng-model="moreInfoImage[$index]" name="moreInfoImage" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="20MB">Select Photo</md-button>
 
-              <div>
+              <div class="mg-top">
                 <md-input-container>
                   <label>Title</label>
                   <input type="text" name="moreInfoTitle" ng-model="moreInfoTitle[$index]">
@@ -253,7 +254,7 @@
 
               <div class="grid-gallery">
                 <section class="grid-wrap">
-                  <ul class="grid clearfix flowGrid" ng-flow-grid="homePageGrid" min-item-width="70">
+                  <ul class="clearfix flowGrid" id="demogrid">
                     <li class="flowGridItem" ng-repeat="item in faqdata">
                       <h3 class="h5">{{faqTitle[$index] || "Question"}}</h3>
                       <p>{{faqText[$index] || "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque vitae officiis at repellat, temporibus incidunt doloribus laboriosam deleniti et voluptatibus dolorem quasi dolor minima natus rerum cumque voluptates, praesentium debitis."}}</p>
@@ -261,6 +262,7 @@
                   </ul>
                 </section>
               </div><!-- / grid-gallery -->
+
               <a href="javascript:;" target="_blank" ng-show="prevReadMore1" class="h3">Read More</a>
             </div>
 
@@ -325,6 +327,7 @@
           </div>
 
         </div>
+
       </div>
 
 
@@ -333,3 +336,5 @@
 
   </div>
 </div>
+
+

@@ -1,32 +1,16 @@
-<style>
-    *{box-sizing: border-box;}
-    .flowGrid:before,.flowGrid:after{
-        content: "";
-        display: table;
-    }
-    .flowGrid:after{
-        clear:both;
-    }
-    .flowGridItem{ margin-bottom:10px;}
-    .flowGridItem img{width:100%;}
-    .flowGridColumn{
-        float: left;
-        padding-left: 10px;
-    }
-    .flowGridColumn:last-of-type{
-        padding-right: 10px;
-    }
-</style>
+
 <div class="user-pages pack wh-bg" ng-class="{'full-width' : fullWidth}">
     <div class="banner clearfix" ng-style="{'background-color': packageData.bgcolor}">
-        <div class="col-lg-6 col-lg-push-6 nopadding">
-            <img class="img-responsive" ng-src="http://res.cloudinary.com/velummedia/image/upload/members_{{packageData._id}}_topCover" alt="Banner">
-        </div>
-        <div class="col-lg-6 left-box col-lg-pull-6" ng-style="{'color': packageData.fontcolor}">
-            <h3>{{packageData.title}}</h3>
-            <p ng-bind-html="packageData.desc"></p>
-        </div>
+        <div class="banner-inner">
+            <div class="col-md-6 col-md-push-6 nopadding img-wrapper">
+                <img class="img-responsive" ng-src="http://res.cloudinary.com/velummedia/image/upload/members_{{packageData._id}}_topCover" alt="Banner">
+            </div>
 
+            <div class="col-md-6 left-box col-md-pull-6" ng-style="{'color': packageData.fontcolor}">
+                <h3 class="h2">{{packageData.title}}</h3>
+                <p ng-bind-html="packageData.desc"></p>
+            </div>
+        </div>
     </div>
 
     <div class="clearfix row">
@@ -37,7 +21,6 @@
 
             </p>
             <a href="{{packageData.welcomemore}}" target="_blank" ng-show="packageData.welcomemore" class="h3">Read More</a>
-
 
             <div class="link-bar">
                 <div class="h3">
@@ -100,7 +83,7 @@
                 <ul class="row clearfix">
 
                     <li class="col-xs-4" ng-repeat="it in packageData.moreinfo">
-                        <a href="{{it.link}}" target="_blank">
+                        <a class="more-img" href="{{it.link}}" target="_blank">
                             <img class="img-responsive" src="http://res.cloudinary.com/velummedia/image/upload/members_{{packageData._id}}_moreinfo_{{$index}}" alt="">
                         </a>
                         <h2 class="h4 text-center">

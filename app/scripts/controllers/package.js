@@ -23,13 +23,10 @@ angular.module('bmadminApp')
     $timeout( function(){
 		flow = fgDelegate.new({
 		  name:"demoGird",
-		  minItemWidth:200,
+		  minItemWidth:270,
 		  container: document.getElementById("demogrid"),
 		  itemSelector:".flowGridItem",
 		})
 	},300);
-
-
-
 
 });

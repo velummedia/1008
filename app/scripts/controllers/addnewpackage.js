@@ -8,7 +8,7 @@
  * Controller of the bmadminApp
  */
 angular.module('bmadminApp')
-  .controller('AddnewpackageCtrl', function ($scope,$http,logger,Upload,cloudinary) {
+  .controller('AddnewpackageCtrl', function ($scope,$http,logger,Upload,cloudinary,fgDelegate,$timeout) {
     $scope.open = function($event) {
 		$scope.opened = true;
 	};
@@ -147,12 +147,6 @@ angular.module('bmadminApp')
 
 
 
-
-
-
-
-    ///////////////////
-
     $scope.moreinfo = [];
     $scope.moreInfoImage = [];
     $scope.moreInfoTitle = [];
@@ -285,6 +279,14 @@ angular.module('bmadminApp')
         }
     }
 
-
-
+    /******* Grid *******/
+    var flow;
+      $timeout( function(){
+          flow = fgDelegate.new({
+              name:"demoGird",
+              minItemWidth:200,
+              container: document.getElementById("demogrid"),
+              itemSelector:".flowGridItem",
+          })
+      },100);
   });
