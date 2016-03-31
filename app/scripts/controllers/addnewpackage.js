@@ -35,7 +35,7 @@ angular.module('bmadminApp')
     $scope.secondAvatar = "http://res.cloudinary.com/velummedia/image/upload/v1458829161/members/second_default.jpg";
     $scope.moreInfoCover = "http://res.cloudinary.com/velummedia/image/upload/v1458828609/members/banner_default.jpg";
     $scope.prevTitle = "TITLE";
-    $scope.prevDescription = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate dolores, earum quidem odit, quibusdam odio perferendis esse architecto maiores";
+    $scope.prevDescription = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate dolores, earum quidem odit.";
     $scope.prevWelcome = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae harum laboriosam distinctio et suscipit, rerum pariatur unde natus hic eum cupiditate, alias laudantium labore magni voluptate voluptatibus nesciunt laborum esse.";
     $scope.prevCoachBio = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae harum laboriosam distinctio et suscipit.";
     $scope.PrevCoachName = "John Smith";
@@ -106,14 +106,14 @@ angular.module('bmadminApp')
     }
 
     $scope.liveFaq = function() {
-        if (faqdata.length == 0) {
+        if ($scope.faqdata.length == 0) {
             $scope.prevFaqTitle = false;
         }else{
             $scope.prevFaqTitle = true;
         }
     }
     $scope.liveMoreInfo = function() {
-        if (faqdata.length == 0) {
+        if ($scope.moreinfo.length == 0) {
             $scope.prevMoreInfoTitle = false;
         }else{
             $scope.prevMoreInfoTitle = true;

@@ -213,15 +213,14 @@
 
           <div class="frq-section">
             <h3 class="h3 text-center bold green-txt" ng-show="prevFaqTitle">Frequently Asked Questions</h3>
+            
             <div class="grid-gallery">
-
               <section class="grid-wrap">
-                <ul class="grid clearfix flowGrid" ng-flow-grid="homePageGrid" min-item-width="270">
+                <ul class="grid clearfix flowGrid" ng-flow-grid="homePageGrid" min-item-width="70">
                   <li class="flowGridItem" ng-repeat="item in faqdata">
                     <h3 class="h5">{{faqTitle[$index] || "Question"}}</h3>
                     <p>{{faqText[$index] || "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque vitae officiis at repellat, temporibus incidunt doloribus laboriosam deleniti et voluptatibus dolorem quasi dolor minima natus rerum cumque voluptates, praesentium debitis."}}</p>
                   </li>
-
                 </ul>
               </section>
             </div><!-- / grid-gallery -->
