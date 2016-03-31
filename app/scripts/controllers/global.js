@@ -90,9 +90,16 @@ angular.module('bmadminApp')
 
   	$rootScope.$on("$routeChangeSuccess", function (event, currentRoute, previousRoute) {
       $rootScope.sysname = "members";
-
       window.scrollTo(0,0);
-      // For Page Title
+
+      // LODING ALL PACKAGES //
+      var getPackageData = "sysname=" + $scope.sysname;
+      httpAccess(getPackageData,"membersGetAllPackages",$http).then(function(result){
+        console.log(result);
+        $rootScope.packages = result.data.export;
+      });
+      /// ///////////////// //
+      // For Page Title //
       switch(currentRoute.$$route.originalPath){
         case '/browsepackage':
           $rootScope.pageTitle = "Browse Package";
@@ -163,7 +170,7 @@ angular.module('bmadminApp')
           $rootScope.pageTitle = "";
         break;
       }
-      // End of Page Title
+      // End of Page Title //
       // 
 
       if (currentRoute.$$route.originalPath == '/login' ||

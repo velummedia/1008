@@ -1,10 +1,30 @@
+<style>
+    *{box-sizing: border-box;}
+    .flowGrid:before,.flowGrid:after{
+        content: "";
+        display: table;
+    }
+    .flowGrid:after{
+        clear:both;
+    }
+    .flowGridItem{ margin-bottom:10px;}
+    .flowGridItem img{width:100%;}
+    .flowGridColumn{
+        float: left;
+        padding-left: 10px;
+    }
+    .flowGridColumn:last-of-type{
+        padding-right: 10px;
+    }
+</style>
 <div class="user-pages pack wh-bg" ng-class="{'full-width' : fullWidth}">
-    <div class="banner clearfix" ng-style="{'background-color': pdata.bg}">
+    <div class="banner clearfix" ng-style="{'background-color': packageData.bgcolor}">
         <div class="col-lg-6 col-lg-push-6 nopadding">
-            <img class="img-responsive" src="{{pdata.cover}}" alt="Banner">
+            <img class="img-responsive" ng-src="http://res.cloudinary.com/velummedia/image/upload/members_{{packageData._id}}_topCover" alt="Banner">
         </div>
-        <div class="col-lg-6 left-box col-lg-pull-6 ">
-            <p ng-bind-html="pdata.description"></p>
+        <div class="col-lg-6 left-box col-lg-pull-6" ng-style="{'color': packageData.fontcolor}">
+            <h3>{{packageData.title}}</h3>
+            <p ng-bind-html="packageData.desc"></p>
         </div>
 
     </div>
@@ -13,43 +33,42 @@
 
         <div class="col-sm-8 col-lg-9 text-center">
             <h2 class="h1 text-center green-txt">Welcome</h2>
-            <p class="text-center welcome-txt" ng-bind-html="pdata.welcome_text">
+            <p class="text-center welcome-txt" ng-bind-html="packageData.welcometext">
 
             </p>
-            <a href="{{pdata.welcome_more}}" target="_blank" ng-show="pdata.welcome_more" class="h3">Read More</a>
+            <a href="{{packageData.welcomemore}}" target="_blank" ng-show="packageData.welcomemore" class="h3">Read More</a>
 
 
             <div class="link-bar">
                 <div class="h3">
-                    <a href="#/paymentsuser/{{pdata.pid}}">Start your training today!</a>
-                    <a class="load-more-ic" href="#/paymentsuser/{{pdata.pid}}"><i class="fa fa-angle-right green-txt"></i></a>
+                    <a href="#/paymentsuser/{{packageData._id}}">{{packageData.button1text}}</a>
+                    <a class="load-more-ic" href="#/paymentsuser/{{packageData._id}}"><i class="fa fa-angle-right green-txt"></i></a>
                 </div>
             </div>
 
             <div class="intro-banner">
-                <img src="{{pdata.cover2}}" alt="Banner">
+                <img src="http://res.cloudinary.com/velummedia/image/upload/members_{{packageData._id}}_secondBanner" alt="Banner">
             </div>
 
             <div class="frq-section">
-                <h3 class="h1 text-center bold green-txt" ng-show="pdata.faq">Frequently Asked Questions</h3>
+                <h3 class="h1 text-center bold green-txt" ng-show="packageData.faq">Frequently Asked Questions</h3>
                 <div class="grid-gallery">
-
                     <section class="grid-wrap">
-                        <ul class="grid clearfix flowGrid" ng-flow-grid="homePageGrid" min-item-width="270">
-                            <li class="flowGridItem" ng-repeat="item in pdata.faq">
+                        <ul class="clearfix flowGrid" id="demogrid">
+                            <li class="flowGridItem" ng-repeat="item in packageData.faq">
                                 <h3 class="h4">{{item.title}}</h3>
                                 <p>{{item.text}}</p>
                             </li>
                         </ul>
                     </section>
                 </div><!-- / grid-gallery -->
-                <a href="{{pdata.faq_more}}" target="_blank" ng-show="pdata.faq_more" class="h3">Read More</a>
+                <a href="{{packageData.faq_more}}" target="_blank" ng-show="packageData.faq_more" class="h3">Read More</a>
             </div>
 
             <div class="link-bar">
                 <div class="h3">
-                    <a href="#/paymentsuser/{{pdata.pid}}">I want to start my training!</a>
-                    <a class="load-more-ic" href="#/paymentsuser/{{pdata.pid}}"><i class="fa fa-angle-right green-txt"></i></a>
+                    <a href="#/paymentsuser/{{packageData.pid}}">I want to start my training!</a>
+                    <a class="load-more-ic" href="#/paymentsuser/{{packageData.pid}}"><i class="fa fa-angle-right green-txt"></i></a>
                 </div>
             </div>
 
@@ -59,15 +78,14 @@
 
         <div class="col-sm-4 col-lg-3 right-side">
             <!--<div class="info">-->
-                <!--<img src="{{pdata.side_cover}}" alt="Photo">-->
+                <!--<img src="{{packageData.side_cover}}" alt="Photo">-->
             <!--</div>-->
             <div class="about-couch">
-                <img src="{{pdata.about_coach.avatar}}" alt="Coach Pic">
+                <img src="http://res.cloudinary.com/velummedia/image/upload/members_{{packageData._id}}_coachAvatar" alt="Coach Pic">
                 <h3 class="text-center">Meet your coach</h3>
-                <p ng-bind-html="pdata.about_coach.bio">
+                <h3 class="text-center">{{packageData.coach.name}}</h3>
+                <p ng-bind-html="packageData.coach.bio">
 
-                </p>
-                <p ng-bind-html="pdata.about_coach.bio2">
                 </p>
             </div>
 
@@ -81,12 +99,12 @@
                 <br>
                 <ul class="row clearfix">
 
-                    <li class="col-xs-4" ng-repeat="it in pdata.moreinfo">
-                        <a href="{{it.link}}" target=“_blank">
-                            <img class="img-responsive" src="{{it.cover}}" alt="">
+                    <li class="col-xs-4" ng-repeat="it in packageData.moreinfo">
+                        <a href="{{it.link}}" target="_blank">
+                            <img class="img-responsive" src="http://res.cloudinary.com/velummedia/image/upload/members_{{packageData._id}}_moreinfo_{{$index}}" alt="">
                         </a>
                         <h2 class="h4 text-center">
-                            <a href="{{it.link}}" target=“_blank">{{it.title}}</a>
+                            <a href="{{it.link}}" target="_blank">{{it.title}}</a>
                         </h2>
                         <p class="limit-txt-2">{{it.text}}</p>
                     </li>
@@ -97,9 +115,9 @@
         <div class="col-sm-4 col-lg-3 right-side btm">
             <div class="link-bar">
                 <div class="h3">
-                    <div class="price">${{pdata.price}}</div>
-                    <a href="#/paymentsuser/{{pdata.pid}}">Buy Now</a>
-                    <a class="load-more-ic" href="#/paymentsuser/{{pdata.pid}}"><i class="fa fa-angle-right green-txt"></i></a>
+                    <div class="price">${{packageData.price}}</div>
+                    <a href="#/paymentsuser/{{packageData.pid}}">Buy Now</a>
+                    <a class="load-more-ic" href="#/paymentsuser/{{packageData.pid}}"><i class="fa fa-angle-right green-txt"></i></a>
                 </div>
             </div>
         </div>

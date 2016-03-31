@@ -1,56 +1,31 @@
 
 <div class="user-pages brows-pack">
     <div class="row clearfix">
-        <div class="col-sm-4 col-xs-6 packageswrap" ng-repeat="item in packages" ng-if="item.package.approved == 1 && item.approved != 8 && item.access == 1 " ng-class="{'disable' : item.package.approved == 0, 'refund' : item.approved == 8}">
-            <div ng-style="{'background-color' : colors[$index]}">
-                <span class="order-flag"><em>Purchased</em></span>
-                <a class="img-container" href="#/package/{{createMoreInfo(item.package.name)}}">
-                    <img class="img-responsive" ng-src="{{loadBackgroundImage(item.package.name)}}" alt="">
-                </a>
-                <div class="br-main">
-                    <div class="img-overlay" ng-style="{'background-color' : colors[$index]}"></div>
-                    <h3 class="limit-txt"><a href="#/package/{{createMoreInfo(item.package.name)}}">{{item.package.name}}</a></h3>
-                </div>
-                <footer class="more-buy-wrap clearfix">
-                    <a class="buy-btn" href="{{item.package.loginurl}}" style="width:100%;">LOGIN</a>
-                </footer>
-            </div>
-        </div>
-
-        <div class="col-sm-4 col-xs-6 packageswrap" ng-repeat="item in packages" ng-if="item.package.approved == 1 && item.access == 0 && item.approved != 8 && item.package.start_date < todayTime"  ng-class="{'disable' : item.package.approved == 0, 'refund' : item.approved == 8}">
+        <div class="col-sm-4 col-xs-6 packageswrap" ng-repeat="item in packages">
 
             <div ng-style="{'background-color' : colors[$index]}">
                 <span class="order-flag y-flag"><em>Buy Now</em></span>
-                <a class="img-container" href="#/package/{{createMoreInfo(item.package.name)}}">
-                    <img class="img-responsive" ng-src="{{loadBackgroundImage(item.package.name)}}" ng-show="item.package.price !== '0'" alt="">
-                </a>
-                <a class="img-responsive" href="javascript:;" ng-show="item.package.price == '0'">
-                    <img class="img-responsive" ng-src="{{loadBackgroundImage(item.package.name)}}" alt="">
+                <a class="img-container" href="#/package/{{createMoreInfo(item.title)}}{{createMoreInfo(item.title)}}">
+                    <img class="img-responsive" ng-src="http://res.cloudinary.com/velummedia/image/upload/members_{{item._id}}_topCover" ng-show="item.package.price !== '0'" alt="">
                 </a>
                 
                 <div class="br-main">
                     <div class="img-overlay" ng-style="{'background-color' : colors[$index]}"></div>
                     <h3 class="limit-txt">
-                        <a href="#/package/{{createMoreInfo(item.package.name)}}" ng-show="item.package.price !== '0'">{{item.package.name}}</a>
-                        <a href="javascript:;" ng-show="item.package.price == '0'">{{item.package.name}}</a>
+                        <a href="#/package/{{createMoreInfo(item.title)}}" ng-show="item.package.price !== '0'">{{item.title}}</a>
                     </h3>
                 </div>
 
                 <footer class="more-buy-wrap clearfix">
-                    <a href="#/package/{{createMoreInfo(item.package.name)}}" ng-show="item.package.price !== '0'">More Info</a>
-                    <a href="javscript:;" ng-show="item.package.price == '0'">More Info</a>
-                    <a class="buy-btn" href="#/paymentsuser/{{item.package.id}}" ng-show="item.package.price !== '0'">Buy For ${{item.package.price}}</a>
-                    <a class="buy-btn" href="#/paymentsuser/{{item.package.id}}" ng-show="item.package.price == '0'">
+                    <a href="#/package/{{createMoreInfo(item.title)}}" ng-show="item.price !== '0'">More Info</a>
+                    <a class="buy-btn" href="#/paymentsuser/{{item.id}}" ng-show="item.price !== '0'">Buy For ${{item.price}}</a>
+                    <a class="buy-btn" href="#/paymentsuser/{{item.id}}" ng-show="item.price == '0'">
                         Access
-                        <span ng-show="!item.package.vip && item.package.price !== '0'">
-                            ${{item.package.price}}
-                        </span>
-                        <span ng-show="item.package.vip">VIP</span>
-                        <span ng-show="!item.package.vip && item.package.price == '0'">Free</span>
+                        <span ng-show="item.price == '0'">Free</span>
                     </a>
                 </footer>
-            </div>
 
+            </div>
         </div>
     </div>
 </div>
