@@ -97,6 +97,23 @@ angular.module('bmadminApp')
             $scope.prevWelcomeReadMore = true;
         }
     }
+
+      $scope.liveReadMore1 = function(a) {
+          if (a.length == 0) {
+              $scope.prevReadMore1 = false;
+          }else{
+              $scope.prevReadMore1 = true;
+          }
+      }
+
+      $scope.liveReadMore2 = function(a) {
+          if (a.length == 0) {
+              $scope.prevReadMore2 = false;
+          }else{
+              $scope.prevReadMore2 = true;
+          }
+      }
+
     $scope.liveButton1Text = function(a) {
         if (a.length == 0) {
             $scope.prevButton1Text = "Start your training today!";
@@ -104,6 +121,14 @@ angular.module('bmadminApp')
             $scope.prevButton1Text = a;
         }
     }
+
+    $scope.liveButton2Text = function(a) {
+          if (a.length == 0) {
+              $scope.prevButton2Text = "Start";
+          }else{
+              $scope.prevButton2Text = a;
+          }
+      }
 
     $scope.liveFaq = function() {
         if ($scope.faqdata.length == 0) {

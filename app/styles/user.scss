@@ -798,6 +798,14 @@ textarea{
 		padding: 15px;
 	}
 
+	textarea{
+		background-color: transparent;
+	}
+
+	ul,textarea{
+		margin-bottom: 0;
+	}
+
 	.md-button{
 		margin: 0 10px 0 0;
 		text-transform: capitalize;
@@ -906,8 +914,9 @@ textarea{
 
 	@media (min-width: $medium-width) {
 		.scrollbar{
-			height: 1000px;
-			overflow: auto;
+			height: 800px;
+			overflow-y: auto;
+			overflow-x: hidden;
 			padding-right: 10px;
 		}
 		.scrollbar::-webkit-scrollbar {
@@ -923,6 +932,10 @@ textarea{
 		}
 	}
 
-
+	//@media (min-width: $lg-width){
+	//	.scrollbar {
+	//		height: 850px;
+	//	}
+	//}
 
 }

@@ -1,5 +1,5 @@
 
-<div class="wh-bg clearfix add-package">
+<div class=" clearfix add-package">
   <div class="col-md-6 nopadding-left">
     <form name="addnewpackage" class="scrollbar" ng-submit="sendnewpackage(addnewpackage)">
 
@@ -106,7 +106,7 @@
             <div>
               <md-input-container>
                 <label>Second button link</label>
-                <input type="text" name="button2text" ng-model="form.button2text" ng-keyup="liveButton1Text(form.button2text)">
+                <input type="text" name="button2text" ng-model="form.button2text" ng-keyup="liveButton2Text(form.button2text)">
               </md-input-container>
             </div>
 
@@ -142,6 +142,12 @@
             </li>
           </ul>
 
+          <div class="mg-top">
+            <md-input-container>
+              <label>More info link</label>
+              <input type="text" name="more1" ng-model="form.more1" ng-keyup="liveReadMore1(form.more1)">
+            </md-input-container>
+          </div>
         </div>
       </div>
 
@@ -153,37 +159,40 @@
             More Information
           </div>
 
-          <div class="more-dt">
-            <ul class="row clearfix">
-              <li class="col-xs-4" ng-repeat="it in moreinfo track by $index">
-                <div class="button" ngf-select ng-model="moreInfoImage[$index]" name="moreInfoImage" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="20MB">Select Photo</div>
+          <ul class="more-dt">
+            <li ng-repeat="it in moreinfo track by $index">
+              <md-button class="md-raised" ngf-select ng-model="moreInfoImage[$index]" name="moreInfoImage" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="20MB">Select Photo</md-button>
 
-                <div>
-                  <md-input-container>
-                    <label>Title</label>
-                    <input type="text" name="moreInfoTitle" ng-model="moreInfoTitle[$index]">
-                  </md-input-container>
-                </div>
+              <div>
+                <md-input-container>
+                  <label>Title</label>
+                  <input type="text" name="moreInfoTitle" ng-model="moreInfoTitle[$index]">
+                </md-input-container>
+              </div>
 
-                <div>
-                  <md-input-container>
-                    <label>Description</label>
-                    <input type="text" name="moreInfoDesc" ng-model="moreInfoDesc[$index]">
-                  </md-input-container>
-                </div>
+              <div>
+                <md-input-container>
+                  <label>Description</label>
+                  <input type="text" name="moreInfoDesc" ng-model="moreInfoDesc[$index]">
+                </md-input-container>
+              </div>
 
-                <div>
-                  <md-input-container>
-                    <label>Link</label>
-                    <input type="text" name="moreInfoLink" ng-model="moreInfoLink[$index]">
-                  </md-input-container>
-                </div>
+              <div>
+                <md-input-container>
+                  <label>Link</label>
+                  <input type="text" name="moreInfoLink" ng-model="moreInfoLink[$index]">
+                </md-input-container>
+              </div>
 
-              </li>
-            </ul>
+            </li>
+          </ul>
+
+          <div class="mg-top">
+            <md-input-container>
+              <label>More info link</label>
+              <input type="text" name="more2" ng-model="form.more2" ng-keyup="liveReadMore2(form.more2)">
+            </md-input-container>
           </div>
-
-
         </div>
 
       </div>
@@ -201,117 +210,124 @@
 
   <div class="col-sm-6 nopadding">
 
-    <div class="pack wh-bg scrollbar">
-      <div class="banner clearfix" ng-style="{'background-color': form.bgcolor || '#000'}">
-        <div class="banner-inner">
-          <img class="img-responsive" ngf-src="topCover || defaultTopCover" alt="Banner">
+    <div class="pack wh-bg">
 
-          <div class="col-xs-6 left-box" ng-style="{'color': form.fontcolor || '#fff'}">
-            <h3>{{prevTitle}}</h3>
-            <p style="white-space: pre-line">{{prevDescription}}</p>
-          </div>
+      <div class="scrollbar">
+        <div class="banner clearfix" ng-style="{'background-color': form.bgcolor || '#000'}">
+          <div class="banner-inner">
+            <img class="img-responsive" ngf-src="topCover || defaultTopCover" alt="Banner">
 
-        </div>
-
-
-      </div>
-
-      <div class="clearfix row">
-
-        <div class="col-xs-7 col-sm-8 text-center">
-          <h2 class="h4 text-center green-txt">Welcome</h2>
-          <p class="text-center welcome-txt" style="white-space: pre-line">
-            {{prevWelcome}}  
-          </p>
-          <a href="javascript:;" target="_blank" ng-show="prevWelcomeReadMore" class="h3">Read More</a>
-
-
-          <div class="link-bar">
-            <div class="h3">
-              <a href="javascript:;">{{prevButton1Text}}</a>
-              <a class="load-more-ic" href="javascript:;"><i class="fa fa-angle-right green-txt"></i></a>
+            <div class="col-xs-6 left-box" ng-style="{'color': form.fontcolor || '#fff'}">
+              <h3>{{prevTitle}}</h3>
+              <p style="white-space: pre-line">{{prevDescription}}</p>
             </div>
-          </div>
 
-          <div class="intro-banner">
-            <img ngf-src="secondBanner || secondAvatar" alt="Banner">
           </div>
-
-          <div class="frq-section">
-            <h3 class="h3 text-center bold green-txt" ng-show="prevFaqTitle">Frequently Asked Questions</h3>
-            
-            <div class="grid-gallery">
-              <section class="grid-wrap">
-                <ul class="grid clearfix flowGrid" ng-flow-grid="homePageGrid" min-item-width="70">
-                  <li class="flowGridItem" ng-repeat="item in faqdata">
-                    <h3 class="h5">{{faqTitle[$index] || "Question"}}</h3>
-                    <p>{{faqText[$index] || "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque vitae officiis at repellat, temporibus incidunt doloribus laboriosam deleniti et voluptatibus dolorem quasi dolor minima natus rerum cumque voluptates, praesentium debitis."}}</p>
-                  </li>
-                </ul>
-              </section>
-            </div><!-- / grid-gallery -->
-            <!-- <a href="{{pdata.faq_more}}" target="_blank" ng-show="pdata.faq_more" class="h3">Read More</a> -->
-          </div>
-
-          <div class="link-bar">
-            <div class="h3">
-              <a href="javascript:;">I want to start my training!</a>
-              <a class="load-more-ic" href="javascript:;"><i class="fa fa-angle-right green-txt"></i></a>
-            </div>
-          </div>
-
 
 
         </div>
 
-        <div class="col-xs-5 col-sm-4 right-side">
-          <!--<div class="info">-->
-          <!--<img src="{{pdata.side_cover}}" alt="Photo">-->
-          <!--</div>-->
-          <div class="about-couch">
-            <img ngf-src="avatar || defaultAvatar" alt="Coach Pic">
-            <h3 class="h5 text-center">Meet your coach</h3>
-            <h4 class="h5 text-center">{{PrevCoachName}}</h4>
-            <p style="white-space: pre-line; font-size: 12px;">
-              {{prevCoachBio}}
+        <div class="clearfix row">
+
+          <div class="col-xs-7 col-sm-8 text-center">
+            <h2 class="h4 text-center green-txt">Welcome</h2>
+            <p class="text-center welcome-txt" style="white-space: pre-line">
+              {{prevWelcome}}
             </p>
-            
+            <a href="javascript:;" target="_blank" ng-show="prevWelcomeReadMore" class="h3">Read More</a>
+
+
+            <div class="link-bar">
+              <div class="h3">
+                <a href="javascript:;">{{prevButton1Text}}</a>
+                <a class="load-more-ic" href="javascript:;"><i class="fa fa-angle-right green-txt"></i></a>
+              </div>
+            </div>
+
+            <div class="intro-banner">
+              <img ngf-src="secondBanner || secondAvatar" alt="Banner">
+            </div>
+
+            <div class="frq-section">
+              <h3 class="h3 text-center bold green-txt" ng-show="prevFaqTitle">Frequently Asked Questions</h3>
+
+              <div class="grid-gallery">
+                <section class="grid-wrap">
+                  <ul class="grid clearfix flowGrid" ng-flow-grid="homePageGrid" min-item-width="70">
+                    <li class="flowGridItem" ng-repeat="item in faqdata">
+                      <h3 class="h5">{{faqTitle[$index] || "Question"}}</h3>
+                      <p>{{faqText[$index] || "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque vitae officiis at repellat, temporibus incidunt doloribus laboriosam deleniti et voluptatibus dolorem quasi dolor minima natus rerum cumque voluptates, praesentium debitis."}}</p>
+                    </li>
+                  </ul>
+                </section>
+              </div><!-- / grid-gallery -->
+              <a href="javascript:;" target="_blank" ng-show="prevReadMore1" class="h3">Read More</a>
+            </div>
+
+            <div class="link-bar">
+              <div class="h3">
+                <a href="javascript:;">{{prevButton2Text}}</a>
+                <a class="load-more-ic" href="javascript:;"><i class="fa fa-angle-right green-txt"></i></a>
+              </div>
+            </div>
+
+
+
           </div>
 
-        </div>
-      </div>
+          <div class="col-xs-5 col-sm-4 right-side">
+            <!--<div class="info">-->
+            <!--<img src="{{pdata.side_cover}}" alt="Photo">-->
+            <!--</div>-->
+            <div class="about-couch">
+              <img ngf-src="avatar || defaultAvatar" alt="Coach Pic">
+              <h3 class="h5 text-center">Meet your coach</h3>
+              <h4 class="h5 text-center">{{PrevCoachName}}</h4>
+              <p style="white-space: pre-line; font-size: 12px;">
+                {{prevCoachBio}}
+              </p>
 
-      <div class="clearfix row pack-btm">
-        <div class="col-xs-7 col-sm-8 text-center btm">
-          <div class="more-dt">
-            <h4 class="h4 bold text-center green-txt" ng-show="prevMoreInfoTitle">More Information</h4>
-            <br>
-            <ul class="row clearfix">
+            </div>
 
-              <li class="col-xs-4" ng-repeat="it in moreinfo">
-                <a class="more-img" href="javascript:;" target="_blank">
-                  <img class="img-responsive" ngf-src="moreInfoImage[$index] || moreInfoCover" alt="">
-                </a>
-                <h2 class="h4 text-center">
-                  <a href="{{it.link}}" target="_blank">{{moreInfoTitle[$index] || "title"}}</a>
-                </h2>
-                <p class="limit-txt-2">{{moreInfoDesc[$index] || "short text"}}</p>
-              </li>
-            </ul>
           </div>
         </div>
 
-        <div class="col-xs-5 col-sm-4 right-side btm">
-          <div class="link-bar">
-            <div class="h3">
-              <div class="price">${{prevPrice}}</div>
-              <a href="#/paymentsuser/{{pdata.pid}}">Buy Now</a>
-              <a class="load-more-ic" href="#/paymentsuser/{{pdata.pid}}"><i class="fa fa-angle-right green-txt"></i></a>
+        <div class="clearfix row pack-btm">
+          <div class="col-xs-7 col-sm-8 text-center btm">
+            <div class="more-dt">
+              <h4 class="h4 bold text-center green-txt" ng-show="prevMoreInfoTitle">More Information</h4>
+              <br>
+              <ul class="row clearfix">
+
+                <li class="col-xs-4" ng-repeat="it in moreinfo">
+                  <a class="more-img" href="javascript:;" target="_blank">
+                    <img class="img-responsive" ngf-src="moreInfoImage[$index] || moreInfoCover" alt="">
+                  </a>
+                  <h2 class="h4 text-center">
+                    <a href="{{it.link}}" target="_blank">{{moreInfoTitle[$index] || "title"}}</a>
+                  </h2>
+                  <p class="limit-txt-2">{{moreInfoDesc[$index] || "short text"}}</p>
+                </li>
+
+                <a href="javascript:;" target="_blank" ng-show="prevReadMore2" class="h3">Read More</a>
+              </ul>
             </div>
           </div>
-        </div>
 
+          <div class="col-xs-5 col-sm-4 right-side btm">
+            <div class="link-bar">
+              <div class="h3">
+                <div class="price">${{prevPrice}}</div>
+                <a href="#/paymentsuser/{{pdata.pid}}">Buy Now</a>
+                <a class="load-more-ic" href="#/paymentsuser/{{pdata.pid}}"><i class="fa fa-angle-right green-txt"></i></a>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
+
+
 
     </div>
 
