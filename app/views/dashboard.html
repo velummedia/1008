@@ -1,283 +1,495 @@
-<div  class="main-dash user-pages clearfix">
+<div class="box-row sale-info clearfix">
 
-    <div class="row">
-        <div class="col-sm-6 col-lg-3 right-box">
-            <div class="box-wrapper">
-                <h2>Sales</h2>
-                <div class="inner">
-                    <select name="usersPackage" id="income" ng-model="form.usersPackage" ng-change="userPackageChange(form.usersPackage)">
+    <div class="col col-sm-4">
+        <div class="green-box">
+            <h4 class="h4">Sales</h4>
+            <div class="inner">
+                <label class="select-box">
+                    <select name="usersPackage" ng-model="form.usersPackage" ng-change="userPackageChange(form.usersPackage)">
                         <option value="0">Total</option>
                         <option ng-repeat="item in filterPackages" value="{{item.id}}">{{item.name}}</option>
                     </select>
+                </label>
 
-                    <div class="blue-txt">{{userDataMonitor}}</div>
-                    <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-                </div>
+                <div class="huge-num text-center">{{userDataMonitor}}</div>
+                <p class="limit-txt mg-top">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus harum possimus sapiente sunt. Adipisci consectetur cumque doloribus earum eligendi excepturi facilis illum laudantium adipisicing elit. Delectus harum possimus sapiente sunt. Adipisci consectetur cumque doloribus earum eligendi excepturi facilis illum laudantium</p>
             </div>
         </div>
-        <div class="col-sm-6 col-lg-3 right-box">
-            <div class="box-wrapper">
-                <h2>Monitor</h2>
-                <div class="inner">
+    </div>
+    <div class="col col-sm-4">
+        <div class="green-box">
+            <h4 class="h4">Monitor</h4>
+            <div class="inner">
+                <label class="select-box">
                     <select name="monitorTypeChoose" id="monitor" ng-model="form.monitorTypeChoose" ng-change="monitorTypeChange(form.monitorTypeChoose)">
                         <option value="0">Today</option>
                         <option value="7">Last 7 days</option>
                         <option value="30">Last 30 days</option>
                     </select>
-                    <div class="blue-txt">{{monitorUser}}</div>
-                    <div class="blue-txt">{{monitorIncome | currency:"$"}}</div>
-                    <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+                </label>
+                <div class="clearfix">
+                    <div class="huge-num text-center pull-left">{{monitorUser}}</div>
+                    <div class="huge-num text-center pull-right">{{monitorIncome | currency:"$"}}</div>
                 </div>
+                <p class="limit-txt mg-top">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias aliquam asperiores at corporis dicta error impedit, inventore itaque maxime nam necessitatibus nemo nesciunt officiis quam quia quo repellendus similique!</p>
             </div>
         </div>
-        <div class="col-sm-6 col-lg-3 right-box">
-            <div class="box-wrapper">
-                <h2>Income</h2>
-                <div class="inner">
+    </div>
+    <div class="col col-sm-4">
+        <div class="green-box">
+            <h4 class="h4">Income</h4>
+            <div class="inner">
+                <label class="select-box">
                     <select name="incomePackages" id="income" ng-model="form.incomePackages" ng-change="incomePackageChange(form.incomePackages)">
                         <option value="0">All plans</option>
                         <option ng-repeat="item in filterPackages" value="{{item.id}}">{{item.name}}</option>
                     </select>
-
-                    <div class="blue-txt">{{incomeInt | currency:"$"}}</div>
-                    <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-                </div>
+                </label>
+                <div class="huge-num text-center">{{incomeInt | currency:"$"}}</div>
+                <p class="limit-txt mg-top">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti eaque, eius eum labore praesentium quaerat soluta vel. Consequuntur dolores ex fugit magni, molestiae natus quod vero! Aut eligendi exercitationem explicabo.</p>
             </div>
         </div>
     </div>
 
+</div>
 
-    <div class=" chart-tab">
-        <header class="chart-header clearfix"  style="clear: both">
-            <h3>Overview (Users & Sales)</h3>
-            <div class="col-md-3 nopadding">
-                <select name="totalChart" id="register-select" ng-model="form.totalChart" ng-change="totalUsersChartPackageChange(form.totalChart)">
-                    <option value="0">All plans</option>
-                    <option ng-repeat="item in filterPackages" value="{{item.id}}">{{item.name}}</option>
-                </select>
+<div class="sale-chart">
+
+    <div class="green-box">
+        <h4 class="h4">Overview (Users & Sales)</h4>
+        <div class="inner clearfix">
+            <div class="chart-info col-sm-5 col-lg-4">
+                <label class="select-box">
+                    <select name="totalChart" ng-model="form.totalChart" ng-change="totalUsersChartPackageChange(form.totalChart)">
+                        <option value="0">All plans</option>
+                        <option ng-repeat="item in filterPackages" value="{{item.id}}">{{item.name}}</option>
+                    </select>
+                </label>
+
+                <div class="row mg-bottom mg-top">
+                    <div class="clearfix">
+                        <div class="h3 green-txt nopadding-right col-xs-6">Total income:</div>
+                        <div class="h3 col-xs-6 text-right">{{allChartsIncome | currency:"$"}}</div>
+                    </div>
+
+                    <div class="clearfix">
+                        <div class="h3 col-xs-6 nopadding-right green-txt">Total sales:</div>
+                        <div class="h3 col-xs-6 text-right">{{allChartsSales}}</div>
+                    </div>
+
+                    <div class="clearfix">
+                        <div class="h3 col-xs-6 nopadding-right green-txt">Total users:</div>
+                        <div class="h3 col-xs-6 text-right">{{allChartsUsers}}</div>
+                    </div>
+                </div>
             </div>
-        </header>
-        <div class="chart-inner clearfix">
-            <div class="col-md-9">
-                <canvas id="line" class="chart chart-line" chart-data="dataUsers"
+            <div class="col-xs-12 col-sm-7 col-lg-8 pull-right">
+                <canvas class="chart chart-line" chart-data="dataUsers"
                         chart-labels="labels" chart-legend="true" chart-series="seriesUsers" chart-click="onClick" chart-options="chartOptions" chart-colours="chartColors" >
                 </canvas>
             </div>
-            <div class="col-md-3">
-                <div class="chart-info">
-                    <!-- <div class="col-md-8">
-                        <div class="info">
-                            <span class="blue-txt">plan:</span>
-                            <span>{{form.totalChart}}</span>
-                        </div>
-                    </div> -->
-                    <div class="info">
-                        <span class="blue-txt">Total income:</span>
-                        <span>{{allChartsIncome | currency:"$"}}</span>
-                    </div>
-
-                    <!-- <div class="info">
-                        <span class="blue-txt">start date:</span>
-                        <span>{{firstDateStamp | date:'MM/dd/yyyy'}}</span>
-                    </div> -->
-
-                    <div class="info">
-                        <span class="blue-txt">Total sales:</span>
-                        <span>{{allChartsSales}}</span>
-                    </div>
-
-                    <!-- <div class="info">
-                        <span class="blue-txt">end date:</span>
-                        <span>{{lastDateStamp | date:'MM/dd/yyyy'}}</span>
-                    </div> -->
-
-                    <div class="info">
-                        <span class="blue-txt">Total users:</span>
-                        <span>{{allChartsUsers}}</span>
-                    </div>
-
-                </div>
-            </div>
-
         </div>
 
     </div>
 
-     <div class=" chart-tab">
-        <header class="chart-header clearfix"  style="clear: both">
-            <h3>Overview (Income)</h3>
-            <div class="col-md-3 nopadding">
-                <select name="totalIncome" id="register-select" ng-model="form.totalIncome" ng-change="totalIncomePackageChange(form.totalIncome)">
-                    <option value="0">All plans</option>
-                    <option ng-repeat="item in filterPackages" value="{{item.id}}">{{item.name}}</option>
-                </select>
+</div>
+
+<div class="sale-chart">
+    <div class="green-box">
+        <h4 class="h4">Overview (Income)</h4>
+        <div class="inner clearfix">
+
+            <div class="chart-info col-sm-5 col-lg-4">
+                <label class="select-box">
+                    <select name="totalIncome" id="register-select" ng-model="form.totalIncome" ng-change="totalIncomePackageChange(form.totalIncome)">
+                        <option value="0">All plans</option>
+                        <option ng-repeat="item in filterPackages" value="{{item.id}}">{{item.name}}</option>
+                    </select>
+                </label>
+
+                <div class="row mg-bottom mg-top">
+                    <div class="clearfix">
+                        <div class="h3 col-xs-6 nopadding-right green-txt">Total income:</div>
+                        <div class="h3 col-xs-6 text-right">{{allIncomeChartsIncome | currency:"$"}}</span>
+                        </div>
+
+                        <div class="clearfix">
+                            <div class="h3 col-xs-6 nopadding-right green-txt">Total sales:</div>
+                            <div class="h3 col-xs-6 text-right">{{allIncomeChartsSales}}</div>
+                        </div>
+
+                        <div class="clearfix">
+                            <div class="h3 col-xs-6 nopadding-right green-txt">Total users:</div>
+                            <div class="h3 col-xs-6 text-right">{{allIncomeChartsUsers}}</div>
+                        </div>
+
+                    </div>
+                </div>
             </div>
-        </header>
-        <div class="chart-inner clearfix">
-            <div class="col-md-9">
-                <canvas id="line" class="chart chart-line" chart-data="dataIncome"
+            <div class="col-xs-12 col-sm-7 col-lg-8 pull-right">
+                <canvas class="chart chart-line" chart-data="dataIncome"
                         chart-labels="labels" chart-legend="true" chart-series="seriesIncome"
                         chart-options="chartOptions" chart-colours="chartColors" >
                 </canvas>
             </div>
-            <div class="col-md-3">
-                <div class="chart-info">
-                    <!-- <div class="col-md-8">
-                        <div class="info">
-                            <span class="blue-txt">plan:</span>
-                            <span>{{form.totalChart}}</span>
-                        </div>
-                    </div> -->
-                    <div class="info">
-                        <span class="blue-txt">Total income:</span>
-                        <span>{{allIncomeChartsIncome | currency:"$"}}</span>
-                    </div>
-
-                    <!-- <div class="info">
-                        <span class="blue-txt">start date:</span>
-                        <span>{{firstDateStamp | date:'MM/dd/yyyy'}}</span>
-                    </div> -->
-
-                    <div class="info">
-                        <span class="blue-txt">Total sales:</span>
-                        <span>{{allIncomeChartsSales}}</span>
-                    </div>
-
-                    <!-- <div class="info">
-                        <span class="blue-txt">end date:</span>
-                        <span>{{lastDateStamp | date:'MM/dd/yyyy'}}</span>
-                    </div> -->
-
-                    <div class="info">
-                        <span class="blue-txt">Total users:</span>
-                        <span>{{allIncomeChartsUsers}}</span>
-                    </div>
-
-                </div>
-            </div>
 
         </div>
 
     </div>
+</div>
 
-    <div class="chart-tab ">
-        <header class="chart-header clearfix">
-            <h3>This Month Look (Users & Sales)</h3>
-            <div class="col-md-3  nopadding">
-                <select name="totalUsersPackage" id="register-select" ng-model="form.totalUsersPackage" ng-change="totalMonthChartByPackage(form.totalUsersPackage)">
-                    <option value="0">All plans</option>
-                    <option ng-repeat="item in filterPackages" value="{{item.id}}">{{item.name}}</option>
-                </select>
-            </div>
-        </header>
-        <div class="clearfix chart-inner">
-            <div class="col-md-9 ">
-                <div class="">
-                    <canvas id="line" class="chart chart-line" chart-data="monthDataUsers" chart-labels="monthLabels" chart-legend="true" chart-series="seriesUsers" chart-options="chartOptions" chart-colours="chartColors" >
-                    </canvas>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="chart-info">
-                    <!-- <div class="col-md-8">
-                        <div class="info">
-                            <span class="blue-txt">plan:</span>
-                            <span>{{form.totalChart}}</span>
-                        </div>
-                    </div> -->
-                    <div class="info">
-                        <span class="blue-txt">Total income:</span>
-                        <span>{{monthLabelsChartsIncome | currency:"$"}}</span>
+<div class="sale-chart">
+    <div class="green-box">
+        <h4 class="h4">This Month Look (Users & Sales)</h4>
+        <div class="inner clearfix">
+            <div class="chart-info col-sm-5 col-lg-4">
+                <label class="select-box">
+                    <select name="totalUsersPackage" ng-model="form.totalUsersPackage" ng-change="totalMonthChartByPackage(form.totalUsersPackage)">
+                        <option value="0">All plans</option>
+                        <option ng-repeat="item in filterPackages" value="{{item.id}}">{{item.name}}</option>
+                    </select>
+                </label>
+                <div class="row mg-bottom mg-top">
+                    <div class="clearfix">
+                        <div class="h3 col-xs-6 nopadding-right green-txt">Total income:</div>
+                        <div class="h3 col-xs-6 text-right">{{monthLabelsChartsIncome | currency:"$"}}</div>
                     </div>
 
-                    <!-- <div class="info">
-                        <span class="blue-txt">start date:</span>
-                        <span>{{firstDateStamp | date:'MM/dd/yyyy'}}</span>
-                    </div> -->
-
-                    <div class="info">
-                        <span class="blue-txt">Total sales:</span>
-                        <span>{{monthLabelsChartsSales}}</span>
+                    <div class="clearfix">
+                        <div class="h3 col-xs-6 nopadding-right green-txt">Total sales:</div>
+                        <div class="h3 col-xs-6 text-right">{{monthLabelsChartsSales}}</div>
                     </div>
 
-                    <!-- <div class="info">
-                        <span class="blue-txt">end date:</span>
-                        <span>{{lastDateStamp | date:'MM/dd/yyyy'}}</span>
-                    </div> -->
-
-                    <div class="info">
-                        <span class="blue-txt">Total users:</span>
-                        <span>{{monthLabelsChartsUsers}}</span>
+                    <div class="clearfix">
+                        <div class="h3 col-xs-6 nopadding-right green-txt">Total users:</div>
+                        <div class="h3 col-xs-6 text-right">{{monthLabelsChartsUsers}}</div>
                     </div>
                 </div>
+
             </div>
-        </div>
-    </div>
 
-    <div class="chart-tab ">
-        <header class="chart-header clearfix">
-            <h3>This Month Look (Income)</h3>
-            <div class="col-md-3  nopadding">
-                <select name="totalIncomePackage" id="register-select" ng-model="form.totalIncomePackage" ng-change="totalMonthChartByPackage(form.totalIncomePackage)">
-                    <option value="0">All plans</option>
-                    <option ng-repeat="item in filterPackages" value="{{item.id}}">{{item.name}}</option>
-                </select>
-            </div>
-        </header>
-        <div class="clearfix chart-inner">
-            <div class="col-md-9 ">
-                <div class="">
-                    <canvas id="line" class="chart chart-line" chart-data="monthDataIncome" chart-labels="monthLabels" chart-legend="true" chart-series="seriesIncome"
-                            chart-options="chartOptions" chart-colours="chartColors" >
-                    </canvas>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="chart-info">
-                    <!-- <div class="col-md-8">
-                        <div class="info">
-                            <span class="blue-txt">plan:</span>
-                            <span>{{form.totalChart}}</span>
-                        </div>
-                    </div> -->
-                    <div class="info">
-                        <span class="blue-txt">Total income:</span>
-                        <span>{{monthLabelsChartsPackageIncome | currency:"$"}}</span>
-                    </div>
-
-                    <!-- <div class="info">
-                        <span class="blue-txt">start date:</span>
-                        <span>{{firstDateStamp | date:'MM/dd/yyyy'}}</span>
-                    </div> -->
-
-                    <div class="info">
-                        <span class="blue-txt">Total sales:</span>
-                        <span>{{monthLabelsChartsPackageSales}}</span>
-                    </div>
-
-                    <!-- <div class="info">
-                        <span class="blue-txt">end date:</span>
-                        <span>{{lastDateStamp | date:'MM/dd/yyyy'}}</span>
-                    </div> -->
-
-                    <div class="info">
-                        <span class="blue-txt">Total users:</span>
-                        <span>{{monthLabelsChartsPackageUsers}}</span>
-                    </div>
-                </div>
+            <div class="col-xs-12 col-sm-7 col-lg-8 pull-right">
+                <canvas class="chart chart-line" chart-data="monthDataUsers" chart-labels="monthLabels" chart-legend="true" chart-series="seriesUsers" chart-options="chartOptions" chart-colours="chartColors" >
+                </canvas>
             </div>
         </div>
     </div>
 
 </div>
 
-<div class="right-side-text main-dash-side">
-    <div class="right-side-inner">
-        <h1>Dashboard/System Monitoring</h1>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus animi culpa debitis, in mollitia provident quas. Accusamus aperiam deleniti iste, laboriosam molestias, nesciunt placeat porro quaerat quisquam, sapiente tenetur?
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolores, ducimus eligendi illo in, molestiae non repudiandae saepe sed sequi similique sint soluta. Consequuntur, deserunt illum in obcaecati quod velit!
-        </p>
+<div class="sale-chart">
+    <div class="green-box">
+        <h4 class="h4">This Month Look (Income)</h4>
+        <div class="inner clearfix">
+            <div class="chart-info col-sm-5 col-lg-4">
+                <label class="select-box">
+                    <select name="totalIncomePackage" ng-model="form.totalIncomePackage" ng-change="totalMonthChartByPackage(form.totalIncomePackage)">
+                        <option value="0">All plans</option>
+                        <option ng-repeat="item in filterPackages" value="{{item.id}}">{{item.name}}</option>
+                    </select>
+                </label>
+                <div class="row mg-bottom mg-top">
+                    <div class="clearfix">
+                        <div class="h3 col-xs-6 nopadding-right green-txt">Total income:</div>
+                        <div class="h3 col-xs-6 text-right">{{monthLabelsChartsPackageIncome | currency:"$"}}</div>
+                    </div>
+
+                    <div class="clearfix">
+                        <div class="h3 col-xs-6 nopadding-right green-txt">Total sales:</div>
+                        <div class="h3 col-xs-6 text-right">{{monthLabelsChartsPackageSales}}</div>
+                    </div>
+
+                    <div class="clearfix">
+                        <div class="h3 col-xs-6 nopadding-right green-txt">Total users:</div>
+                        <div class="h3 col-xs-6 text-right">{{monthLabelsChartsPackageUsers}}</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-xs-12 col-sm-7 col-lg-8 pull-right">
+                <canvas class="chart chart-line" chart-data="monthDataIncome" chart-labels="monthLabels" chart-legend="true" chart-series="seriesIncome"
+                        chart-options="chartOptions" chart-colours="chartColors" >
+                </canvas>
+            </div>
+        </div>
     </div>
 
 </div>
+
+
+
+
+<!--<div  class="main-dash  clearfix">-->
+
+    <!--<div class="row">-->
+        <!--<div class="col-sm-6 col-lg-3 right-box">-->
+            <!--<div class="box-wrapper">-->
+                <!--<h2>Sales</h2>-->
+                <!--<div class="inner">-->
+                    <!--<select name="usersPackage" id="income" ng-model="form.usersPackage" ng-change="userPackageChange(form.usersPackage)">-->
+                        <!--<option value="0">Total</option>-->
+                        <!--<option ng-repeat="item in filterPackages" value="{{item.id}}">{{item.name}}</option>-->
+                    <!--</select>-->
+
+                    <!--<div class="blue-txt">{{userDataMonitor}}</div>-->
+                    <!--<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="col-sm-6 col-lg-3 right-box">-->
+            <!--<div class="box-wrapper">-->
+                <!--<h2>Monitor</h2>-->
+                <!--<div class="inner">-->
+                    <!--<select name="monitorTypeChoose" id="monitor" ng-model="form.monitorTypeChoose" ng-change="monitorTypeChange(form.monitorTypeChoose)">-->
+                        <!--<option value="0">Today</option>-->
+                        <!--<option value="7">Last 7 days</option>-->
+                        <!--<option value="30">Last 30 days</option>-->
+                    <!--</select>-->
+                    <!--<div class="blue-txt">{{monitorUser}}</div>-->
+                    <!--<div class="blue-txt">{{monitorIncome | currency:"$"}}</div>-->
+                    <!--<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="col-sm-6 col-lg-3 right-box">-->
+            <!--<div class="box-wrapper">-->
+                <!--<h2>Income</h2>-->
+                <!--<div class="inner">-->
+                    <!--<select name="incomePackages" id="income" ng-model="form.incomePackages" ng-change="incomePackageChange(form.incomePackages)">-->
+                        <!--<option value="0">All plans</option>-->
+                        <!--<option ng-repeat="item in filterPackages" value="{{item.id}}">{{item.name}}</option>-->
+                    <!--</select>-->
+
+                    <!--<div class="blue-txt">{{incomeInt | currency:"$"}}</div>-->
+                    <!--<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+
+
+    <!--<div class=" chart-tab">-->
+        <!--<header class="chart-header clearfix"  style="clear: both">-->
+            <!--<h3>Overview (Users & Sales)</h3>-->
+            <!--<div class="col-md-3 nopadding">-->
+                <!--<select name="totalChart" id="register-select" ng-model="form.totalChart" ng-change="totalUsersChartPackageChange(form.totalChart)">-->
+                    <!--<option value="0">All plans</option>-->
+                    <!--<option ng-repeat="item in filterPackages" value="{{item.id}}">{{item.name}}</option>-->
+                <!--</select>-->
+            <!--</div>-->
+        <!--</header>-->
+        <!--<div class="chart-inner clearfix">-->
+            <!--<div class="col-md-9">-->
+                <!--<canvas id="line" class="chart chart-line" chart-data="dataUsers"-->
+                        <!--chart-labels="labels" chart-legend="true" chart-series="seriesUsers" chart-click="onClick" chart-options="chartOptions" chart-colours="chartColors" >-->
+                <!--</canvas>-->
+            <!--</div>-->
+            <!--<div class="col-md-3">-->
+                <!--<div class="chart-info">-->
+                    <!--&lt;!&ndash; <div class="col-md-8">-->
+                        <!--<div class="info">-->
+                            <!--<span class="blue-txt">plan:</span>-->
+                            <!--<span>{{form.totalChart}}</span>-->
+                        <!--</div>-->
+                    <!--</div> &ndash;&gt;-->
+                    <!--<div class="info">-->
+                        <!--<span class="blue-txt">Total income:</span>-->
+                        <!--<span>{{allChartsIncome | currency:"$"}}</span>-->
+                    <!--</div>-->
+
+                    <!--&lt;!&ndash; <div class="info">-->
+                        <!--<span class="blue-txt">start date:</span>-->
+                        <!--<span>{{firstDateStamp | date:'MM/dd/yyyy'}}</span>-->
+                    <!--</div> &ndash;&gt;-->
+
+                    <!--<div class="info">-->
+                        <!--<span class="blue-txt">Total sales:</span>-->
+                        <!--<span>{{allChartsSales}}</span>-->
+                    <!--</div>-->
+
+                    <!--&lt;!&ndash; <div class="info">-->
+                        <!--<span class="blue-txt">end date:</span>-->
+                        <!--<span>{{lastDateStamp | date:'MM/dd/yyyy'}}</span>-->
+                    <!--</div> &ndash;&gt;-->
+
+                    <!--<div class="info">-->
+                        <!--<span class="blue-txt">Total users:</span>-->
+                        <!--<span>{{allChartsUsers}}</span>-->
+                    <!--</div>-->
+
+                <!--</div>-->
+            <!--</div>-->
+
+        <!--</div>-->
+
+    <!--</div>-->
+
+     <!--<div class=" chart-tab">-->
+        <!--<header class="chart-header clearfix"  style="clear: both">-->
+            <!--<h3>Overview (Income)</h3>-->
+            <!--<div class="col-md-3 nopadding">-->
+                <!--<select name="totalIncome" id="register-select" ng-model="form.totalIncome" ng-change="totalIncomePackageChange(form.totalIncome)">-->
+                    <!--<option value="0">All plans</option>-->
+                    <!--<option ng-repeat="item in filterPackages" value="{{item.id}}">{{item.name}}</option>-->
+                <!--</select>-->
+            <!--</div>-->
+        <!--</header>-->
+        <!--<div class="chart-inner clearfix">-->
+            <!--<div class="col-md-9">-->
+                <!--<canvas id="line" class="chart chart-line" chart-data="dataIncome"-->
+                        <!--chart-labels="labels" chart-legend="true" chart-series="seriesIncome"-->
+                        <!--chart-options="chartOptions" chart-colours="chartColors" >-->
+                <!--</canvas>-->
+            <!--</div>-->
+            <!--<div class="col-md-3">-->
+                <!--<div class="chart-info">-->
+                    <!--&lt;!&ndash; <div class="col-md-8">-->
+                        <!--<div class="info">-->
+                            <!--<span class="blue-txt">plan:</span>-->
+                            <!--<span>{{form.totalChart}}</span>-->
+                        <!--</div>-->
+                    <!--</div> &ndash;&gt;-->
+                    <!--<div class="info">-->
+                        <!--<span class="blue-txt">Total income:</span>-->
+                        <!--<span>{{allIncomeChartsIncome | currency:"$"}}</span>-->
+                    <!--</div>-->
+
+                    <!--&lt;!&ndash; <div class="info">-->
+                        <!--<span class="blue-txt">start date:</span>-->
+                        <!--<span>{{firstDateStamp | date:'MM/dd/yyyy'}}</span>-->
+                    <!--</div> &ndash;&gt;-->
+
+                    <!--<div class="info">-->
+                        <!--<span class="blue-txt">Total sales:</span>-->
+                        <!--<span>{{allIncomeChartsSales}}</span>-->
+                    <!--</div>-->
+
+                    <!--&lt;!&ndash; <div class="info">-->
+                        <!--<span class="blue-txt">end date:</span>-->
+                        <!--<span>{{lastDateStamp | date:'MM/dd/yyyy'}}</span>-->
+                    <!--</div> &ndash;&gt;-->
+
+                    <!--<div class="info">-->
+                        <!--<span class="blue-txt">Total users:</span>-->
+                        <!--<span>{{allIncomeChartsUsers}}</span>-->
+                    <!--</div>-->
+
+                <!--</div>-->
+            <!--</div>-->
+
+        <!--</div>-->
+
+    <!--</div>-->
+
+    <!--<div class="chart-tab ">-->
+        <!--<header class="chart-header clearfix">-->
+            <!--<h3>This Month Look (Users & Sales)</h3>-->
+            <!--<div class="col-md-3  nopadding">-->
+                <!--<select name="totalUsersPackage" id="register-select" ng-model="form.totalUsersPackage" ng-change="totalMonthChartByPackage(form.totalUsersPackage)">-->
+                    <!--<option value="0">All plans</option>-->
+                    <!--<option ng-repeat="item in filterPackages" value="{{item.id}}">{{item.name}}</option>-->
+                <!--</select>-->
+            <!--</div>-->
+        <!--</header>-->
+        <!--<div class="clearfix chart-inner">-->
+            <!--<div class="col-md-9 ">-->
+                <!--<div class="">-->
+                    <!--<canvas id="line" class="chart chart-line" chart-data="monthDataUsers" chart-labels="monthLabels" chart-legend="true" chart-series="seriesUsers" chart-options="chartOptions" chart-colours="chartColors" >-->
+                    <!--</canvas>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="col-md-3">-->
+                <!--<div class="chart-info">-->
+                    <!--&lt;!&ndash; <div class="col-md-8">-->
+                        <!--<div class="info">-->
+                            <!--<span class="blue-txt">plan:</span>-->
+                            <!--<span>{{form.totalChart}}</span>-->
+                        <!--</div>-->
+                    <!--</div> &ndash;&gt;-->
+                    <!--<div class="info">-->
+                        <!--<span class="blue-txt">Total income:</span>-->
+                        <!--<span>{{monthLabelsChartsIncome | currency:"$"}}</span>-->
+                    <!--</div>-->
+
+                    <!--&lt;!&ndash; <div class="info">-->
+                        <!--<span class="blue-txt">start date:</span>-->
+                        <!--<span>{{firstDateStamp | date:'MM/dd/yyyy'}}</span>-->
+                    <!--</div> &ndash;&gt;-->
+
+                    <!--<div class="info">-->
+                        <!--<span class="blue-txt">Total sales:</span>-->
+                        <!--<span>{{monthLabelsChartsSales}}</span>-->
+                    <!--</div>-->
+
+                    <!--&lt;!&ndash; <div class="info">-->
+                        <!--<span class="blue-txt">end date:</span>-->
+                        <!--<span>{{lastDateStamp | date:'MM/dd/yyyy'}}</span>-->
+                    <!--</div> &ndash;&gt;-->
+
+                    <!--<div class="info">-->
+                        <!--<span class="blue-txt">Total users:</span>-->
+                        <!--<span>{{monthLabelsChartsUsers}}</span>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+
+    <!--<div class="chart-tab ">-->
+        <!--<header class="chart-header clearfix">-->
+            <!--<h3>This Month Look (Income)</h3>-->
+            <!--<div class="col-md-3  nopadding">-->
+                <!--<select name="totalIncomePackage" id="register-select" ng-model="form.totalIncomePackage" ng-change="totalMonthChartByPackage(form.totalIncomePackage)">-->
+                    <!--<option value="0">All plans</option>-->
+                    <!--<option ng-repeat="item in filterPackages" value="{{item.id}}">{{item.name}}</option>-->
+                <!--</select>-->
+            <!--</div>-->
+        <!--</header>-->
+        <!--<div class="clearfix chart-inner">-->
+            <!--<div class="col-md-9 ">-->
+                <!--<div class="">-->
+                    <!--<canvas id="line" class="chart chart-line" chart-data="monthDataIncome" chart-labels="monthLabels" chart-legend="true" chart-series="seriesIncome"-->
+                            <!--chart-options="chartOptions" chart-colours="chartColors" >-->
+                    <!--</canvas>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="col-md-3">-->
+                <!--<div class="chart-info">-->
+                    <!--&lt;!&ndash; <div class="col-md-8">-->
+                        <!--<div class="info">-->
+                            <!--<span class="blue-txt">plan:</span>-->
+                            <!--<span>{{form.totalChart}}</span>-->
+                        <!--</div>-->
+                    <!--</div> &ndash;&gt;-->
+                    <!--<div class="info">-->
+                        <!--<span class="blue-txt">Total income:</span>-->
+                        <!--<span>{{monthLabelsChartsPackageIncome | currency:"$"}}</span>-->
+                    <!--</div>-->
+
+                    <!--&lt;!&ndash; <div class="info">-->
+                        <!--<span class="blue-txt">start date:</span>-->
+                        <!--<span>{{firstDateStamp | date:'MM/dd/yyyy'}}</span>-->
+                    <!--</div> &ndash;&gt;-->
+
+                    <!--<div class="info">-->
+                        <!--<span class="blue-txt">Total sales:</span>-->
+                        <!--<span>{{monthLabelsChartsPackageSales}}</span>-->
+                    <!--</div>-->
+
+                    <!--&lt;!&ndash; <div class="info">-->
+                        <!--<span class="blue-txt">end date:</span>-->
+                        <!--<span>{{lastDateStamp | date:'MM/dd/yyyy'}}</span>-->
+                    <!--</div> &ndash;&gt;-->
+
+                    <!--<div class="info">-->
+                        <!--<span class="blue-txt">Total users:</span>-->
+                        <!--<span>{{monthLabelsChartsPackageUsers}}</span>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+
+<!--</div>-->
+

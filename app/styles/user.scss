@@ -1,12 +1,186 @@
-ul{
-	padding: 0;
-	list-style: none;
+/************** General Style **************/
+$lg-width: 1400px;
+$desktop-width: 1200px;
+$medium-width: 992px;
+$tablet-width: 768px;
+$phone-width: 480px;
+
+$semi-bold:"SF-Medium",sans-serif;
+$radiused:15px;
+$top-radiused:0 50px 0 0;
+$green:#06bf85;
+$shadow:3px 3px 0 0 #6a6869;
+
+
+$thin:'sf-thin', sans-serif;
+$medium:'SF-Medium' ,sans-serif;
+$bold: 'SF-Bold',sans-serif;
+
+$border: 1px solid #919090;
+
+$green:#06bf85;
+$wh:#ffffff;
+
+
+
+a:hover{color: $green}
+ul{padding: 0;list-style: none;margin: 0;}
+.green-txt {color: $green}
+
+
+
+
+
+.mg-auto {
+	float: none;
+	margin: 0 auto;
 }
 
+.huge-num{
+	font-family: "SF-Bold",sans-serif;
+	font-size: 30px;
+	color: #06bf85;
+	line-height: 1;
+	@media (min-width: $medium-width) {
+		font-size: 40px;
+	}
+	@media (min-width: $lg-width) {
+		font-size: 60px;
+	}
+}
+
+.green-box{
+	background-color: $green;
+	box-shadow:$shadow;
+
+	h4{
+		color: #ffffff;
+		font-size: 22px;
+		padding: 15px;
+		line-height: 1.2;
+		margin: 0;
+		text-transform: capitalize;
+		@media (min-width:$tablet-width) {
+			font-size: 25px;
+		}
+	}
+
+	.inner{
+		background-color: #ffffff;
+		border-radius: $top-radiused;
+		padding: 30px;
+	}
+}
+/************** FORM **************/
+.green-btn{
+	background-color: $green;
+	border-radius: $top-radiused;
+	color: $wh;
+	box-shadow: $shadow;
+	line-height: 1;
+	height: 50px;
+	font-size: 17px;
+	text-align: center;
+	min-width: 150px;
+}
+
+.green-btn:focus,
+.green-btn:active{
+	outline: none!important;
+	box-shadow: $shadow;
+}
+
+.input-txt {
+	width: 100%;
+	color: #a8a8a8;
+	border: 1px solid $green;
+	height: 65px;
+	background: #ffffff;
+	padding: 5px 10px;
+	border-radius: 0;
+	@media (min-width: $tablet-width) {
+		font-size: 14px;
+	}
+}
+
+.label-success{
+	background-color: #a963a9;
+	border-radius: $radiused;
+}
+
+.select-box{
+	position:relative;
+	display: block;
+	select {
+		padding:4px 0 4px 10px;
+		margin: 0;
+		height: 65px;
+		background: #ffffff;
+		color: #a8a8a8;
+		border: 1px solid #06bf85;
+		outline:none;
+		display: inline-block;
+		-webkit-appearance:none;
+		-moz-appearance:none;
+		appearance:none;
+		cursor:pointer;
+		width: 100%;
+		-webkit-border-radius: 0px;
+		-moz-border-radius: 0px;
+		border-radius: 0px;
+		@media (min-width: $tablet-width) {
+			font-size: 20px;
+		}
+	}
+}
+
+.select-box:after {
+	content: "\e252";
+	font-family: 'Glyphicons Halflings';
+	font-size: 23px;
+	color: #06bf85;
+	right: 20px;
+	top: 22px;
+	line-height: 1;
+	padding: 0 0 2px;
+	position: absolute;
+	pointer-events: none;
+}
+
+/************** TABLE **************/
+.table-responsive{
+	overflow-x: initial;
+	min-height: 100%;
+}
+.gr-table {
+
+	thead > tr > th,
+	thead > tr > td,
+	tbody > tr > th,
+	tbody > tr > td,
+	tfoot > tr > th,
+	tfoot > tr > td{
+		border: none;
+	}
+	tr:nth-child(1) th {
+		font-family: $medium;
+		color: $green;
+		border-top: none;
+		font-size: 16px;
+	}
+
+	tr:nth-of-type(even){
+		background-color: #f7f7f7;
+
+	}
+	//tr:first-child{
+	//	background-color: transparent;
+	//}
+}
+/************** Main Style **************/
 .user-pages{
 	display: inline-block;
 	width: 80%;
-    padding: 0;
 }
 
 .each-section-wrap{
@@ -145,47 +319,7 @@ ul{
 /*---------------- Main --------------------*/
 
 
-$lg-width: 1400px;
-$desktop-width: 1200px;
-$medium-width: 992px;
-$tablet-width: 768px;
-$phone-width: 480px;
 
-$radiused:15px;
-$top-radiused:0 50px 0 0;
-$green:#06bf85;
-$shadow:3px 3px 0 0 #6a6869;
-
-$thin:'sf-thin', sans-serif;
-$medium:'SF-Medium' ,sans-serif;
-$bold: 'SF-Bold',sans-serif;
-
-$border: 1px solid #919090;
-
-$green:#06bf85;
-$wh:#ffffff;
-
-.green-txt {color: $green}
-a:hover{color: $green}
-ul{padding: 0;list-style: none}
-
-.green-btn{
-	background-color: $green;
-	border-radius: $top-radiused;
-	color: $wh;
-	box-shadow: $shadow;
-	line-height: 1;
-	height: 50px;
-	font-size: 17px;
-	text-align: center;
-	min-width: 150px;
-}
-
-.green-btn:focus,
-.green-btn:active{
-	outline: none!important;
-	box-shadow: $shadow;
-}
 
 .navigation-wrap{
 	margin: 0;
@@ -211,73 +345,7 @@ ul{padding: 0;list-style: none}
 	}
 }
 
-.input-txt {
-	width: 100%;
-	color: #a8a8a8;
-	border: 1px solid $green;
-	height: 65px;
-	background: #ffffff;
-	padding: 5px 10px;
-	border-radius: 0;
-	@media (min-width: $tablet-width) {
-		font-size: 14px;
-	}
-}
 
-.label-success{
-	background-color: #a963a9;
-	border-radius: $radiused;
-}
-
-.gr-table {
-
-	thead > tr > th,
-	thead > tr > td,
-	tbody > tr > th,
-	tbody > tr > td,
-	tfoot > tr > th,
-	tfoot > tr > td{
-		border: none;
-	}
-	tr:nth-child(1) th {
-		font-family: $medium;
-		color: $green;
-		border-top: none;
-		font-size: 16px;
-	}
-
-	tr:nth-of-type(even){
-		background-color: #f7f7f7;
-
-	}
-	//tr:first-child{
-	//	background-color: transparent;
-	//}
-}
-
-
-.green-box{
-	background-color: $green;
-	box-shadow:$shadow;
-
-	h4{
-		color: #ffffff;
-		font-size: 22px;
-		padding: 15px;
-		line-height: 1.2;
-		margin: 0;
-		text-transform: capitalize;
-		@media (min-width:$tablet-width) {
-			font-size: 25px;
-		}
-	}
-
-	.inner{
-		background-color: #ffffff;
-		border-radius: $top-radiused;
-		padding: 30px;
-	}
-}
 
 .right-side-text .inner{
 	padding: 30px 15px;
@@ -302,7 +370,6 @@ ul{padding: 0;list-style: none}
 			left: -9999px;
 		}
 
-
 		td {
 			border: none;
 			border-bottom: 1px solid #eee;
@@ -323,37 +390,127 @@ ul{padding: 0;list-style: none}
 	}
 }
 
-/*--------All Payment Thead ---------*/
-.allpaymentuser-table{
-	td:nth-of-type(1):before { content: "#"; }
-	td:nth-of-type(2):before { content: "Systems"; }
-	td:nth-of-type(3):before { content: "User Invoice"; }
-	td:nth-of-type(4):before { content: "Type"; }
-	td:nth-of-type(5):before { content: "Price"; }
-	td:nth-of-type(6):before { content: "Date"; }
-	td:nth-of-type(7):before { content: "Status"; }
+/************** TABLE**************/
+@media only screen and (max-width: 840px) {
+
+	.email-setting .responsive-table {
+		td:nth-of-type(1):before {
+			content: "#";
+		}
+		td:nth-of-type(2):before {
+			content: "Email Type";
+		}
+		td:nth-of-type(3):before {
+			content: "Description";
+		}
+		td:nth-of-type(4):before {
+			content: "Action";
+		}
+	}
+
+	.allpaymentuser-table {
+		td:nth-of-type(1):before {
+			content: "#";
+		}
+		td:nth-of-type(2):before {
+			content: "Systems";
+		}
+		td:nth-of-type(3):before {
+			content: "User Invoice";
+		}
+		td:nth-of-type(4):before {
+			content: "Type";
+		}
+		td:nth-of-type(5):before {
+			content: "Price";
+		}
+		td:nth-of-type(6):before {
+			content: "Date";
+		}
+		td:nth-of-type(7):before {
+			content: "Status";
+		}
+	}
+
+	.manage-package .responsive-table{
+		td:nth-of-type(1):before {
+			content: "#";
+		}
+		td:nth-of-type(2):before {
+			content: "Description";
+		}
+		td:nth-of-type(3):before {
+			content: "Price";
+		}
+		td:nth-of-type(4):before {
+			content: "Start";
+		}
+		td:nth-of-type(5):before {
+			content: "End";
+		}
+		td:nth-of-type(6):before {
+			content: "Add";
+		}
+		td:nth-of-type(7):before {
+			content: "Coupon";
+		}
+		td:nth-of-type(8):before {
+			content: "Status";
+		}
+		td:nth-of-type(9):before {
+			content: "Actions";
+		}
+	}
+
+	.allpayment .responsive-table{
+		td:nth-of-type(1):before {
+			content: "#";
+		}
+		td:nth-of-type(2):before {
+			content: "User";
+		}
+		td:nth-of-type(3):before {
+			content: "User Invoice";
+		}
+		td:nth-of-type(4):before {
+			content: "Type";
+		}
+		td:nth-of-type(5):before {
+			content: "Price";
+		}
+		td:nth-of-type(6):before {
+			content: "Date";
+		}
+		td:nth-of-type(7):before {
+			content: "Systems";
+		}
+		td:nth-of-type(8):before {
+			content: "Status";
+		}
+		td:nth-of-type(9):before {
+			content: "Actions";
+		}
+	}
+
 }
+/************** BROWSPACK **************/
 
-
-/*------------- brows-pack ---------------*/
-
-$font-size: 20px;
-$line-height: 1.3;
-$lines-to-show: 2;
-
-.limit-txt{
-	display: block;
-	display: -webkit-box;
-	height: $font-size*$line-height*$lines-to-show;
-	font-size: $font-size;
-	line-height: $line-height;
-	-webkit-line-clamp: $lines-to-show;
-	-webkit-box-orient: vertical;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	color: #FFFFFF;
-}
 .brows-pack{
+	$font-size: 20px;
+	$line-height: 1.3;
+	$lines-to-show: 2;
+	.limit-txt{
+		display: block;
+		display: -webkit-box;
+		height: $font-size*$line-height*$lines-to-show;
+		font-size: $font-size;
+		line-height: $line-height;
+		-webkit-line-clamp: $lines-to-show;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		color: #FFFFFF;
+	}
 	background-color: transparent;
 
 	.limit-txt{
@@ -477,7 +634,7 @@ $lines-to-show: 2;
 	}
 
 }
-/*------------- Package ---------------*/
+/************** PACKAGE **************/
 .full-width{
 	width: 100%;
 }
@@ -788,7 +945,7 @@ $lines-to-show-2: 3;
 
 }
 
-/*------------- Add New Package ---------------*/
+/************** ADDNEWPACKAGE **************/
 *{box-sizing: border-box;}
 .flowGrid:before,.flowGrid:after{
 	content: "";
@@ -820,6 +977,9 @@ textarea{
 }
 
 .add-package{
+	.nopadding-left{
+		padding-top: 15px;
+	}
 	.gr-border{
 		border: 1px solid $green;
 		padding: 15px;
@@ -956,6 +1116,166 @@ textarea{
 		.scrollbar::-webkit-scrollbar-track {
 			-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
 			border-radius: 0px;
+		}
+	}
+
+}
+
+/************** LOGIN **************/
+
+.main-content .contentside-full {
+	width: 100% !important;
+	margin: 0;
+	padding: 0 !important;
+	background-color: #243441;
+}
+@media (min-width: 641px){
+	.singlecolumn .main-content {
+		height: 99%;
+		padding-top: 58px;
+	}
+}
+
+.loginpage{
+	height: 100%;
+
+	.login-btn{
+		font-family: 'SF-Bold',sans-serif;
+		box-shadow: 3px 3px 0 0 #000000;
+		text-transform: uppercase;
+		background-color: #02bfdc;
+		color: #000000;
+		display: block;
+		margin: 50px auto 15px auto;
+		font-size: 24px;
+		width: 130px;
+		padding: 8px 0;
+		outline: none;
+		border: none;
+		border-radius: 0;
+	}
+
+	.login-btn:hover{
+		opacity: 0.9;
+	}
+
+	.b-title{
+		font-family: 'SF-Medium',sans-serif;
+		color: #e9e9e7;
+		font-size: 11vw;
+		opacity: 0.06;
+		margin: 0;
+		text-transform: uppercase;
+		text-align: center;
+		line-height: 0.8;
+		@media (min-width: $tablet-width) {
+			text-align: right;
+		}
+		@media (max-width: 767px) {
+			display: none;
+		}
+	}
+
+	.register-section{
+		background-color: #0a1622;
+		height: 100%;
+		@media (min-width: $tablet-width) {
+			.b-title{
+				text-align: left;
+			}
+		}
+
+		.login-btn{
+			box-shadow: 3px 3px 0 0 #222e3a;
+		}
+		p{
+			color: #abb0b3;
+			line-height: 1;
+			font-size: 13px;
+		}
+	}
+
+	input:-webkit-autofill {
+		-webkit-box-shadow: 0 0 0px 1000px #02293a inset;
+		-webkit-text-fill-color: #abb0b3;
+	}
+	.login-title{
+		font-family: 'SF-Medium',sans-serif;
+		display:inline-block;
+		padding:10px 0;
+		margin-bottom: 20px;
+		color: #f3f3f3;
+		text-transform: uppercase;
+		@media (min-width: $desktop-width) {
+			font-size: 35px;
+		}
+
+	}
+
+	.loginpageinput{
+		font-family: 'SF-Thin',sans-serif;
+		width:100%;
+		border:none;
+		padding:10px;
+		outline:none;
+		background: #02293a;
+		color: #5e7384;
+		margin-top: 10px;
+		text-align: center;
+		font-size: 23px;
+		height: 58px;
+		text-transform: uppercase;
+	}
+
+	.registerbutton{
+		font-family: 'SF-Thin',sans-serif;
+		display:block;
+		text-decoration:none;
+		text-align:center;
+		margin-top:35px;
+		margin-bottom: 15px;
+		text-transform: uppercase;
+		color: #02bfdc;
+	}
+
+}
+
+/************** DASHBOARD **************/
+.box-row{
+	margin-left: -8px;
+	margin-right: -7px;
+}
+.sale-info .col{
+	padding: 0 7px 15px 8px;
+	$font-size: 17px;
+	$line-height: 1.15;
+	$lines-to-show: 4;
+
+	.limit-txt{
+		display: block; /* Fallback for non-webkit */
+		display: -webkit-box;
+		height: $font-size*$line-height*$lines-to-show; /* Fallback for non-webkit */
+		font-size: $font-size;
+		line-height: $line-height;
+		-webkit-line-clamp: $lines-to-show;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+}
+.sale-chart{
+	margin-bottom: 15px;
+	.chart-info {
+		@media (min-width: $tablet-width) {
+			width: 31.333333%;
+			padding-left: 0;
+		}
+
+		.h3{
+			@media (max-width: $desktop-width) {
+				font-size: 17px;
+			}
+
 		}
 	}
 

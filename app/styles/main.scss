@@ -45,7 +45,7 @@ a:hover,a:focus{
 }
 
 a{
-  color: #000000;
+  color: #02BF84;
 }
 
 html, body {
@@ -761,12 +761,12 @@ table tr.info {
 .contentside::-webkit-scrollbar-thumb {
   -webkit-border-radius: 10px;
   border-radius: 10px;
-  background: rgba(2, 192, 220,0.8); 
+  background: rgba(6, 191, 133, 0.8);
   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
 }
 .mainmenu::-webkit-scrollbar-thumb:window-inactive,
 .contentside::-webkit-scrollbar-thumb:window-inactive {
-  background: rgba(2, 192, 220,0.4); 
+  background: rgba(6, 191, 133, 0.4);
 }
 
 .modaloverlay, .modaloverlay .modalcontent{
@@ -892,57 +892,57 @@ table tr.info {
 /****************************/
 /*      login styles      */
 /****************************/
-.loginpage{
-  margin:0;
-  padding:30px 0 0 0;
-}
-
-.loginpage .login-title{
-  display:inline-block;
-  padding:10px 0;
-  margin-bottom: 20px;
-  background:#01c0da;
-  text-align:center;
-  color: #fff;
-  font-family: 'SF-Bold',sans-serif;
-}
-
-.loginpage .loginpageinput{
-  width:100%;
-  border:none;
-  padding:10px;
-  outline:none;
-  background: #02293a;
-  color: #5e7384;
-  margin-top: 10px;
-  text-align: center;
-}
-
-.loginpage .formwrap form button{
-  display:block;
-  float: right;
-  background:none;
-  padding:10px;
-  color:#fff;
-  outline: none;
-  font-family: 'SF-Bold',sans-serif;
-}
-
-.loginpage .formwrap .registerbutton{
-  display:block;
-
-  text-decoration:none;
-  text-align:center;
-  margin-top:35px;
-  font-family: 'SF-Bold',sans-serif;
-}
-.loginpage .formwrap .registerbutton.login-btn{float: left;}
-
-.loginpage .guidtext p{
-  color:#fff;
-  margin: 0;
-  font-size: 13px;
-}
+//.loginpage{
+//  margin:0;
+//  padding:30px 0 0 0;
+//}
+//
+//.loginpage .login-title{
+//  display:inline-block;
+//  padding:10px 0;
+//  margin-bottom: 20px;
+//  background:#01c0da;
+//  text-align:center;
+//  color: #fff;
+//  font-family: 'SF-Bold',sans-serif;
+//}
+//
+//.loginpage .loginpageinput{
+//  width:100%;
+//  border:none;
+//  padding:10px;
+//  outline:none;
+//  background: #02293a;
+//  color: #5e7384;
+//  margin-top: 10px;
+//  text-align: center;
+//}
+//
+//.loginpage .formwrap form button{
+//  display:block;
+//  float: right;
+//  background:none;
+//  padding:10px;
+//  color:#fff;
+//  outline: none;
+//  font-family: 'SF-Bold',sans-serif;
+//}
+//
+//.loginpage .formwrap .registerbutton{
+//  display:block;
+//
+//  text-decoration:none;
+//  text-align:center;
+//  margin-top:35px;
+//  font-family: 'SF-Bold',sans-serif;
+//}
+//.loginpage .formwrap .registerbutton.login-btn{float: left;}
+//
+//.loginpage .guidtext p{
+//  color:#fff;
+//  margin: 0;
+//  font-size: 13px;
+//}
 
 @media screen and (max-width:1024px){
   .error{
@@ -1348,9 +1348,9 @@ small.blue-txt{padding-right: 5px;}
   .paymentsuser select.select-card{text-indent: 33%;}
 
 }
-@media (min-width: 641px) {
-  .singlecolumn .main-content{  margin-top:56px;}
-}
+//@media (min-width: 641px) {
+//  .singlecolumn .main-content{  margin-top:56px;}
+//}
 @media (min-width: 1200px) {.paymentsuser select.select-card{text-indent: 12%;}}
 @media (min-width: 1600px) {.paymentsuser select.select-card{text-indent: 30%;}}
 @media (max-width: 470px) {

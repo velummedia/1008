@@ -11,115 +11,123 @@
     </div>
 </script>
 
-<div class="user-pages manageadminswrap">
-	<table class="table">
-		<thead>
-			<th>#</th>
-			<th>Email Type</th>
-			<th>Description</th>
-			<th>Action</th>
-		</thead>
-		<tr>
-			<td>1</td>
-			<td>Order Confirmation</td>
-			<td>
-				<p>__USERNAME__ > User First and Last</p>
-				<p>__PACKAGENAME__ > Name of package</p>
-				<p>__PRICE__ > Package Price</p>
-				<p>__ORDERID__ > Invoice ID</p>
-				<p>__DATE__ > Current Date</p>
-			</td>
-			<td>
-				<a href="javascript:;" ng-click="open('order_confirmation')"><i class="fa fa-pencil"></i></a>
-	  		</td>
-		</tr>
-		<tr>
-			<td>2</td>
-			<td>User Signup</td>
-			<td>
-				<p>__USERNAME__ > User First and Last</p>
-				<p>__ACTIVATIONLINK__ > Link for activation email</p>
-				<p>__LOGINLINK__ > Site Login url</p>
-				<p>__DATE__ > Current Date</p>
-			</td>
-			<td>
-				<a href="javascript:;" ng-click="open('signup')"><i class="fa fa-pencil"></i></a>
-	  		</td>
-		</tr>
-		<!-- <tr>
-			<td>3</td>
-			<td>Ban</td>
-			<td>
-				<p>__USERNAME__ > User First and Last</p>
-				<p>__PACKAGENAME__ > Package name</p>
-				<p>__DATE__ > Current Date</p>
-			</td>
-			<td>
-				<a href="javascript:;" ng-click="open('ban')"><i class="fa fa-pencil"></i></a>
-	  		</td>
-		</tr> -->
-		<!-- <tr>
-			<td>4</td>
-			<td>Refund</td>
-			<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, voluptatem.</td>
-			<td>
-				<a href="javascript:;" ng-click="open('refund')"><i class="fa fa-pencil"></i></a>
-	  		</td>
-		</tr> -->
-		<tr>
-			<td>5</td>
-			<td>Disable Package</td>
-			<td>
-				<p>__USERNAME__ > User First and Last</p>
-				<p>__PACKAGENAME__ > Name of the package</p>
-				<p>__DATE__ > Current Date</p>
-			</td>
-			<td>
-				<a href="javascript:;" ng-click="open('disable_package')"><i class="fa fa-pencil"></i></a>
-	  		</td>
-		</tr>
-		<tr>
-			<td>6</td>
-			<td>Enable Package</td>
-			<td>
-				<p>__USERNAME__ > User First and Last</p>
-				<p>__PACKAGENAME__ > Name of the package</p>
-				<p>__DATE__ > Current Date</p>
-			</td>
-			<td>
-				<a href="javascript:;" ng-click="open('enable_package')"><i class="fa fa-pencil"></i></a>
-	  		</td>
-		</tr>
-		<tr>
-			<td>7</td>
-			<td>Create Child Admin</td>
-			<td>
-				<p>__USERNAME__ > User First and Last</p>
-				<p>__PACKAGENAME__ > Name of the package</p>
-				<p>__DATE__ > Current Date</p>
-			</td>
-			<td>
-				<a href="javascript:;" ng-click="open('create_admin')"><i class="fa fa-pencil"></i></a>
-	  		</td>
-		</tr>
-		<tr>
-			<td>8</td>
-			<td>Forgot Password</td>
-			<td>
-				<p>__USERNAME__ > User First and Last</p>
-				<p>__PACKAGENAME__ > Name of the package</p>
-				<p>__DATE__ > Current Date</p>
-			</td>
-			<td>
-				<a href="javascript:;" ng-click="open('forgot_password')"><i class="fa fa-pencil"></i></a>
-	  		</td>
-		</tr>
-	</table>
+<div class="green-box email-setting">
+	<h4 class="h4">Emails Setting</h4>
+	<div class="inner">
+		<div class="responsive-table gr-table">
+			<table class="table">
+
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Email Type</th>
+						<th>Description</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr>
+						<td>1</td>
+						<td>Order Confirmation</td>
+						<td>
+							<p>__USERNAME__ > User First and Last</p>
+							<p>__PACKAGENAME__ > Name of package</p>
+							<p>__PRICE__ > Package Price</p>
+							<p>__ORDERID__ > Invoice ID</p>
+							<p>__DATE__ > Current Date</p>
+						</td>
+						<td>
+							<a href="javascript:;" ng-click="open('order_confirmation')"><i class="fa fa-pencil"></i></a>
+						</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>User Signup</td>
+						<td>
+							<p>__USERNAME__ > User First and Last</p>
+							<p>__ACTIVATIONLINK__ > Link for activation email</p>
+							<p>__LOGINLINK__ > Site Login url</p>
+							<p>__DATE__ > Current Date</p>
+						</td>
+						<td>
+							<a href="javascript:;" ng-click="open('signup')"><i class="fa fa-pencil"></i></a>
+						</td>
+					</tr>
+					<!-- <tr>
+						<td>3</td>
+						<td>Ban</td>
+						<td>
+							<p>__USERNAME__ > User First and Last</p>
+							<p>__PACKAGENAME__ > Package name</p>
+							<p>__DATE__ > Current Date</p>
+						</td>
+						<td>
+							<a href="javascript:;" ng-click="open('ban')"><i class="fa fa-pencil"></i></a>
+						  </td>
+					</tr> -->
+					<!-- <tr>
+						<td>4</td>
+						<td>Refund</td>
+						<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, voluptatem.</td>
+						<td>
+							<a href="javascript:;" ng-click="open('refund')"><i class="fa fa-pencil"></i></a>
+						  </td>
+					</tr> -->
+					<tr>
+						<td>5</td>
+						<td>Disable Package</td>
+						<td>
+							<p>__USERNAME__ > User First and Last</p>
+							<p>__PACKAGENAME__ > Name of the package</p>
+							<p>__DATE__ > Current Date</p>
+						</td>
+						<td>
+							<a href="javascript:;" ng-click="open('disable_package')"><i class="fa fa-pencil"></i></a>
+						</td>
+					</tr>
+					<tr>
+						<td>6</td>
+						<td>Enable Package</td>
+						<td>
+							<p>__USERNAME__ > User First and Last</p>
+							<p>__PACKAGENAME__ > Name of the package</p>
+							<p>__DATE__ > Current Date</p>
+						</td>
+						<td>
+							<a href="javascript:;" ng-click="open('enable_package')"><i class="fa fa-pencil"></i></a>
+						</td>
+					</tr>
+					<tr>
+						<td>7</td>
+						<td>Create Child Admin</td>
+						<td>
+							<p>__USERNAME__ > User First and Last</p>
+							<p>__PACKAGENAME__ > Name of the package</p>
+							<p>__DATE__ > Current Date</p>
+						</td>
+						<td>
+							<a href="javascript:;" ng-click="open('create_admin')"><i class="fa fa-pencil"></i></a>
+						</td>
+					</tr>
+					<tr>
+						<td>8</td>
+						<td>Forgot Password</td>
+						<td>
+							<p>__USERNAME__ > User First and Last</p>
+							<p>__PACKAGENAME__ > Name of the package</p>
+							<p>__DATE__ > Current Date</p>
+						</td>
+						<td>
+							<a href="javascript:;" ng-click="open('forgot_password')"><i class="fa fa-pencil"></i></a>
+						</td>
+					</tr>
+				</tbody>
+
+			</table>
+		</div>
+
+	</div>
 </div>
 
-<div class="right-side-text">
-    <div class="right-side-inner">
-        <h1>Lorem ipsum.</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia dolorem sint adipisci, commodi enim animi minus debitis, aliquid aspernatur ex soluta maxime sunt, quibusdam. Consequatur officia veniam quam deleniti perspiciatis?</p>
-    </div>
-</div>
+

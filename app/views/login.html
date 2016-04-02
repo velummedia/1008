@@ -1,54 +1,97 @@
-<div class="col-sm-6 col-md-4 col-sm-push-3 col-md-push-4 loginpage">
+<div class="clearfix loginpage">
 
-  <div class="col-sm-12 formwrap nopadding">
+    <div class="col-sm-6">
+        <form name="loginForm" ng-submit="login(loginForm)">
+            <h3 class="b-title">Login</h3>
 
-    <div class="col-lg-12 guidtext nopadding" ng-hide="hideRegisterSection">
-      <p>Welcome the Breaking Muscle Premium Training Plan registration page. Once you are registered you will be able to gain access to the programs of your choice and manage your account.</p>
-      <br>
-      <p>Thanks for being a part of our community and training with world class Breaking Muscle coaches.</p>
+            <div class="col-md-10 col-lg-8 mg-auto">
+                <h4 class="login-title">Login</h4>
+                <input type="email" class="loginpageinput" name="email" ng-model="form.email" required placeholder="Email">
+                <input type="password" class="loginpageinput" name="password" ng-model="form.password" required placeholder="Password">
+                <button class="login-btn" type="submit">GO</button>
+                <a class="registerbutton" href="#/forgotpassword">Forgot Password</a>
+            </div>
+        </form>
     </div>
 
-    <form name="loginForm" ng-submit="login(loginForm)" ng-hide="hideLoginSection">
+    <div class="col-sm-6 register-section">
+        <form name="signupForm" ng-submit="signup(signupForm)">
+            <h3 class="b-title">Register</h3>
 
-        <h4 class="col-xs-12 login-title">User Login</h4>
+            <div class="col-md-10 col-lg-8 mg-auto">
+                <h4 class="login-title">Register</h4>
+                <input type="text" class="loginpageinput" name="name" ng-model="form.name" placeholder="Name" required>
+                <input type="email" class="loginpageinput" name="email" ng-model="form.email" placeholder="Email" required>
+                <input type="password" class="loginpageinput" name="password" ng-model="form.password" placeholder="Password" required>
+                <input type="password" class="loginpageinput" name="repassword" ng-model="form.repassword" placeholder="Confirm Password" required>
+                <p>Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters</p>
+                <button class="login-btn" type="submit" onclick="required()">DONE</button>
 
-      
-        <input type="email" class="loginpageinput" name="email" ng-model="form.email" required placeholder="Email">
-
-        <input type="password" class="loginpageinput" name="password" ng-model="form.password" required placeholder="Password">
-        <a class="registerbutton" href="#/forgotpassword">Forgot Password</a>
-        <div class="clearfix">
-            <a href="" class="login-btn registerbutton" ng-click="hideLoginSectionButton()">REGISTER</a>
-            <button class="login-btn" type="submit">Login</button>
-
-        </div>
-
-
-    </form>
-
-
-
-    <form name="signupForm" ng-submit="signup(signupForm)" ng-hide="hideRegisterSection">
-
-      <!-- <h4 class="col-xs-12 login-title">User Signup</h4> -->
-
-
-            <input type="text" class="loginpageinput" name="name" ng-model="form.name" placeholder="Name" required>
-
-            <input type="email" class="loginpageinput" name="email" ng-model="form.email" placeholder="Email" required>
-
-
-            <input type="password" class="loginpageinput" name="password" ng-model="form.password" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
-
-            <input type="password" class="loginpageinput" name="repassword" ng-model="form.repassword" placeholder="Confirm Password" required>
-            <small style="color: #ccc;">Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters</small>
-
-            <input type="text" class="loginpageinput" name="phone" ng-model="form.phone" placeholder="Phone (Optional)">
-
-            <a href="" class="login-btn registerbutton" ng-click="hideRegisterSectionButton()">LOGIN</a>
-            <button class="login-btn" type="submit" onclick="required()">Signup</button>
-
-    </form>
-  </div>
+            </div>
+        </form>
+    </div>
 </div>
+
+
+
+
+<!--<div class="clearfix loginpage">-->
+    <!--<div class="col-sm-6">-->
+        <!--<form name="loginForm" ng-submit="login(loginForm)">-->
+
+            <!--<h4 class="col-xs-12 login-title">User Login</h4>-->
+
+            <!--<input type="email" class="loginpageinput" name="email" ng-model="form.email" required placeholder="Email">-->
+
+            <!--<input type="password" class="loginpageinput" name="password" ng-model="form.password" required placeholder="Password">-->
+            <!--<a class="registerbutton" href="#/forgotpassword">Forgot Password</a>-->
+            <!--<div class="clearfix">-->
+                <!--<a href="" class="login-btn registerbutton" ng-click="hideLoginSectionButton()">REGISTER</a>-->
+                <!--<button class="login-btn" type="submit">Login</button>-->
+            <!--</div>-->
+
+        <!--</form>-->
+
+    <!--</div>-->
+    <!--<div class="col-sm-6 register-section">-->
+        <!--<form name="signupForm" ng-submit="signup(signupForm)" >-->
+
+            <!--&lt;!&ndash; <h4 class="col-xs-12 login-title">User Signup</h4> &ndash;&gt;-->
+
+
+            <!--<input type="text" class="loginpageinput" name="name" ng-model="form.name" placeholder="Name" required>-->
+
+            <!--<input type="email" class="loginpageinput" name="email" ng-model="form.email" placeholder="Email" required>-->
+
+            <!--<input type="password" class="loginpageinput" name="password" ng-model="form.password" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>-->
+
+            <!--<input type="password" class="loginpageinput" name="repassword" ng-model="form.repassword" placeholder="Confirm Password" required>-->
+            <!--<small style="color: #ccc;">Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters</small>-->
+
+            <!--<input type="text" class="loginpageinput" name="phone" ng-model="form.phone" placeholder="Phone (Optional)">-->
+
+            <!--<a href="" class="login-btn registerbutton" ng-click="hideRegisterSectionButton()">LOGIN</a>-->
+            <!--<button class="login-btn" type="submit" onclick="required()">Signup</button>-->
+
+        <!--</form>-->
+
+    <!--</div>-->
+<!--</div>-->
+
+
+
+
+<!--<div class="col-sm-6 col-md-4 col-sm-push-3 col-md-push-4 loginpage">-->
+
+  <!--<div class="col-sm-12 formwrap nopadding">-->
+
+    <!--<div class="col-lg-12 guidtext nopadding" ng-hide="hideRegisterSection">-->
+      <!--<p>Welcome the Breaking Muscle Premium Training Plan registration page. Once you are registered you will be able to gain access to the programs of your choice and manage your account.</p>-->
+      <!--<br>-->
+      <!--<p>Thanks for being a part of our community and training with world class Breaking Muscle coaches.</p>-->
+    <!--</div>-->
+
+
+  <!--</div>-->
+<!--</div>-->
 

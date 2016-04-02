@@ -1,56 +1,54 @@
-<div class="user-pages allpaymentswrap">
-	<!-- <div class="col-sm-3 nopadding filter-search">
-		<select name="" id="" ng-model="select.filter">
-	      <option value="">Packages List</option>
-	      <option value="{{item.name}}" ng-repeat="item in filterPackages" >{{item.name}}</option>
-	    </select>
-	</div> -->
-	<div class="col-sm-12 filter-search nopadding">
-		<input type="text" name="search" ng-model="form.search" placeholder="Search">
+<div class="green-box allpayment">
+	<h4 class="h4">All Payments</h4>
+	<div class="inner">
+		<div class="col-sm-6 col-md-4 nopadding mg-bottom">
+			<input class="input-txt" type="text" name="search" ng-model="form.search" placeholder="Search">
+		</div>
+		<div class="responsive-table gr-table clear">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>User</th>
+						<th>User Invoice</th>
+						<th>Type</th>
+						<th>Price</th>
+						<th>Date</th>
+						<th>Systems</th>
+						<th>Status</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+				<tbody>
+
+					<tr ng-repeat="item in users | filter:form.search | filter:select.filter" ng-class="{'back-red' : item.payment.approved == 8}">
+					<td>{{$index+1}}</td>
+					<td>{{item.user.email}}</td>
+					<td>{{item.payment.user_invoice}}</td>
+					<td>{{item.payment.ptype}}</td>
+					<td>${{item.payment.price}}</td>
+					<td>{{(item.payment.add_date)*1000 | date:'dd/MM/yyyy'}}</td>
+					<td>{{item.system.name}}</td>
+					<td>
+						<span class="label label-success" ng-show="item.payment.approved == 1">Success</span>
+						<span class="label label-danger" ng-show="item.payment.approved == 2">Rejected</span>
+						<span class="label label-danger" ng-show="item.payment.approved == 8">Refunded ({{item.payment.refdate*1000 | date:'dd/MM/yyyy'}}</span>
+					</td>
+					<td>
+						<span ng-show="user.level == 7 || user.level == 6">
+							<a href="#/viewpayment/{{item.payment.id}}" class="actions"><i class="glyphicon glyphicon-search"></i></a>
+							<a href="javascript:;" ng-click="reSendOrderConfirmation(item.payment.id)" class="actions"><i class="glyphicon glyphicon-refresh"></i></a>
+							<!-- <a href="javascript:;" class="actions"><i class="fa fa-remove"></i></a> -->
+						</span>
+						<span ng-show="user.level != 7 && user.leve != 6">
+							<a href="#/viewpayment/{{item.payment.id}}" class="actions"><i class="glyphicon glyphicons-refresh"></i></a>
+						</span>
+					</td>
+				</tr>
+
+				</tbody>
+			</table>
+		</div>
 	</div>
-	<table class="table">
-	<tr>
-		<th>#</th>
-		<th>User</th>
-		<th>User Invoice</th>
-		<th>Type</th>
-		<th>Price</th>
-		<th>Date</th>
-		<th>Systems</th>
-		<th>Status</th>
-		<th>Action</th>
-	</tr>
-	<tr ng-repeat="item in users | filter:form.search | filter:select.filter" ng-class="{'back-red' : item.payment.approved == 8}">
-		<td>{{$index+1}}</td>
-		<td>{{item.user.email}}</td>
-		<td>{{item.payment.user_invoice}}</td>
-		<td>{{item.payment.ptype}}</td>
-		<td>${{item.payment.price}}</td>
-		<td>{{(item.payment.add_date)*1000 | date:'dd/MM/yyyy'}}</td>
-		<td>{{item.system.name}}</td>
-		<td>
-			<span class="label label-success" ng-show="item.payment.approved == 1">Success</span>
-			<span class="label label-danger" ng-show="item.payment.approved == 2">Rejected</span>
-			<span class="label label-danger" ng-show="item.payment.approved == 8">Refunded ({{item.payment.refdate*1000 | date:'dd/MM/yyyy'}}</span>
-		</td>
-		<td>
-			<span ng-show="user.level == 7 || user.level == 6">
-				<a href="#/viewpayment/{{item.payment.id}}" class="actions"><i class="glyphicon glyphicon-search"></i></a>
-				<a href="javascript:;" ng-click="reSendOrderConfirmation(item.payment.id)" class="actions"><i class="glyphicon glyphicon-refresh"></i></a>
-				<!-- <a href="javascript:;" class="actions"><i class="fa fa-remove"></i></a> -->
-			</span>
-			<span ng-show="user.level != 7 && user.leve != 6">
-				<a href="#/viewpayment/{{item.payment.id}}" class="actions"><i class="glyphicon glyphicons-refresh"></i></a>
-			</span>
-  		</td>
-	</tr>
-</table>
 </div>
 
-
-<div class="right-side-text">
-    <div class="right-side-inner">
-        <h1>Lorem ipsum.</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia dolorem sint adipisci, commodi enim animi minus debitis, aliquid aspernatur ex soluta maxime sunt, quibusdam. Consequatur officia veniam quam deleniti perspiciatis?</p>
-    </div>
-</div>
