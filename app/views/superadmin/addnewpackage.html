@@ -1,4 +1,30 @@
-
+<style type="text/css">
+/*------------------------*/
+.flowGrid{position: relative;padding: 0;}
+.flowGrid:before,.flowGrid:after{
+    content: "";
+    display: table;
+}
+.flowGrid:after{
+    clear:both;
+}
+.flowGridItem{ list-style: none;}
+.flowGridItem img{width:100%;}
+.flowGridColumn{
+    float: left;
+    padding-left: 10px;
+}
+/*.flowGridColumn:last-of-type{
+    padding-right: 10px;
+}*/
+/*---------- demo page only--------------*/
+header{
+  background-color: #efefef;
+  margin-bottom: 25px;
+  height: 250px;
+  text-align: center;
+}
+</style>
 <div class=" clearfix add-package">
   <div class="col-md-6 nopadding-left">
     <form name="addnewpackage" class="scrollbar" ng-submit="sendnewpackage(addnewpackage)">
@@ -257,7 +283,7 @@
                   <ul class="clearfix flowGrid" id="demogrid">
                     <li class="flowGridItem" ng-repeat="item in faqdata">
                       <h3 class="h5">{{faqTitle[$index] || "Question"}}</h3>
-                      <p>{{faqText[$index] || "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque vitae officiis at repellat, temporibus incidunt doloribus laboriosam deleniti et voluptatibus dolorem quasi dolor minima natus rerum cumque voluptates, praesentium debitis."}}</p>
+                      <p style="font-size:10px;">{{faqText[$index] || "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque vitae officiis at repellat."}}</p>
                     </li>
                   </ul>
                 </section>
@@ -268,7 +294,7 @@
 
             <div class="link-bar">
               <div class="h3">
-                <a href="javascript:;">{{prevButton2Text}}</a>
+                <a href="javascript:;">{{prevButton2Text || 'I want to start my training!'}}</a>
                 <a class="load-more-ic" href="javascript:;"><i class="fa fa-angle-right green-txt"></i></a>
               </div>
             </div>

@@ -20,8 +20,8 @@ angular.module('bmadminApp')
             name : 'Payments',
             page : 'allpayments',
             type : 'head',
-            icon : 'images/admin/packageg.png',
-            iconh : 'images/admin/packagew.png',
+            icon : 'images/admin/paysg.png',
+            iconh : 'images/admin/paysw.png',
             selected : false,
             child: '0'
           },

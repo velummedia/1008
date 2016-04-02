@@ -8,7 +8,7 @@
  * Controller of the bmadminApp
  */
 angular.module('bmadminApp')
-  .controller('LoginCtrl', function ($scope,$http,$route,$location,logger,loading,$window,$rootScope) {
+  .controller('LoginCtrl', function ($scope,$cookies,$http,$route,$location,logger,loading,$window,$rootScope) {
 
   	$scope.blurForm = function(i,d) {
   		console.log(d);
@@ -126,40 +126,21 @@ angular.module('bmadminApp')
     $scope.login = function(form) {
     	if (form.$valid) {
     		loading.show("Please wait ...");
-    		var dataLogin = {
-	    		tag: "login",
-	    		email : form.email.$modelValue,
-	    		password: form.password.$modelValue,
-	    		ref: 0
-	    	}
-	    	if (key) {
-		  		dataLogin["ref"] = key;
-		  	}
-
-	    	httpAccess(dataLogin,$http).then(function(result){
+        var dataLogin = "sysname=" + $scope.sysname +
+                        "&email=" + form.email.$modelValue +
+                        "&password=" + form.password.$modelValue;
+	    	httpAccess(dataLogin,"loginPluginUser",$http).then(function(result){
 	    		console.log(result);
-	    		if (result.data.error == 0 ) {
-	    			window.localStorage["bmadminUser"] = angular.toJson(result.data.export.user);
-	    			window.localStorage["bmadminlogin"] = 1;
-	    			window.localStorage["bmadminlevel"] = result.data.export.user.level;
-	    			switch(result.data.export.ref.error) {
-	    				case 100:
-	    					$location.path("browsepackage");
-	    				break;
-	    				case 20:
-	    					$location.path("browsepackage");
-	    					logger.error("The package is disabled right now.");
-	    				break;
-	    				case 21:
-	    					$location.path("browsepackage");
-	    					logger.error("You've already registered this package.");
-	    				break;
-	    				case 0:
-	    					$location.path("paymentsuser/" + result.data.export.ref.pid);
-	    				break;
-	    				
-	    			}
-	    			loading.hide();
+	    		if (result.data.e == 100 ) {
+	    			var ld = {
+                login: true,
+                user: result.data.res[0],
+                level: 2
+              }
+            $cookies.remove('theiapanel');
+			$cookies.putObject('theiapanel',ld);
+            $location.path("browsepackage");
+            loading.hide();
 	    		}else{
 	    			logger.error("Invalid username or password.");
 	    			$window.scrollTo(0,0);

@@ -79,13 +79,13 @@ angular
                 templateUrl: 'views/login.html',
                 controller: 'LoginCtrl'
             })
-            .when('/paymentsuser/:id', {
-                templateUrl: 'views/user/paymentsuser.html',
-                controller: 'PaymentsuserCtrl'
+            .when('/checkout/:id', {
+                templateUrl: 'views/user/checkout.html',
+                controller: 'CheckoutCtrl'
             })
-            .when('/paymentsuser/:id/:status', {
-                templateUrl: 'views/user/paymentsuser.html',
-                controller: 'PaymentsuserCtrl'
+            .when('/checkout/:id/:status', {
+                templateUrl: 'views/user/checkout.html',
+                controller: 'CheckoutCtrl'
             })
             .when('/browsepackage', {
                 templateUrl: 'views/user/browsepackage.html',

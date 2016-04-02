@@ -47,14 +47,6 @@ angular.module('bmadminApp')
       "#839098",
       "#5481e6"
     ];
-  	
-    function checkAccess(menus,ulevel,currentPage) {
-      var keys = [];
-      var c = currentPage.substring(1);
-      angular.forEach(menus, function(key) {
-          keys.push(key.page);
-      });
-    }
     //SUB-MENU OPENS BY CLICK//
   	$scope.clickMe = function (a,b,i,p){
       $rootScope.sidebarOpen = false;
@@ -95,7 +87,7 @@ angular.module('bmadminApp')
       // LODING ALL PACKAGES //
       var getPackageData = "sysname=" + $scope.sysname;
       httpAccess(getPackageData,"membersGetAllPackages",$http).then(function(result){
-        console.log(result);
+        // console.log(result);
         $rootScope.packages = result.data.export;
       });
       /// ///////////////// //
@@ -196,7 +188,10 @@ angular.module('bmadminApp')
           switch($scope.userinfo.level) {
             case 7: 
               $rootScope.links = menus.superAdmin();
-              // console.log(menus);
+            break;
+            case 1:
+            case 2:
+              $rootScope.links = menus.userMenu();
             break;
             default:
 
@@ -219,11 +214,9 @@ angular.module('bmadminApp')
 
 
   	$scope.logout = function() {
-  		window.localStorage["bmadminUser"] = 0;
-  		window.localStorage["bmadminlogin"] = 0;
-  		window.localStorage["bmadminlevel"] = 0;
+      $cookies.remove('theiapanel');
       $scope.userLogin = false;
-  		$location.path("/");
+  		$location.path("/login");
       $route.reload();
     }
 

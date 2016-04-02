@@ -18,8 +18,8 @@
 
                 <footer class="more-buy-wrap clearfix">
                     <a href="#/package/{{createMoreInfo(item.title)}}" ng-show="item.price !== '0'">More Info</a>
-                    <a class="buy-btn" href="#/paymentsuser/{{item.id}}" ng-show="item.price !== '0'">Buy For ${{item.price}}</a>
-                    <a class="buy-btn" href="#/paymentsuser/{{item.id}}" ng-show="item.price == '0'">
+                    <a class="buy-btn" href="#/checkout/{{item._id}}" ng-show="item.price !== '0'">Buy For ${{item.price}}</a>
+                    <a class="buy-btn" href="#/checkout/{{item._id}}" ng-show="item.price == '0'">
                         Access
                         <span ng-show="item.price == '0'">Free</span>
                     </a>
@@ -44,7 +44,7 @@
         <div class="inner">
             <ul>
                 <li ng-repeat="item in filterPackages">
-                    <a title="{{item.name}}" href="#/paymentsuser/{{item.id}}">{{item.name}} (${{item.price}})</a>
+                    <a title="{{item.name}}" href="#/checkout/{{item._id}}">{{item.name}} (${{item.price}})</a>
                     <a class="moreinfobutton" href="{{item.url}}" target="_blank">(More Info)</a>
                 </li>
             </ul>

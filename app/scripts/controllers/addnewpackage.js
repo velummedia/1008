@@ -18,12 +18,24 @@ angular.module('bmadminApp')
         $scope.form.topCover = f;
     }
 
+    /******* Grid *******/
     $scope.faqdata = [];
     $scope.faqTitle = [];
     $scope.faqText = [];
     $scope.addFaq = function() {
         $scope.faqdata.push($scope.faqdata.length+1);
         $scope.liveFaq();
+
+        var flow;
+        $timeout( function(){
+            flow = fgDelegate.new({
+              name:"demoGird",
+              minItemWidth:100,
+              container: document.getElementById("demogrid"),
+              itemSelector:".flowGridItem",
+            })
+            console.log(flow);
+        },300);
     }
 
 
@@ -167,6 +179,7 @@ angular.module('bmadminApp')
             }
             var prevewData = "sysname=" + $scope.sysname +
                 "&button1text=" + form.button1text.$modelValue +
+                "&button2text=" + form.button2text.$modelValue +
                 "&coach=" + JSON.stringify(coach) +
                 "&desc=" + form.desc.$modelValue +
                 "&name=" + form.name.$modelValue +
@@ -279,14 +292,5 @@ angular.module('bmadminApp')
         }
     }
 
-    /******* Grid *******/
-    var flow;
-      $timeout( function(){
-          flow = fgDelegate.new({
-              name:"demoGird",
-              minItemWidth:200,
-              container: document.getElementById("demogrid"),
-              itemSelector:".flowGridItem",
-          })
-      },100);
+    
   });

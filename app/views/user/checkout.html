@@ -19,7 +19,7 @@
         <div class="col-xs-1"></div>
         <div class="col-sm-8 col-lg-6 nopadding-left">
             <h1>VIP PACKAGE</h1>
-            <a class="title" href="#">{{package.name}}</a>
+            <a class="title" href="#">{{package.title}}</a>
             <div class="" style="margin: 20px 0 10px 0;">
                 <input type="checkbox" name="terms" class="vertical-top" ng-model="form.terms">
                 <span>I agree to the <a href="http://breakingmuscle.com/terms-of-use" target="_blank"><i>Terms and Conditions</i></a></span>
@@ -40,7 +40,7 @@
 
 
     <div class="col-xs-10">
-      <h4><b>{{package.name}}</b> <span ng-show="package.description">({{package.description}})</span></h4>
+      <h4><b>{{package.title}}</b></h4>
     </div>
     <div class="col-xs-2 textright nopadding-left">
         <small class="blue-txt"></small><h4>${{package.price}}</h4>
